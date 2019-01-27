@@ -1,0 +1,84 @@
+Also there is two functions if you just want to enable or disable agent:
+  <i>PathFinderAgent.On()</i>
+  <i>PathFinderAgent.Off()</i>
+
+This functions just flip flag telling agent should it recive goals and results or not. Or more specific one:
+  <i>PathFinderAgent.StartRecieveGoals()</i>
+  <i>PathFinderAgent.StartRecieveResults()</i>
+  <i>PathFinderAgent.StopRecieveGoals()</i>
+  <i>PathFinderAgent.StopRecieveResults()</i>
+
+
+<b>Goals and results</b>
+
+To tell agent what sort of info you want it to take from PathFinder there are three functions and related to this:
+
+<b>1) <i>SetGoalMoveHere(Vector3 destination)</i></b>
+Which is tell to agent where it should move.
+
+After some time agent will receive Path and you can start using it. You can specify delegate to invoke it when Path received:
+  <i>SetRecievePathDelegate(Action<Path> pathDelegate)</i>
+Which is not thread safe, so actually you can't really use Unity API in that delegate, but you can check is there some specific first point or just flip some flag or whatever. To remove delegate use:
+  <i>RemoveRecievePathDelegate()</i>
+
+<b>Important 1:</b> There is actualy lots of things that can go wrong. For example there can be no path at all. So check if path are valid at all. Path class have Path.pathType where some issues are described. "no path" are listed there.
+
+<b>Important 2:</b> Since Path are class and you probably need it very often there is object pool with paths. Path that agent store are returned to pool after it recieve new one. If you want to store path information you can call Path.Copy(). This will return you new instance of path with copy of information inside it. Call Path.ReturnToPool() after you done with it.
+
+<b>2) <i>SetGoalGetBattleGrid(int depth)</i></b>
+This function will return you bunch of accessible by moving points in world. It's userful when you want to test visibility to that points. Maybe find a good place to hide or escape from the explosion or whatever. Useful because it contain only accessible points.
+<i>depth</i> are depth of points. amount of iteration it will capture adjacent points to the current set of points. Obviously first point is nearest to agent position point.
+Related delegates are:
+<i>SetRecieveBattleGridDelegate(Action<IEnumerable<BattleGridPoint>> gridDelegate)</i>
+<i>RemoveRecieveBattleGridDelegate()</i>
+
+
+<b>3) <i>SetGoalFindCover(float maxCost)</i></b>
+Wich is tell agent to find nearest cover. Wich is cool if you want to just quickly find some cover spots and dont want to test all nearby space if it's viable for that goal. 
+<i>minChunkDepth</i> are just check if there enough existed chunks nearby. if you have already built all NavMesh you need, you just can input 0 here. 
+<i>maxCost</i> are Cell cost. Cost to move between the centers of cells. Not actual path cost to this cover. It's just very approximate cost and you should check how much you overshoot or undershoot with your input cause result depends on level geometry.
+
+Related delegates are:
+<i>SetRecieveCoverDelegate(Action<IEnumerable<NodeCoverPoint>> coverDelegate)</i>
+<i>RemoveRecieveCoverDelegate()</i>
+
+<b>In version 0.33 there is also thread safe version of this delegates which will execute in next update.</b>
+All delegates above now have optional input AgentDelegateMode mode. By default it is AgentDelegateMode.NotThreadSafe.
+
+
+<b>Path</b>
+About Path there is another tab with types and pictures here is just couple useful functions inside Agent.
+
+<i>bool MovableDistanceLesserThan(float targetDistance, out float distance, out PathPoint lastPoint, out bool reachLastPoint)</i>
+This is actually most useful one, especially if your agent can jump. It exists in some other variants with different output. It will tell you if in next row of points are point where Agent should stop. It will also return true if there if jump point.
+
+<i>haveNextNode</i> Return true if there is more nodes in Path
+
+<i>PathNode nextNode</i> Return next node in Path
+
+<i>RemoveNextNode()</i> Will move Path to next node
+
+<i>Vector3 nextNodeDirectionVector3</i> Next node direction from current position
+<i>Vector2 nextNodeDirectionVector2</i> Next node direction from current position in top view
+
+<i>bool RemoveNextNodeIfCloser</i> remove next node if it closer then target value. There is more variations of this function. Like RemoveNextNodeIfCloserThanRadius if you just want to remove points if it closer than agent radius. return true if point was removed
+
+
+
+<b><size=20>Properties</size></b>
+
+   Properties are Scriptable Object which used to describe Agent. It used as information how navmesh should be generated and to select which navmesh should be used after it generated. It's have tooltips in the inspector, here i will describe some important options with more words and why it is this way.
+
+   <b>Voxels per chunk side</b>: Usually this option called "voxel size". Navmeshes are build from lots of data points - voxels, this option describes how precise initial data are. voxel size is chunk size / this number. good enough results will be when you have at least 2-3 voxels per agent radius. So if chunk size are 10, agent radius are 0.3, then probably good number will be around 80-100. You can debug voxels if you enable "Full Debug" in debugger and enable "Voxels" option (careful with this option). 
+
+<b>In version 0.37 there is button to set target amount of voxels per agent radius.</b>
+Also there is label to show current voxel size
+
+some history: In way NavMesh build i kinda can't use just number of voxel size. If for example you use chunk size of 10 units and some obscure voxel size like 0.18 units, then we simply can't fit evenly voxels on chunk and some data will be lost on chunk borders. And the borders between chunks are important thing. 
+I tried a couple of ways to fix it: 
+  Simply don't fix it. Ended up with agent hitting obstacles on chunk borders.
+  Cheat. I take chunkSize / voxelSize, then round it to int, then do chunkSize / that int and this was actual voxel size. and this was also feels bad cause i ended up with unexpected results. after that i start putting resulted number into properties again but it was changed overtime while i change chunk size and i end up with very obscure numbers. 
+  Just put number of voxels per chunk side. Voxel size are chunk size / amount of voxels. and this work good enough. Sure, you need to fix this number if you change chunk size but this change much improve NavMesh consistency.
+
+
+   <b>Offset multiplier</b>: This option control how much extra data are taken to chunk borders. this value are multiplier to agent radius. Amount of extra voxels will be Round(agent radius * offset multiplier / voxel size). At least 1 row of extra samples will be taken. Extra samples are needed to take into account nearby obstacles cause NavMesh need to put hole on this chunk even if it obstacle are in nearby chunk. Too big number will slow all down, too small will give odd result. Around 1 is probably best, but i never know for sure.

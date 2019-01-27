@@ -1,0 +1,35 @@
+This will make this agent eligible to use local avoidance.
+
+It automaticaly enable:
+<b>Update Navmesh Position</b> - because agent should probably stay inside navmesh while avoid other agents it's navmesh position should be constantly updated. If it enabled then agent will update this values:
+<i>Cell nearestCell</i> - closest cell to this agent
+<i>Vector3 nearestNavmeshPoint</i> - nearest point to navmesh (It have slight offsets here and there)
+<i>bool outsideNavmesh</i> - true if agent outside navmesh
+
+<b>Update Neighbour Agents</b> - agents dont evade everything in it's vicinity. They evade just some small list of close enough agents to them. This option enable agent recieve updates of nearby agents. It it enabled then agent will update this values:
+<i>List<PathFinderAgent> neighbourAgents</i> - list of beighbour agents
+<i>List<float> neighbourSqrDistances</i> - in equal index from neighbourAgents list will be squared distance to that agent
+Bouth lists are not sorted
+
+This things are somewhat userful without local avoidance so you can enable it without enabling local avoidance. But they will be enabled anyway for propper local avoidance work.
+
+Now when local avoidance enabled you need to provide PathFinderAgent with values:
+* Agents should know it's own current velocity. It is done by passing it to PathFinderAgent.velocity. It is Vector2 in top view
+* Agents should know prefered velocity. PathFinderAgent.prefVelocity. Also Vector2 in top projection
+
+When everything is in place you need to call <b>PathFinder.UpdateRVO()</b>. After some time in separate thread Pathfinder use solver for avoidance.
+
+It return it result to <b>PathFinderAgent.safeVelocity</b> which will be closest to it prefered velocity that outside collision trajectory. Or at least at furthest point from collision.
+All velocity is in units/second.
+
+<b><size=20>Local Avoidance Settings</size></b>
+
+<b>Max velocity</b> - Agent max velocity should be used to evasion. Do not confuse with agent actual velocity. Cause this value used as outer border of possible velocity change. If agent velocity are not exceed its maximum velocity described by this number it actually have far greater chance to evade other agent.
+
+<b>Avoidance Responcibility</b> - Agents dont fully evade each others. They share responcibility. Here you can control amount of responcibility. You can actualy set whatever value through code here. Result amount of respoicibility is this value / (this value + other agent value). So agents can have different proportions between each others.
+
+<b>Care Distance</b> - Agents dont instantly start evade each others. Here you can control how far agents will evade each others. Lower number - sooner reaction. This number control how OTHER agents see this one. If agents move slowly then you might need to make this value high. Or other agents will overreact. If agent move fast then you need to set this value down so others will start evade it as soon as possible. If you not sure then just set it to 0.5
+
+<b>Deadlock failsafe</b> - Optional feature. Somethimes agents will just "stuck". They will hug each others and wount let pass. This is actualy pretty rare case and usualy just happen when agents move exaclty to the direction of each others. Or when they start in some geometrical shapes like circle and they need to go to other side of circle. If this is the case you can specify velocity when agent considered to be "stuck". When agent moved to this state then it will try to move out from other agents to opposite direction in hope to shake off formation where it stuck.
+
+<b>Prefer One Side</b> - Optional feature. If it enabled then other agents shaped will be slightly bigger and shifted to the left. So agent more likley evade other agents to the right. Also if agent still pass on the left it have bigger responcibility.

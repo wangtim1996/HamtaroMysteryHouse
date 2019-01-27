@@ -1,0 +1,3 @@
+<b><size=20>No tunnels in Mesh Collider</size></b>
+
+Simply no tunnels. The way it currently works anyway. One collider = one volume. And volumes are 2d map with voxels where it have minimal and maximal values of height. Much simplification worth it. If you want have tunnels then separate colliders. You can put lots of colliders on one GameObject though and it will work.

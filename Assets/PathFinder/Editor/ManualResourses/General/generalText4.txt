@@ -1,0 +1,6 @@
+
+   <b>3)</b>  Now you ready to use PathFinder. Couple words about generation. Currently there is a bunch of ways you can generate navmesh. I wrote navmesh aiming to use it mostly from code. All controls are hidded in K_PathFinder.PathFinder class so get yourself familliar with it. Most importand control is under "management" region.
+   Also, if you want to observe result (wich you probably are) of navmesh generation, then open "Debuger" foldout and enable "Do debug" option. And check if in selector enabled options like "Cell", "Edge", ect.
+
+   Now. In PathFinder Menu find top part. This is Editor controls for NavMesh generation. Put created Agent Properties into Properties. Now you need to specify "start" and "size" of target area. It's measured in chunks. You can type exact numbers of chunks or use chunk sellector that appeared in scene. Chunk selector height do nothing outside better positioning of selector. Now press "Build" button and hope for result.
+Or you can request target area by using <i>PathFinder.QueueGraph</i>.

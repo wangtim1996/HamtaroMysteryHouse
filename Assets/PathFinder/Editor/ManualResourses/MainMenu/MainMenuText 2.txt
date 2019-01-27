@@ -1,0 +1,31 @@
+Think position and size selector i already explained in General tab.
+
+<b>Build</b>: Build button are obvious. It will build NavMesh in sellected area when you press it. Also when any of this buttons pressed it trigger init in main class and it will create helper in scene wich will hold saved data and execute some Unity API.
+To use this button from code use there is bunch of ways:
+
+Will queue sellected area:
+<i>PathFinder.QueueGraph(int x, int z, AgentProperties properties, int sizeX = 1, int sizeZ = 1)</i>
+<i>PathFinder.QueueGraph(Vector2Int pos, AgentProperties properties)</i>
+<i>PathFinder.QueueGraph(Vector2Int pos, Vector2Int size, AgentProperties properties)</i>
+<i>PathFinder.QueueGraph(Bounds bounds, AgentProperties properties)</i> - my favorite one. put here target bounds in world space and it will queue all chunks it overlap
+
+Will return if target graph exist. If true - return graph. If false - will queue it to generation:
+<i>bool PathFinder.GetGraph(Vector2Int chunkPos, AgentProperties properties, out Graph graph)</i>
+<i>bool PathFinder.GetGraph(int x, int z, AgentProperties properties, out Graph graph)</i>
+
+<b>Remove</b>: will remove NavMesh targeted by area selector. If checkbox next to it are enabled then after removing PathFinder will queue removed chunks again and redo them.
+To use this button from code use <i>PathFinder.RemoveGraph(Vector2Int chunkPos, AgentProperties properties, bool createNewGraphAfter = true)</i>. Input are in chunk position. There is also a version with Bounds which will convert bound position to chunk position and use these values as input. 
+
+<b>Clear</b>: will clear all existed NavMesh and also stop all existed work. Potentially can crash Unity if there some work in threads and you are constantly entering and exiting playmode. No clue how to fix it.
+To use this button from code use <i>PathFinder.ClearAll()</i>
+
+<b>Serialization</b>:
+
+ By default serialization implemented by storing SerializedNavmesh in SceneNavmeshData:ScriptableObject. When you attempt to save current navmesh this scriptable object will be created. 
+
+Your Serialization buttons.
+<i>Save</i>: If you press this button then if your scene dont have SceneNavmeshData associated with it then PathFinder suggest you to create one and put all current NavMesh inside it. To use this from code use <i>PathFinder.SaveCurrentSceneData()</i> 
+<i>Load</i>: Are obviously try to load SceneNavmeshData in current scene you can use it from code use <i>PathFinder.LoadCurrentSceneData()</i> but it will done automatically anyway while PathFinder are starting up.
+<i>Delete</i>: Will delete all data inside current SceneNavmeshData. Also, if you want to delete some particular layer of NavMesh then you can select SceneNavmeshData associated with current scene and press Remove button near undesired AgentProperties.
+
+<b><size=20>Settings</size></b>

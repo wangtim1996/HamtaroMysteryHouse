@@ -1,0 +1,123 @@
+//this is straight up hilarious
+
+struct DebugArrayVector3 {
+	//cool number
+	float cn1, cn2, cn3;
+	float3 pos;
+
+	int i;
+	float3
+		V0, V1, V2, V3, V4, V5, V6, V7, V8, V9,
+		V10, V11, V12, V13, V14, V15, V16, V17, V18, V19;
+
+};
+
+DebugArrayVector3 WriteToArray(float3 val[20], int length) {
+	DebugArrayVector3 result;
+	result.i = length;
+	result.cn1 = 0;
+	result.cn2 = 0;
+	result.cn3 = 0;
+	result.pos = float3(0, 0, 0);
+
+	if (length > 0)
+		result.V0 = val[0];
+	else
+		result.V0 = float3(0, 0, 0);
+
+	if (length > 1)
+		result.V1 = val[1];
+	else
+		result.V1 = float3(0, 0, 0);
+
+	if (length > 2)
+		result.V2 = val[2];
+	else
+		result.V2 = float3(0, 0, 0);
+
+	if (length > 3)
+		result.V3 = val[3];
+	else
+		result.V3 = float3(0, 0, 0);
+
+	if (length > 4)
+		result.V4 = val[4];
+	else
+		result.V4 = float3(0, 0, 0);
+
+	if (length > 5)
+		result.V5 = val[5];	
+	else
+		result.V5 = float3(0, 0, 0);
+
+	if (length > 6)
+		result.V6 = val[6];
+	else
+		result.V6 = float3(0, 0, 0);
+
+	if (length > 7)
+		result.V7 = val[7];
+	else
+		result.V7 = float3(0, 0, 0);
+
+	if (length > 8)
+		result.V8 = val[8];
+	else
+		result.V8 = float3(0, 0, 0);
+
+	if (length > 9)
+		result.V9 = val[9];
+	else
+		result.V9 = float3(0, 0, 0);
+
+	if (length > 10)
+		result.V10 = val[10];
+	else
+		result.V10 = float3(0, 0, 0);
+
+	if (length > 11)
+		result.V11 = val[11];
+	else
+		result.V11 = float3(0, 0, 0);
+
+	if (length > 12)
+		result.V12 = val[12];
+	else
+		result.V12 = float3(0, 0, 0);
+
+	if (length > 13)
+		result.V13 = val[13];
+	else
+		result.V13 = float3(0, 0, 0);
+
+	if (length > 14)
+		result.V14 = val[14];
+	else
+		result.V14 = float3(0, 0, 0);
+
+	if (length > 15)
+		result.V15 = val[15];
+	else
+		result.V15 = float3(0, 0, 0);
+
+	if (length > 16)
+		result.V16 = val[16];
+	else
+		result.V16 = float3(0, 0, 0);
+
+	if (length > 17)
+		result.V17 = val[17];
+	else
+		result.V17 = float3(0, 0, 0);
+
+	if (length > 18)
+		result.V18 = val[18];
+	else
+		result.V18 = float3(0, 0, 0);
+
+	if (length > 19)
+		result.V19 = val[19];
+	else
+		result.V19 = float3(0, 0, 0);
+	return result;
+}

@@ -1,0 +1,121 @@
+//rasterization that do min and max values even if triangle are paralel with camera
+
+struct Voxel {
+	float min;
+	float max;
+	int pas;
+	//bool exist;
+};
+
+struct DataSegment {
+	int index;
+	int length;
+	int pas; //passability
+};
+
+struct ClipLineToSegmentResult {
+	bool value;
+	float3 newA;
+	float3 newB;
+};
+
+ClipLineToSegmentResult ClipLineToSegment(float aPlaneNormalX, float aPlaneNormalZ, float planeClipStart, float planeClipEnd, float3 lineA, float3 lineB) {
+	ClipLineToSegmentResult result;
+
+	float nDistA = (aPlaneNormalX * lineA.x + aPlaneNormalZ * lineA.z);
+	float nDistB = (aPlaneNormalX * lineB.x + aPlaneNormalZ * lineB.z);	
+
+	if (nDistA == nDistB) {//paralel
+		if ((nDistA > planeClipStart) && (nDistA < planeClipEnd)) {
+			result.value = true;
+			result.newA = lineA;
+			result.newB = lineB;
+		}
+		else {
+			result.value = false;
+			result.newA = float3(0, 0, 0);
+			result.newB = float3(0, 0, 0);
+		}
+		return result;
+	}
+
+	float3 dir = lineA - lineB;
+
+	float AS = nDistA - planeClipStart;
+	//float AE = nDistA - planeClipEnd;
+
+	float BS = nDistB - planeClipStart;
+	float BE = nDistB - planeClipEnd;
+
+	float LL = BS - AS;
+	if (LL == 0) { //length == 0
+		result.value = false;
+		result.newA = float3(0, 0, 0);
+		result.newB = float3(0, 0, 0);
+		return result;
+	}
+
+	float BSLL = BS / LL;
+	float BELL = BE / LL;
+
+	if (LL < 0) {
+		LL *= -1;
+		float tFloat = BSLL;
+		BSLL = BELL;
+		BELL = tFloat;
+	}
+
+	float planeWidth = planeClipEnd - planeClipStart;
+
+	if (BELL > 1 | BSLL < 0) { // bouth outside plane at same side
+		result.value = false;
+		result.newA = float3(0, 0, 0);
+		result.newB = float3(0, 0, 0);
+		return result;
+	}
+
+	if (BSLL > 1) {
+		result.newA = lineA;
+	}
+	else {
+		result.newA = lineB + (dir * BSLL);
+	}
+
+	if (BELL > 0) {
+		result.newB = lineB + (dir * BELL);
+	}
+	else {
+		result.newB = lineB;
+	}
+	result.value = true;
+	return result;
+}
+
+Voxel CombineVoxels(Voxel mainVoxel, Voxel appliedVoxel) {
+	if (appliedVoxel.pas != -1) {//if second voxel exist
+		if (mainVoxel.pas != -1) {//if main voxel exist then apply state
+			//if (appliedVoxel.max >= mainVoxel.max) {
+			//	mainVoxel.pas = max(mainVoxel.pas, appliedVoxel.pas);
+			//	mainVoxel.max = appliedVoxel.max;
+			//}
+			mainVoxel.pas = max(mainVoxel.pas, appliedVoxel.pas);
+			mainVoxel.max = max(mainVoxel.max, appliedVoxel.max);
+			mainVoxel.min = min(mainVoxel.min, appliedVoxel.min);
+
+			//if (appliedVoxel.max > mainVoxel.max) {
+			//	mainVoxel.max = appliedVoxel.max;
+			//}
+
+			//if (appliedVoxel.min < mainVoxel.min) {
+			//	mainVoxel.min = appliedVoxel.min;
+			//}
+		}
+		else {//if not exist then set state
+			//mainVoxel.exist = true;
+			mainVoxel.min = appliedVoxel.min;
+			mainVoxel.max = appliedVoxel.max;
+			mainVoxel.pas = appliedVoxel.pas;
+		}
+	}
+	return mainVoxel;
+}

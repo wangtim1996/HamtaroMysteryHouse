@@ -1,0 +1,59 @@
+Here i describe in depth some options in main menu and how it can be executed from code.
+
+
+<b><size=20>Main buttons</size></b>
+
+Think position and size selector i already explained in General tab and Build button are obvious. 
+
+<b>Remove</b>: will remove NavMesh targeted by area selector. If checkbox next to it are enabled then after removing PathFinder will queue removed chunks again and redo them.
+To use this button from code use <i>PathFinder.RemoveGraph(Vector2Int chunkPos, AgentProperties properties, bool createNewGraphAfter = true)</i>. Input are in chunk position. There is also a version with Bounds which will convert bound position to chunk position and use these values as input. 
+
+<b>Clear</b>: will clear all existed NavMesh and also stop all existed work. Potentially can crash Unity if there some work in threads and you are constantly entering and exiting playmode. No clue how to fix it.
+To use this button from code use <i>PathFinder.ClearAll()</i>
+
+<b>Save, Load, Delete</b>: Are your Serialization buttons. Probably should make Serialization tab but there is not much to explain so i just put it here.
+   There is SerializedNavmesh class which you can get by using <i>PathFinder.Serialize(AgentProperties properties)</i>. Prefer to use your own method of serialization, this is not serialized data this is data for you to serialize. I have no clue how you want to organize your save or loading process. To load this class into PathFinder use <i>PathFinder.Deserialize(SerializedNavmesh target, AgentProperties properties)</i>
+   Buttons exist to control serialization in current scene. There is SceneNavmeshData Scriptable Object class wich can store collection of AgentProperties and SerializedNavmesh. 
+ <i>Save</i>: If you press this button then if your scene dont have SceneNavmeshData associated with it then PathFinder suggest you to create one and put all current NavMesh inside it. To use this from code use <i>PathFinder.SaveCurrentSceneData()</i> 
+ <i>Load</i>: Are obviously try to load SceneNavmeshData in current scene you can use it from code use <i>PathFinder.LoadCurrentSceneData()</i> but it will done automatically anyway while PathFinder are starting up.
+ <i>Delete</i>: Will delete all data inside current SceneNavmeshData. Also, if you want to delete some particular layer of NavMesh then you can select SceneNavmeshData associated with current scene and press Remove button near undesired AgentProperties.
+
+<b><size=20>Settings</size></b>
+
+<b>Helper name</b>: In order PathFinder to work it needs to use Unity API. After you start using PathFinder it will create object in scene and you can specify its name here. PathFinder will put some Coroutines inside it. Also, this GameObject will store SceneNavmeshData. For example if you copying scene then with slight changes then you can just put here SceneNavmeshData from another scene. Or you can copy SceneNavmeshData and store it as backup and when you need just put it here.
+
+<b>Multithread</b>: Are actually here for debugging. Debug Threads are pain. Here you can tell Pathfinder to use Coroutines instead of Threads.
+
+<b>Max threads</b>: Obviously control the maximum amount of active threads. But actially you can control it in code using <i>PathFinder.SetMaxThreads(int value)</i> and this is useful. Cause, for example, when level is generated and you want to build NavMesh as quickly as possible you can put here big enough number. But when you want your silky smooth FPS then you tune down maximum threads and PC wont struggle to create all you throw at PathFinder.
+
+<b>World grid size</b>: I already explained it in General tab. This is value to control how big Chunk are.
+
+<b>Chunk max/min height</b>: Actualy, just a crutch for Unity. When NavMesh are generated it stored inside Chunk. And Chunk are describe where PathFinder should to check for colliders. And when Chunk are generated this values will tell PathFinder from where it should start boxcasting and where should stop boxcasting to get Chunk size. Numbers here are in chunk size. I have no clue how big your world are so just enter here right numbers if navmesh not generated at target height.
+   Actualy, this options doesn't normally exist cause normally NavMesh built in one go. If this were applicable to PathFinder then it simply check all colliders and watch where bounds for all of them. But i cant do this if there bazillion colliders in scene cause it need to be checked for every chunk in every operation.
+
+<b>Terrain Collection</b>: This is a bit misleading option and it's need a bit of explanation. There are two ways to handle terrain here.
+   *Precise. In main thread when PathFinder collect info about terrain it will use Terrain.SampleHeight and TerrainData.GetSteepness to get height and passability of voxel. But this currently can be used only in main thread.
+   *Fast. Then in main thread it will simply take height map for the terrain. And then when PathFinder start doing threaded stuff it will make Mesh of terrain in target area and process it as normal Mesh.
+   And this is not actualy representing real speed! Precise method is actualy a bit faster right now. BUT when Pathfinder use it - it will drop precious FPS cause lots of it executed in the main thread. So better say "Precice" are for editor or before actual action start and "Fast" are when you need smooth fps. You can change desired method from code by using <i>PathFinder.SetCurrentTerrainMethod(TerrainCollectorType type)</i>
+
+<b>Minimal distance</b>: This option will appear when you select a fast terrain collection. Height map are actually can be too cramped to the point when it's even more precise than a voxel height map. And this will create too dense mesh in the thread and this will slow all down. There is no point to work with that much precise mesh. This option tells Pathfinder at least how much distance it should take between the samples lowering resolution of height map.
+
+<b>Area editor</b>: No really need to explain if you familiar with the movement cost on graphs. Need to tell that SerializedNavmesh are serialize areas inside NavMesh as indexes in that editor. So if you change purpose in some index, then be ready to some mess in serialized data.
+
+
+<b><size=20>Debugger</size></b>
+
+Some nice toy builded on unity Handles.
+
+<b>Do debug</b>: Will tell debugger if you need to debug NavMesh at all. I mean you can't even see the result of PathFinder work if you turn that option off.
+
+<b>Full debug</b>: This option will show up if you enable "Do debug". If you enable this option then debugger will also debug all stages of NavMesh generations. Voxels, Volumes, Temp nodes and connections before Ramer-Douglas-Peucker and lots and lots more info. But it eat up all your PC memory for that and kill all FPS in editor if you enable lots of options in the same time. It can even crash Unity if you try to use Unity Profiler. So careful with that! 
+
+<b>Do profiler</b>: If you enable this then PathFinder will log all operations while build NavMesh and will annoy you with messages in console wich will contain this log. If something go wrong and you want to tell me what, then probably you should start with showing me that log. Or if you want to know more about pipeline then you might wanna read it.
+
+<b>Scene GUI</b>: If you enable this option then inside all existed chunks in scene will appear bunch of checkboxes with AgentProperties names. You can enable or disable debugging of some particular AgentProperties using this.
+
+<b>lines, dots, labels, generic, errors, paths</b>: Options to debug bunch of debugger groups. This is actually helpful tool and you may want to use it. There is a namespace K_PathFinder.PFDebugger and there is static class Debugger. Open generic region and you will find a bunch of options like AddBounds, AddDot, AddLine, AddLabel(my favorite. you can draw text with coordinates in scene. yay!) and functions like ClearGeneric(DebugGroup group)
+you currently can see paths debug here and I don't put on it off switch so it will debug regardless.
+
+<b>sellector</b>: Under this tab are lots of option what you want to draw from debugged information. Here is only NavMesh related options.

@@ -41,6 +41,7 @@ public class RoomMgr : MonoBehaviour
             DebugMap();
             LinkRooms();
             GenerateHallways();
+            NavMeshMgr.Instance.CreateNavMesh(dimensions);
         }
     }
 

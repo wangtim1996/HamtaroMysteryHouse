@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f8e93bf43f3be4583017f721f02085, type: 3}
+  m_Name: DebugerSettings
+  m_EditorClassIdentifier: 
+  autoUpdateSceneView: 1
+  optionColors:
+  - {r: 1, g: 1, b: 1, a: 0.116}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.8896551, a: 0.128}
+  - {r: 0.9862069, g: 1, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.95862055, b: 1, a: 0.666}
+  - {r: 0.034482718, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.048275948, b: 1, a: 1}
+  - {r: 0.07586192, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.986207, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  optionIsShows: 00000000010000000000000000000000000000000000000000000100
+  doDebug: 1
+  debugOnlyNavmesh: 0
+  doProfilerStuff: 1
+  showSelector: 1
+  showSceneGUI: 0
+  doDebugPaths: 0
+  clearGenericOnUpdate: 0
+  drawGenericDots: 1
+  drawGenericLines: 1
+  drawGenericLabels: 1
+  drawGenericMesh: 1
+  drawErrors: 1
+  drawPaths: 1
+  debugFlags: 0101010101010001000000010100000000000000
+  debugRVO: 0
+  debugRVObasic: 1
+  debugRVOvelocityObstacles: 0
+  debugRVOconvexShape: 1
+  debugRVOplaneIntersections: 0
+  dotShader: {fileID: 4800000, guid: ae6486b8ed6c5d04a8a134f41471b5fd, type: 3}
+  lineShader: {fileID: 4800000, guid: 47caeb78b63a6344891d9bea800fe2f7, type: 3}
+  trisShader: {fileID: 4800000, guid: 79c06beefb11bd44eaf8633abecb0522, type: 3}

@@ -1,0 +1,11 @@
+Covers are information about nearby obstacles that are on range of sellected values. 
+When you recive information abour Cover it will be collection of NodeCoverPoint. 
+NodeCoverPoint have:
+position - this is position on botton of obstacle.
+cellPosition - nearest point to NavMesh in direction of cover normal
+cell - cell where connected cellPosition 
+cover - reference to Cover itself
+coverType - is cover height. 0 is none, 1 is half height, 2 is full height
+normal - direction of cover
+
+Also i recomend to use reference to Cover in NodeCoverPoint. It's also contains left and right positions of cover. it can be userful for snaping to cover or represent it in scene in some way.

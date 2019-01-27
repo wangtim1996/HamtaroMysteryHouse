@@ -1,0 +1,26 @@
+<b>Helper name</b>: In order PathFinder to work it needs to use Unity API. After you start using PathFinder it will create object in scene and you can specify its name here. PathFinder will put some Coroutines inside it. Also, this GameObject will store SceneNavmeshData. For example if you copying scene then with slight changes then you can just put here SceneNavmeshData from another scene. Or you can copy SceneNavmeshData and store it as backup and when you need just put it here.
+
+<b>Multithread</b>: Enabled by default. Putted here entirely for debugging. Cause debugging threads is pain. If disabled then all navmesh generating code will be executed in main thread.
+
+<b>Max threads</b>: Obviously control the maximum amount of active threads. But actially you can control it in code using <i>PathFinder.SetMaxThreads(int value)</i> and this is useful. Cause, for example, when level is generated and you want to build NavMesh as quickly as possible you can put here big enough number. But when you want your silky smooth FPS then you tune down maximum threads and PC wont struggle to create all you throw at PathFinder.
+
+Options to control method of rasterization:
+<b>Terrain collection</b>
+<b>Collider collection</b>
+Initialy navmesh generate lots of datapoint about world. Here you can define prefered method. All of them have pros and cons.
+Bouth have CPU version and ComputeShader version. 
+CPU are slow but all in threads so it's good when you want to have smooth FPS.
+ComputeShader are very fast and use GPU to get this data. But moving data back and forth from GPU are slow. And there is pretty big data. When you make small amount of chunks it will be superfast but you will have FPS drops if you start generate big.
+
+<b>World grid size</b>: I already explained it in General tab. This is value to control how big Chunk are.
+
+<b>Chunk max/min height</b>: Just a crutch for Unity. When NavMesh are generated it stored inside Chunk. And Chunk are describe where PathFinder should to check for colliders. And when Chunk are generated this values will tell PathFinder from where it should start boxcasting and where should stop boxcasting to get Chunk size. Numbers here are in chunk size. I have no clue how big your world are so just enter here right numbers if navmesh not generated at target height.
+   Actualy, this options doesn't normally exist cause normally NavMesh built in one go. If this were applicable to PathFinder then it simply check all colliders and watch where bounds for all of them. But i cant do this if there bazillion colliders in scene cause it need to be checked for every chunk in every operation.
+
+<b>Area editor</b>: No really need to explain if you familiar with the movement cost on graphs. Need to tell that SerializedNavmesh are serialize areas inside NavMesh as indexes in that editor. So if you change purpose in some index, then be ready to some mess in serialized data.
+It order PathFinder to work 0 and 1 indexes are locked. But you still can change cost and priority of default area. 
+
+<b>Tag Associations</b>: Here you specify default Area for target Tag. Cause adding AreaGameObject can be painful to large number of objects. Userful if you want to quickly make all your furniture Not Walkable by default. 
+If "Use Root Tag" enabled then for chosing area will be sellected topmost parrent of gameObject. Userful if you orfanize your scene using gameObjects as folders. So for example all forks, spoons and dishes became unwalkable if whey parented to table.
+
+<b><size=20>Debugger</size></b>

@@ -1,0 +1,12 @@
+Well thats a fine looking menu :D A nice toy to debug what happening inside PathFinder. 
+Currently it uses StructuredBuffers to debug stuff with exeption for labels. It's still uses Unity Handles. 
+
+<b>Do debug</b>: Will tell debugger if you need to debug NavMesh at all. I mean you can't even see the result of PathFinder work if you turn that option off.
+
+<b>Full debug</b>: This option will show up if you enable "Do debug". If you enable this option then debugger will also debug all stages of NavMesh generations. Voxels, Volumes, Temp nodes and connections before Ramer-Douglas-Peucker and lots and lots more info. But it eat up all your PC memory for that.
+
+<b>Do profiler</b>: If you enable this then PathFinder will log all operations while build NavMesh and will annoy you with messages in console wich will contain this log. If something go wrong and you want to tell me what, then probably you should start with showing me that log. Or if you want to know more about pipeline then you might wanna read it.
+
+<b>Scene GUI</b>: If you enable this option then inside all existed chunks in scene will appear bunch of checkboxes with AgentProperties names. You can enable or disable debugging of some particular AgentProperties using this. In order to update scene view you should press "Update" button.
+
+<b>Clear Generic on Update</b>: If you use Dabuger for debug stuff this oftion are control auto clrearing of generic debug. Debuging path are considered as Generic so when you debug path then enable this option.

@@ -1,0 +1,6185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68df87f02b2625c47847fed2e1d0cdbd, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  properties:
+  - {fileID: 11400000, guid: 8fa1a3f36725e67408e715f795857fcc, type: 2}
+  navmesh:
+  - pathFinderVersion: 0.47
+    cellCount: 45
+    bgPointsCount: 0
+    serializedGraphs:
+    - posX: -1
+      posZ: -1
+      minY: -1
+      maxY: 0
+      serializedCells:
+      - id: 0
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -9.279217, y: 0.49999997, z: -3.3145607}
+        data:
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: -1.7164183
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -9.626865
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: -1.7164183
+        originalEdges:
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: -1.7164183
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -9.626865
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: -1.7164183
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 0
+          connectedCell: 2
+          costFrom: 0.8344499
+          costTo: 1.6900884
+          intersection: {x: -8.943709, y: 0.5, z: -4.0785904}
+          data:
+            xLeft: -8.656716
+            yLeft: 0.5
+            zLeft: -1.7164183
+            xRight: -9.626865
+            yRight: 0.5
+            zRight: -9.701492
+        - interconnection: 1
+          fromCell: 0
+          connectedCell: 16
+          costFrom: 3.3147726
+          costTo: 4.521793
+          intersection: {x: -9.24174, y: 0.5, z: 0}
+          data:
+            xLeft: -9.701492
+            yLeft: 0.5
+            zLeft: 0
+            xRight: -8.656716
+            yRight: 0.5
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 1
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -7.3134327, y: 0.5, z: -3.7064679}
+        data:
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -4.477612
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        originalEdges:
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -4.477612
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 1
+          connectedCell: 2
+          costFrom: 0.12282494
+          costTo: 2.0193014
+          intersection: {x: -7.367946, y: 0.5, z: -3.8165326}
+          data:
+            xLeft: -6.8656716
+            yLeft: 0.5
+            zLeft: -4.701493
+            xRight: -8.432836
+            yRight: 0.5
+            zRight: -1.940299
+        - interconnection: 0
+          fromCell: 1
+          connectedCell: 7
+          costFrom: 0.11366876
+          costTo: 3.041275
+          intersection: {x: -7.202014, y: 0.5, z: -3.6839633}
+          data:
+            xLeft: -8.432836
+            yLeft: 0.5
+            zLeft: -1.940299
+            xRight: -6.6417913
+            yRight: 0.5
+            zRight: -4.477612
+        serializedJumpConnections: []
+      - id: 2
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -8.264174, y: 0.50000006, z: -5.62605}
+        data:
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -9.626865
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: -1.7164183
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: -1.7164183
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -6.19403
+        originalEdges:
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: -1.7164183
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: -1.7164183
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -6.19403
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 2
+          connectedCell: 0
+          costFrom: 1.6900884
+          costTo: 0.8344499
+          intersection: {x: -8.943709, y: 0.5, z: -4.0785904}
+          data:
+            xLeft: -9.626865
+            yLeft: 0.5
+            zLeft: -9.701492
+            xRight: -8.656716
+            yRight: 0.5
+            zRight: -1.7164183
+        - interconnection: 0
+          fromCell: 2
+          connectedCell: 1
+          costFrom: 2.0193014
+          costTo: 0.12282494
+          intersection: {x: -7.367946, y: 0.5, z: -3.8165326}
+          data:
+            xLeft: -8.432836
+            yLeft: 0.5
+            zLeft: -1.940299
+            xRight: -6.8656716
+            yRight: 0.5
+            zRight: -4.701493
+        - interconnection: 0
+          fromCell: 2
+          connectedCell: 3
+          costFrom: 1.7665393
+          costTo: 0.1276601
+          intersection: {x: -7.7486944, y: 0.5, z: -7.315707}
+          data:
+            xLeft: -6.8656716
+            yLeft: 0.5
+            zLeft: -6.19403
+            xRight: -9.626865
+            yRight: 0.5
+            zRight: -9.701492
+        serializedJumpConnections: []
+      - id: 3
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -7.711443, y: 0.5, z: -7.4378114}
+        data:
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -9.626865
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -6.8656716
+          yRight: 0.5
+          zRight: -6.19403
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -6.4179106
+        originalEdges:
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -6.8656716
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -6.4179106
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 3
+          connectedCell: 2
+          costFrom: 0.1276601
+          costTo: 1.7665393
+          intersection: {x: -7.7486944, y: 0.5, z: -7.315707}
+          data:
+            xLeft: -9.626865
+            yLeft: 0.5
+            zLeft: -9.701492
+            xRight: -6.8656716
+            yRight: 0.5
+            zRight: -6.19403
+        - interconnection: 0
+          fromCell: 3
+          connectedCell: 6
+          costFrom: 0.11319125
+          costTo: 2.709466
+          intersection: {x: -7.605711, y: 0.5, z: -7.478222}
+          data:
+            xLeft: -6.6417913
+            yLeft: 0.5
+            zLeft: -6.4179106
+            xRight: -9.626865
+            yRight: 0.5
+            zRight: -9.701492
+        serializedJumpConnections: []
+      - id: 4
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -2.678864, y: 0.5953726, z: -4.3385224}
+        data:
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -3.955224
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -3.955224
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -5
+          yRight: 0.5
+          zRight: -4.477612
+        originalEdges:
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -3.955224
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -3.955224
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -5
+          yRight: 0.5
+          zRight: -4.477612
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 4
+          connectedCell: 7
+          costFrom: 0.18838176
+          costTo: 1.8024398
+          intersection: {x: -2.8248677, y: 0.5914928, z: -4.2195454}
+          data:
+            xLeft: -5
+            yLeft: 0.5
+            zLeft: -4.477612
+            xRight: -0.5970154
+            yRight: 0.68520314
+            zRight: -3.955224
+        - interconnection: 0
+          fromCell: 4
+          connectedCell: 9
+          costFrom: 0.13781746
+          costTo: 1.0400164
+          intersection: {x: -2.654693, y: 0.59401417, z: -4.474197}
+          data:
+            xLeft: -0.5970154
+            yLeft: 0.68520314
+            zLeft: -4.2537317
+            xRight: -4.7761197
+            yRight: 0.5
+            zRight: -4.701493
+        serializedJumpConnections: []
+      - id: 5
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -0.28199834, y: 0.8722393, z: -5.2520027}
+        data:
+        - xLeft: -0.52238846
+          yLeft: 0.7761135
+          zLeft: -6.2686567
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: 0
+          yRight: 1.0167558
+          zRight: -4.3283587
+        - xLeft: 0
+          yLeft: 1.0167558
+          zLeft: -4.3283587
+          xRight: 0
+          yRight: 1.0167558
+          zRight: -6.2686567
+        - xLeft: 0
+          yLeft: 1.0167558
+          zLeft: -6.2686567
+          xRight: -0.52238846
+          yRight: 0.7761135
+          zRight: -6.2686567
+        - xLeft: 0
+          yLeft: 1.0083779
+          zLeft: -4.3283587
+          xRight: 0
+          yRight: 1.0083779
+          zRight: -6.2686567
+        originalEdges:
+        - xLeft: -0.52238846
+          yLeft: 0.7761135
+          zLeft: -6.2686567
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: 0
+          yRight: 1.0167558
+          zRight: -4.3283587
+        - xLeft: 0
+          yLeft: 1.0167558
+          zLeft: -4.3283587
+          xRight: 0
+          yRight: 1.0167558
+          zRight: -6.2686567
+        - xLeft: 0
+          yLeft: 1.0167558
+          zLeft: -6.2686567
+          xRight: -0.52238846
+          yRight: 0.7761135
+          zRight: -6.2686567
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 5
+          connectedCell: 9
+          costFrom: 0.3120944
+          costTo: 1.93096
+          intersection: {x: -0.5588903, y: 0.7316471, z: -5.2831087}
+          data:
+            xLeft: -0.52238846
+            yLeft: 0.7761135
+            zLeft: -6.2686567
+            xRight: -0.5970154
+            yRight: 0.68520314
+            zRight: -4.2537317
+        - interconnection: 1
+          fromCell: 5
+          connectedCell: 26
+          costFrom: 0.31367496
+          costTo: 1.76727
+          intersection: {x: 0, y: 1.0083779, z: -5.2336946}
+          data:
+            xLeft: 0
+            yLeft: 1.0083779
+            zLeft: -4.3283587
+            xRight: 0
+            yRight: 1.0083779
+            zRight: -6.2686567
+        serializedJumpConnections: []
+      - id: 6
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -5.0748005, y: 0.5, z: -8.445537}
+        data:
+        - xLeft: -0.3731346
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -9.626865
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -5
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -9.029851
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: -0.3731346
+          yRight: 0.5
+          zRight: -9.253732
+        originalEdges:
+        - xLeft: -0.3731346
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -9.626865
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -5
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: -5
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: -0.3731346
+          yRight: 0.5
+          zRight: -9.253732
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 6
+          connectedCell: 3
+          costFrom: 2.709466
+          costTo: 0.11319125
+          intersection: {x: -7.605711, y: 0.5, z: -7.478222}
+          data:
+            xLeft: -9.626865
+            yLeft: 0.5
+            zLeft: -9.701492
+            xRight: -6.6417913
+            yRight: 0.5
+            zRight: -6.4179106
+        - interconnection: 0
+          fromCell: 6
+          connectedCell: 10
+          costFrom: 4.891137
+          costTo: 0.15102392
+          intersection: {x: -0.2726543, y: 0.5, z: -9.374308}
+          data:
+            xLeft: -0.3731346
+            yLeft: 0.5
+            zLeft: -9.253732
+            xRight: 0
+            yRight: 0.5
+            zRight: -9.701492
+        - interconnection: 0
+          fromCell: 6
+          connectedCell: 11
+          costFrom: 2.2596514
+          costTo: 0.8265439
+          intersection: {x: -2.970659, y: 0.5, z: -7.621757}
+          data:
+            xLeft: -5
+            yLeft: 0.5
+            zLeft: -6.4179106
+            xRight: -0.5970154
+            yRight: 0.5
+            zRight: -9.029851
+        serializedJumpConnections: []
+      - id: 7
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -4.220998, y: 0.5189441, z: -3.0818517}
+        data:
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -0.6716423
+          yRight: 0.5
+          zRight: -1.940299
+        - xLeft: -0.6716423
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -3.8059702
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -3.8059702
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -3.955224
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -3.955224
+          xRight: -5
+          yRight: 0.5
+          zRight: -4.477612
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -4.477612
+        - xLeft: -6.6417913
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: -1.940299
+        originalEdges:
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -0.6716423
+          yRight: 0.5
+          zRight: -1.940299
+        - xLeft: -0.6716423
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -3.8059702
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -3.8059702
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -3.955224
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -3.955224
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -4.477612
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -4.477612
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: -1.940299
+          xRight: -6.6417913
+          yRight: 0.5
+          zRight: -4.477612
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 7
+          connectedCell: 4
+          costFrom: 1.8024398
+          costTo: 0.18838176
+          intersection: {x: -2.8248677, y: 0.5914928, z: -4.2195454}
+          data:
+            xLeft: -0.5970154
+            yLeft: 0.68520314
+            zLeft: -3.955224
+            xRight: -5
+            yRight: 0.5
+            zRight: -4.477612
+        - interconnection: 0
+          fromCell: 7
+          connectedCell: 1
+          costFrom: 3.041275
+          costTo: 0.11366876
+          intersection: {x: -7.202014, y: 0.5, z: -3.6839633}
+          data:
+            xLeft: -6.6417913
+            yLeft: 0.5
+            zLeft: -4.477612
+            xRight: -8.432836
+            yRight: 0.5
+            zRight: -1.940299
+        serializedJumpConnections: []
+      - id: 8
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -3.8619704, y: 1, z: -0.52154726}
+        data:
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: -7.6865673
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: -7.6865673
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        originalEdges:
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: -7.6865673
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: -7.6865673
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        serializedNormalConnections:
+        - interconnection: 1
+          fromCell: 8
+          connectedCell: 14
+          costFrom: 0.5250906
+          costTo: 3.4084163
+          intersection: {x: -3.8010724, y: 1, z: 0}
+          data:
+            xLeft: -7.761194
+            yLeft: 1
+            zLeft: 0
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        - interconnection: 1
+          fromCell: 8
+          connectedCell: 20
+          costFrom: 3.874509
+          costTo: 4.344708
+          intersection: {x: 0, y: 1, z: -0.8330016}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: 0
+            yRight: 1
+            zRight: -1.0447769
+        serializedJumpConnections: []
+      - id: 9
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -2.4722872, y: 0.5856475, z: -5.4980583}
+        data:
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -4.701493
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: -0.52238846
+          yRight: 0.7761135
+          zRight: -6.2686567
+        - xLeft: -0.52238846
+          yLeft: 0.7761135
+          zLeft: -6.2686567
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -6.791045
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -6.791045
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -6.19403
+        originalEdges:
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -0.5970154
+          yLeft: 0.68520314
+          zLeft: -4.2537317
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -4.701493
+        - xLeft: -0.52238846
+          yLeft: 0.7761135
+          zLeft: -6.2686567
+          xRight: -0.5970154
+          yRight: 0.68520314
+          zRight: -4.2537317
+        - xLeft: -0.52238846
+          yLeft: 0.7761135
+          zLeft: -6.2686567
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -6.791045
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -6.791045
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 9
+          connectedCell: 4
+          costFrom: 1.0400164
+          costTo: 0.13781746
+          intersection: {x: -2.654693, y: 0.59401417, z: -4.474197}
+          data:
+            xLeft: -4.7761197
+            yLeft: 0.5
+            zLeft: -4.701493
+            xRight: -0.5970154
+            yRight: 0.68520314
+            zRight: -4.2537317
+        - interconnection: 0
+          fromCell: 9
+          connectedCell: 5
+          costFrom: 1.93096
+          costTo: 0.3120944
+          intersection: {x: -0.5588903, y: 0.7316471, z: -5.2831087}
+          data:
+            xLeft: -0.5970154
+            yLeft: 0.68520314
+            zLeft: -4.2537317
+            xRight: -0.52238846
+            yRight: 0.7761135
+            zRight: -6.2686567
+        - interconnection: 0
+          fromCell: 9
+          connectedCell: 11
+          costFrom: 1.0623645
+          costTo: 0.78354913
+          intersection: {x: -2.3163705, y: 0.5, z: -6.545423}
+          data:
+            xLeft: -0.5970154
+            yLeft: 0.5
+            zLeft: -6.791045
+            xRight: -4.7761197
+            yRight: 0.5
+            zRight: -6.19403
+        serializedJumpConnections: []
+      - id: 10
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -0.124378204, y: 0.5, z: -9.402986}
+        data:
+        - xLeft: -0.3731346
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.253732
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: -0.3731346
+          yRight: 0.5
+          zRight: -9.253732
+        originalEdges:
+        - xLeft: -0.3731346
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.253732
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: -0.3731346
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 10
+          connectedCell: 6
+          costFrom: 0.15102392
+          costTo: 4.891137
+          intersection: {x: -0.2726543, y: 0.5, z: -9.374308}
+          data:
+            xLeft: 0
+            yLeft: 0.5
+            zLeft: -9.701492
+            xRight: -0.3731346
+            yRight: 0.5
+            zRight: -9.253732
+        - interconnection: 1
+          fromCell: 10
+          connectedCell: 24
+          costFrom: 0.12438784
+          costTo: 4.583085
+          intersection: {x: 0, y: 0.5, z: -9.404533}
+          data:
+            xLeft: 0
+            yLeft: 0.5
+            zLeft: -9.253732
+            xRight: 0
+            yRight: 0.5
+            zRight: -9.701492
+        serializedJumpConnections: []
+      - id: 11
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -2.200998, y: 0.5, z: -7.3204317}
+        data:
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -6.791045
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -9.029851
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: -5
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -6.791045
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -6.19403
+        originalEdges:
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -6.791045
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -9.029851
+        - xLeft: -0.5970154
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: -5
+          yRight: 0.5
+          zRight: -6.4179106
+        - xLeft: -4.7761197
+          yLeft: 0.5
+          zLeft: -6.19403
+          xRight: -0.5970154
+          yRight: 0.5
+          zRight: -6.791045
+        - xLeft: -5
+          yLeft: 0.5
+          zLeft: -6.4179106
+          xRight: -4.7761197
+          yRight: 0.5
+          zRight: -6.19403
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 11
+          connectedCell: 6
+          costFrom: 0.8265439
+          costTo: 2.2596514
+          intersection: {x: -2.970659, y: 0.5, z: -7.621757}
+          data:
+            xLeft: -0.5970154
+            yLeft: 0.5
+            zLeft: -9.029851
+            xRight: -5
+            yRight: 0.5
+            zRight: -6.4179106
+        - interconnection: 0
+          fromCell: 11
+          connectedCell: 9
+          costFrom: 0.78354913
+          costTo: 1.0623645
+          intersection: {x: -2.3163705, y: 0.5, z: -6.545423}
+          data:
+            xLeft: -4.7761197
+            yLeft: 0.5
+            zLeft: -6.19403
+            xRight: -0.5970154
+            yRight: 0.5
+            zRight: -6.791045
+        serializedJumpConnections: []
+      serializedCovers: []
+      battleGrid:
+        points: []
+        lengthX: 0
+        lengthZ: 0
+      cellMapData:
+      - x: 0
+        y: 0
+        z: 0
+      - x: 0
+        y: 0
+        z: 2
+      - x: 0
+        y: 0
+        z: 3
+      - x: 0
+        y: 0
+        z: 6
+      - x: 0
+        y: 1
+        z: 0
+      - x: 0
+        y: 1
+        z: 2
+      - x: 0
+        y: 1
+        z: 3
+      - x: 0
+        y: 2
+        z: 0
+      - x: 0
+        y: 2
+        z: 2
+      - x: 0
+        y: 3
+        z: 0
+      - x: 0
+        y: 3
+        z: 2
+      - x: 0
+        y: 4
+        z: 0
+      - x: 0
+        y: 4
+        z: 2
+      - x: 0
+        y: 5
+        z: 0
+      - x: 0
+        y: 5
+        z: 2
+      - x: 0
+        y: 6
+        z: 0
+      - x: 0
+        y: 7
+        z: 0
+      - x: 0
+        y: 8
+        z: 0
+      - x: 0
+        y: 9
+        z: 0
+      - x: 1
+        y: 0
+        z: 3
+      - x: 1
+        y: 0
+        z: 6
+      - x: 1
+        y: 1
+        z: 2
+      - x: 1
+        y: 1
+        z: 3
+      - x: 1
+        y: 1
+        z: 6
+      - x: 1
+        y: 2
+        z: 2
+      - x: 1
+        y: 2
+        z: 3
+      - x: 1
+        y: 2
+        z: 6
+      - x: 1
+        y: 3
+        z: 2
+      - x: 1
+        y: 4
+        z: 2
+      - x: 1
+        y: 5
+        z: 0
+      - x: 1
+        y: 5
+        z: 2
+      - x: 1
+        y: 6
+        z: 0
+      - x: 1
+        y: 6
+        z: 2
+      - x: 1
+        y: 7
+        z: 0
+      - x: 1
+        y: 7
+        z: 1
+      - x: 1
+        y: 7
+        z: 2
+      - x: 1
+        y: 7
+        z: 7
+      - x: 1
+        y: 8
+        z: 0
+      - x: 1
+        y: 8
+        z: 1
+      - x: 1
+        y: 8
+        z: 2
+      - x: 1
+        y: 8
+        z: 7
+      - x: 1
+        y: 9
+        z: 0
+      - x: 2
+        y: 0
+        z: 6
+      - x: 2
+        y: 1
+        z: 6
+      - x: 2
+        y: 2
+        z: 2
+      - x: 2
+        y: 2
+        z: 3
+      - x: 2
+        y: 2
+        z: 6
+      - x: 2
+        y: 3
+        z: 2
+      - x: 2
+        y: 3
+        z: 3
+      - x: 2
+        y: 3
+        z: 6
+      - x: 2
+        y: 4
+        z: 2
+      - x: 2
+        y: 5
+        z: 1
+      - x: 2
+        y: 5
+        z: 2
+      - x: 2
+        y: 6
+        z: 1
+      - x: 2
+        y: 6
+        z: 2
+      - x: 2
+        y: 6
+        z: 7
+      - x: 2
+        y: 7
+        z: 1
+      - x: 2
+        y: 7
+        z: 2
+      - x: 2
+        y: 7
+        z: 7
+      - x: 2
+        y: 8
+        z: 7
+      - x: 2
+        y: 8
+        z: 8
+      - x: 2
+        y: 9
+        z: 8
+      - x: 3
+        y: 0
+        z: 6
+      - x: 3
+        y: 1
+        z: 6
+      - x: 3
+        y: 2
+        z: 6
+      - x: 3
+        y: 3
+        z: 2
+      - x: 3
+        y: 3
+        z: 3
+      - x: 3
+        y: 3
+        z: 6
+      - x: 3
+        y: 4
+        z: 2
+      - x: 3
+        y: 5
+        z: 1
+      - x: 3
+        y: 5
+        z: 2
+      - x: 3
+        y: 5
+        z: 7
+      - x: 3
+        y: 6
+        z: 1
+      - x: 3
+        y: 6
+        z: 7
+      - x: 3
+        y: 7
+        z: 7
+      - x: 3
+        y: 8
+        z: 7
+      - x: 3
+        y: 8
+        z: 8
+      - x: 3
+        y: 9
+        z: 8
+      - x: 4
+        y: 0
+        z: 6
+      - x: 4
+        y: 1
+        z: 6
+      - x: 4
+        y: 2
+        z: 6
+      - x: 4
+        y: 3
+        z: 6
+      - x: 4
+        y: 5
+        z: 7
+      - x: 4
+        y: 6
+        z: 7
+      - x: 4
+        y: 7
+        z: 7
+      - x: 4
+        y: 8
+        z: 7
+      - x: 4
+        y: 8
+        z: 8
+      - x: 4
+        y: 9
+        z: 8
+      - x: 5
+        y: 0
+        z: 6
+      - x: 5
+        y: 1
+        z: 6
+      - x: 5
+        y: 2
+        z: 6
+      - x: 5
+        y: 2
+        z: 11
+      - x: 5
+        y: 3
+        z: 6
+      - x: 5
+        y: 3
+        z: 9
+      - x: 5
+        y: 3
+        z: 11
+      - x: 5
+        y: 4
+        z: 9
+      - x: 5
+        y: 5
+        z: 4
+      - x: 5
+        y: 5
+        z: 7
+      - x: 5
+        y: 5
+        z: 9
+      - x: 5
+        y: 6
+        z: 7
+      - x: 5
+        y: 7
+        z: 7
+      - x: 5
+        y: 8
+        z: 7
+      - x: 5
+        y: 8
+        z: 8
+      - x: 5
+        y: 9
+        z: 8
+      - x: 6
+        y: 0
+        z: 6
+      - x: 6
+        y: 1
+        z: 6
+      - x: 6
+        y: 2
+        z: 6
+      - x: 6
+        y: 2
+        z: 11
+      - x: 6
+        y: 3
+        z: 9
+      - x: 6
+        y: 3
+        z: 11
+      - x: 6
+        y: 4
+        z: 9
+      - x: 6
+        y: 5
+        z: 4
+      - x: 6
+        y: 5
+        z: 7
+      - x: 6
+        y: 5
+        z: 9
+      - x: 6
+        y: 6
+        z: 7
+      - x: 6
+        y: 7
+        z: 7
+      - x: 6
+        y: 8
+        z: 7
+      - x: 6
+        y: 8
+        z: 8
+      - x: 6
+        y: 9
+        z: 8
+      - x: 7
+        y: 0
+        z: 6
+      - x: 7
+        y: 1
+        z: 6
+      - x: 7
+        y: 1
+        z: 11
+      - x: 7
+        y: 2
+        z: 6
+      - x: 7
+        y: 2
+        z: 11
+      - x: 7
+        y: 3
+        z: 9
+      - x: 7
+        y: 3
+        z: 11
+      - x: 7
+        y: 4
+        z: 9
+      - x: 7
+        y: 5
+        z: 4
+      - x: 7
+        y: 5
+        z: 7
+      - x: 7
+        y: 5
+        z: 9
+      - x: 7
+        y: 6
+        z: 7
+      - x: 7
+        y: 7
+        z: 7
+      - x: 7
+        y: 8
+        z: 7
+      - x: 7
+        y: 8
+        z: 8
+      - x: 7
+        y: 9
+        z: 8
+      - x: 8
+        y: 0
+        z: 6
+      - x: 8
+        y: 1
+        z: 6
+      - x: 8
+        y: 1
+        z: 11
+      - x: 8
+        y: 2
+        z: 11
+      - x: 8
+        y: 3
+        z: 9
+      - x: 8
+        y: 3
+        z: 11
+      - x: 8
+        y: 4
+        z: 9
+      - x: 8
+        y: 5
+        z: 4
+      - x: 8
+        y: 5
+        z: 7
+      - x: 8
+        y: 5
+        z: 9
+      - x: 8
+        y: 6
+        z: 7
+      - x: 8
+        y: 7
+        z: 7
+      - x: 8
+        y: 8
+        z: 7
+      - x: 8
+        y: 8
+        z: 8
+      - x: 8
+        y: 9
+        z: 8
+      - x: 9
+        y: 0
+        z: 6
+      - x: 9
+        y: 0
+        z: 10
+      - x: 9
+        y: 0
+        z: 11
+      - x: 9
+        y: 1
+        z: 6
+      - x: 9
+        y: 1
+        z: 11
+      - x: 9
+        y: 2
+        z: 11
+      - x: 9
+        y: 3
+        z: 5
+      - x: 9
+        y: 3
+        z: 9
+      - x: 9
+        y: 3
+        z: 11
+      - x: 9
+        y: 4
+        z: 5
+      - x: 9
+        y: 4
+        z: 9
+      - x: 9
+        y: 5
+        z: 4
+      - x: 9
+        y: 5
+        z: 5
+      - x: 9
+        y: 5
+        z: 7
+      - x: 9
+        y: 5
+        z: 9
+      - x: 9
+        y: 6
+        z: 4
+      - x: 9
+        y: 6
+        z: 7
+      - x: 9
+        y: 7
+        z: 7
+      - x: 9
+        y: 8
+        z: 7
+      - x: 9
+        y: 8
+        z: 8
+      - x: 9
+        y: 9
+        z: 8
+      contour:
+      - a: {x: -9.626865, y: 0.5, z: -9.701492}
+        b: {x: -9.701492, y: 0.5, z: 0}
+        cell: 0
+      - a: {x: -9.701492, y: 0.5, z: 0}
+        b: {x: -8.656716, y: 0.5, z: 0}
+        cell: 0
+      - a: {x: -8.656716, y: 0.5, z: 0}
+        b: {x: -8.656716, y: 0.5, z: -1.7164183}
+        cell: 0
+      - a: {x: -6.6417913, y: 0.5, z: -4.477612}
+        b: {x: -6.8656716, y: 0.5, z: -4.701493}
+        cell: 1
+      - a: {x: -8.656716, y: 0.5, z: -1.7164183}
+        b: {x: -8.432836, y: 0.5, z: -1.940299}
+        cell: 2
+      - a: {x: -6.8656716, y: 0.5, z: -4.701493}
+        b: {x: -6.8656716, y: 0.5, z: -6.19403}
+        cell: 2
+      - a: {x: -6.8656716, y: 0.5, z: -6.19403}
+        b: {x: -6.6417913, y: 0.5, z: -6.4179106}
+        cell: 3
+      - a: {x: -0.5970154, y: 0.68520314, z: -3.955224}
+        b: {x: -0.5970154, y: 0.68520314, z: -4.2537317}
+        cell: 4
+      - a: {x: -4.7761197, y: 0.5, z: -4.701493}
+        b: {x: -5, y: 0.5, z: -4.477612}
+        cell: 4
+      - a: {x: -0.5970154, y: 0.68520314, z: -4.2537317}
+        b: {x: 0, y: 1.0167558, z: -4.3283587}
+        cell: 5
+      - a: {x: 0, y: 1.0167558, z: -4.3283587}
+        b: {x: 0, y: 1.0167558, z: -6.2686567}
+        cell: 5
+      - a: {x: 0, y: 1.0167558, z: -6.2686567}
+        b: {x: -0.52238846, y: 0.7761135, z: -6.2686567}
+        cell: 5
+      - a: {x: 0, y: 0.5, z: -9.701492}
+        b: {x: -9.626865, y: 0.5, z: -9.701492}
+        cell: 6
+      - a: {x: -6.6417913, y: 0.5, z: -6.4179106}
+        b: {x: -5, y: 0.5, z: -6.4179106}
+        cell: 6
+      - a: {x: -0.5970154, y: 0.5, z: -9.029851}
+        b: {x: -0.3731346, y: 0.5, z: -9.253732}
+        cell: 6
+      - a: {x: -8.432836, y: 0.5, z: -1.940299}
+        b: {x: -0.6716423, y: 0.5, z: -1.940299}
+        cell: 7
+      - a: {x: -0.6716423, y: 0.5, z: -1.940299}
+        b: {x: -0.5970154, y: 0.5, z: -3.8059702}
+        cell: 7
+      - a: {x: -0.5970154, y: 0.5, z: -3.8059702}
+        b: {x: -0.5970154, y: 0.68520314, z: -3.955224}
+        cell: 7
+      - a: {x: -5, y: 0.5, z: -4.477612}
+        b: {x: -6.6417913, y: 0.5, z: -4.477612}
+        cell: 7
+      - a: {x: -7.761194, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 0}
+        cell: 8
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 0, y: 1, z: -1.0447769}
+        cell: 8
+      - a: {x: 0, y: 1, z: -1.0447769}
+        b: {x: -7.6865673, y: 1, z: -1.0447769}
+        cell: 8
+      - a: {x: -7.6865673, y: 1, z: -1.0447769}
+        b: {x: -7.761194, y: 1, z: 0}
+        cell: 8
+      - a: {x: -4.7761197, y: 0.5, z: -6.19403}
+        b: {x: -4.7761197, y: 0.5, z: -4.701493}
+        cell: 9
+      - a: {x: -0.52238846, y: 0.7761135, z: -6.2686567}
+        b: {x: -0.5970154, y: 0.5, z: -6.791045}
+        cell: 9
+      - a: {x: -0.3731346, y: 0.5, z: -9.253732}
+        b: {x: 0, y: 0.5, z: -9.253732}
+        cell: 10
+      - a: {x: 0, y: 0.5, z: -9.253732}
+        b: {x: 0, y: 0.5, z: -9.701492}
+        cell: 10
+      - a: {x: -0.5970154, y: 0.5, z: -6.791045}
+        b: {x: -0.5970154, y: 0.5, z: -9.029851}
+        cell: 11
+      - a: {x: -5, y: 0.5, z: -6.4179106}
+        b: {x: -4.7761197, y: 0.5, z: -6.19403}
+        cell: 11
+      borderData:
+      - a: {x: 0, y: 0.5, z: -9.253732}
+        b: {x: 0, y: 0.5, z: -9.701492}
+        cell: 10
+        direction: 0
+      - a: {x: 0, y: 1.0167558, z: -4.3283587}
+        b: {x: 0, y: 1.0167558, z: -6.2686567}
+        cell: 5
+        direction: 0
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 0, y: 1, z: -1.0447769}
+        cell: 8
+        direction: 0
+      - a: {x: -9.701492, y: 0.5, z: 0}
+        b: {x: -8.656716, y: 0.5, z: 0}
+        cell: 0
+        direction: 2
+      - a: {x: -7.761194, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 0}
+        cell: 8
+        direction: 2
+    - posX: -1
+      posZ: 0
+      minY: -1
+      maxY: 0
+      serializedCells:
+      - id: 12
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -8.930347, y: 0.5, z: 8.905472}
+        data:
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 8.432836
+        originalEdges:
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 8.432836
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 12
+          connectedCell: 16
+          costFrom: 0.15001823
+          costTo: 4.2416687
+          intersection: {x: -8.939239, y: 0.5, z: 8.755717}
+          data:
+            xLeft: -8.656716
+            yLeft: 0.5
+            zLeft: 8.432836
+            xRight: -9.701492
+            yRight: 0.5
+            zRight: 9.626865
+        - interconnection: 0
+          fromCell: 12
+          connectedCell: 17
+          costFrom: 0.15993787
+          costTo: 4.2891374
+          intersection: {x: -8.770699, y: 0.5, z: 8.915082}
+          data:
+            xLeft: -9.701492
+            yLeft: 0.5
+            zLeft: 9.626865
+            xRight: -8.432836
+            yRight: 0.5
+            zRight: 8.656716
+        serializedJumpConnections: []
+      - id: 13
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -7.338309, y: 1, z: 3.9054725}
+        data:
+        - xLeft: -6.4925375
+          yLeft: 1
+          zLeft: 5.820895
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 0
+          xRight: -7.761194
+          yRight: 1
+          zRight: 5.895522
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 5.895522
+          xRight: -6.4925375
+          yRight: 1
+          zRight: 5.820895
+        originalEdges:
+        - xLeft: -6.4925375
+          yLeft: 1
+          zLeft: 5.820895
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 0
+          xRight: -7.761194
+          yRight: 1
+          zRight: 5.895522
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 5.895522
+          xRight: -6.4925375
+          yRight: 1
+          zRight: 5.820895
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 13
+          connectedCell: 14
+          costFrom: 0.41993293
+          costTo: 3.5468352
+          intersection: {x: -6.9220004, y: 1, z: 3.850418}
+          data:
+            xLeft: -6.4925375
+            yLeft: 1
+            zLeft: 5.820895
+            xRight: -7.761194
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 14
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -3.4057791, y: 0.9999999, z: 3.3854165}
+        data:
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 6.343283
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        - xLeft: -7.761194
+          yLeft: 1
+          zLeft: 0
+          xRight: -6.4925375
+          yRight: 1
+          zRight: 5.820895
+        - xLeft: -6.4925375
+          yLeft: 1
+          zLeft: 5.820895
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 6.343283
+        originalEdges:
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 6.343283
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        - xLeft: -6.4925375
+          yLeft: 1
+          zLeft: 5.820895
+          xRight: -7.761194
+          yRight: 1
+          zRight: 0
+        - xLeft: -6.4925375
+          yLeft: 1
+          zLeft: 5.820895
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 6.343283
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 14
+          connectedCell: 13
+          costFrom: 3.5468352
+          costTo: 0.41993293
+          intersection: {x: -6.9220004, y: 1, z: 3.850418}
+          data:
+            xLeft: -7.761194
+            yLeft: 1
+            zLeft: 0
+            xRight: -6.4925375
+            yRight: 1
+            zRight: 5.820895
+        - interconnection: 0
+          fromCell: 14
+          connectedCell: 15
+          costFrom: 3.4821718
+          costTo: 0.33998594
+          intersection: {x: -3.929013, y: 1, z: 6.828053}
+          data:
+            xLeft: -5.9701495
+            yLeft: 1
+            zLeft: 6.343283
+            xRight: 0
+            yRight: 1
+            zRight: 7.7611938
+        - interconnection: 1
+          fromCell: 14
+          connectedCell: 8
+          costFrom: 3.4084163
+          costTo: 0.5250906
+          intersection: {x: -3.8010724, y: 1, z: 0}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: -7.761194
+            yRight: 1
+            zRight: 0
+        - interconnection: 1
+          fromCell: 14
+          connectedCell: 31
+          costFrom: 3.4917939
+          costTo: 0.22139528
+          intersection: {x: 0, y: 1, z: 4.1556716}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 7.7611938
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 15
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -3.9800997, y: 1, z: 7.164179}
+        data:
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 7.3880596
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 6.343283
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 6.343283
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 7.3880596
+        originalEdges:
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 7.3880596
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 6.343283
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 6.343283
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 7.3880596
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 15
+          connectedCell: 14
+          costFrom: 0.33998594
+          costTo: 3.4821718
+          intersection: {x: -3.929013, y: 1, z: 6.828053}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 7.7611938
+            xRight: -5.9701495
+            yRight: 1
+            zRight: 6.343283
+        - interconnection: 0
+          fromCell: 15
+          connectedCell: 18
+          costFrom: 0.3518671
+          costTo: 0.106816486
+          intersection: {x: -4.05643, y: 1, z: 7.507667}
+          data:
+            xLeft: -5.9701495
+            yLeft: 1
+            zLeft: 7.3880596
+            xRight: 0
+            yRight: 1
+            zRight: 7.7611938
+        serializedJumpConnections: []
+      - id: 16
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -9.190618, y: 0.5, z: 4.521504}
+        data:
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 0
+        originalEdges:
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: -8.656716
+          yRight: 0.5
+          zRight: 0
+        - xLeft: -8.656716
+          yLeft: 0.5
+          zLeft: 0
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 0
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 16
+          connectedCell: 12
+          costFrom: 4.2416687
+          costTo: 0.15001823
+          intersection: {x: -8.939239, y: 0.5, z: 8.755717}
+          data:
+            xLeft: -9.701492
+            yLeft: 0.5
+            zLeft: 9.626865
+            xRight: -8.656716
+            yRight: 0.5
+            zRight: 8.432836
+        - interconnection: 1
+          fromCell: 16
+          connectedCell: 0
+          costFrom: 4.521793
+          costTo: 3.3147726
+          intersection: {x: -9.24174, y: 0.5, z: 0}
+          data:
+            xLeft: -8.656716
+            yLeft: 0.5
+            zLeft: 0
+            xRight: -9.701492
+            yRight: 0.5
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 17
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -4.4893117, y: 0.5, z: 9.1728115}
+        data:
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: 0
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 0
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: -8.432836
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: -9.701492
+          yRight: 0.5
+          zRight: 9.626865
+        originalEdges:
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: 0
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 0
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: -9.701492
+          yLeft: 0.5
+          zLeft: 9.626865
+          xRight: -8.432836
+          yRight: 0.5
+          zRight: 8.656716
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 17
+          connectedCell: 12
+          costFrom: 4.2891374
+          costTo: 0.15993787
+          intersection: {x: -8.770699, y: 0.5, z: 8.915082}
+          data:
+            xLeft: -8.432836
+            yLeft: 0.5
+            zLeft: 8.656716
+            xRight: -9.701492
+            yRight: 0.5
+            zRight: 9.626865
+        - interconnection: 1
+          fromCell: 17
+          connectedCell: 40
+          costFrom: 4.490091
+          costTo: 3.2483861
+          intersection: {x: 0, y: 0.5, z: 9.256448}
+          data:
+            xLeft: 0
+            yLeft: 0.5
+            zLeft: 9.701492
+            xRight: 0
+            yRight: 0.5
+            zRight: 8.656716
+        serializedJumpConnections: []
+      - id: 18
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: -4.079602, y: 1, z: 7.61194}
+        data:
+        - xLeft: -6.2686567
+          yLeft: 1
+          zLeft: 7.686567
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: -5.9701495
+          yRight: 1
+          zRight: 7.3880596
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 7.3880596
+          xRight: -6.2686567
+          yRight: 1
+          zRight: 7.686567
+        originalEdges:
+        - xLeft: -6.2686567
+          yLeft: 1
+          zLeft: 7.686567
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 7.3880596
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: -5.9701495
+          yLeft: 1
+          zLeft: 7.3880596
+          xRight: -6.2686567
+          yRight: 1
+          zRight: 7.686567
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 18
+          connectedCell: 15
+          costFrom: 0.106816486
+          costTo: 0.3518671
+          intersection: {x: -4.05643, y: 1, z: 7.507667}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 7.7611938
+            xRight: -5.9701495
+            yRight: 1
+            zRight: 7.3880596
+        serializedJumpConnections: []
+      serializedCovers: []
+      battleGrid:
+        points: []
+        lengthX: 0
+        lengthZ: 0
+      cellMapData:
+      - x: 0
+        y: 0
+        z: 16
+      - x: 0
+        y: 1
+        z: 16
+      - x: 0
+        y: 2
+        z: 16
+      - x: 0
+        y: 3
+        z: 16
+      - x: 0
+        y: 4
+        z: 16
+      - x: 0
+        y: 5
+        z: 16
+      - x: 0
+        y: 6
+        z: 16
+      - x: 0
+        y: 7
+        z: 16
+      - x: 0
+        y: 8
+        z: 12
+      - x: 0
+        y: 8
+        z: 16
+      - x: 0
+        y: 9
+        z: 12
+      - x: 0
+        y: 9
+        z: 16
+      - x: 0
+        y: 9
+        z: 17
+      - x: 1
+        y: 0
+        z: 16
+      - x: 1
+        y: 1
+        z: 16
+      - x: 1
+        y: 2
+        z: 16
+      - x: 1
+        y: 3
+        z: 16
+      - x: 1
+        y: 4
+        z: 16
+      - x: 1
+        y: 5
+        z: 16
+      - x: 1
+        y: 6
+        z: 16
+      - x: 1
+        y: 7
+        z: 16
+      - x: 1
+        y: 8
+        z: 12
+      - x: 1
+        y: 8
+        z: 16
+      - x: 1
+        y: 8
+        z: 17
+      - x: 1
+        y: 9
+        z: 12
+      - x: 1
+        y: 9
+        z: 17
+      - x: 2
+        y: 0
+        z: 13
+      - x: 2
+        y: 0
+        z: 14
+      - x: 2
+        y: 1
+        z: 13
+      - x: 2
+        y: 1
+        z: 14
+      - x: 2
+        y: 2
+        z: 13
+      - x: 2
+        y: 2
+        z: 14
+      - x: 2
+        y: 3
+        z: 13
+      - x: 2
+        y: 3
+        z: 14
+      - x: 2
+        y: 4
+        z: 13
+      - x: 2
+        y: 5
+        z: 13
+      - x: 2
+        y: 8
+        z: 17
+      - x: 2
+        y: 9
+        z: 17
+      - x: 3
+        y: 0
+        z: 14
+      - x: 3
+        y: 1
+        z: 14
+      - x: 3
+        y: 2
+        z: 14
+      - x: 3
+        y: 3
+        z: 13
+      - x: 3
+        y: 3
+        z: 14
+      - x: 3
+        y: 4
+        z: 13
+      - x: 3
+        y: 4
+        z: 14
+      - x: 3
+        y: 5
+        z: 13
+      - x: 3
+        y: 5
+        z: 14
+      - x: 3
+        y: 6
+        z: 14
+      - x: 3
+        y: 7
+        z: 18
+      - x: 3
+        y: 8
+        z: 17
+      - x: 3
+        y: 9
+        z: 17
+      - x: 4
+        y: 0
+        z: 14
+      - x: 4
+        y: 1
+        z: 14
+      - x: 4
+        y: 2
+        z: 14
+      - x: 4
+        y: 3
+        z: 14
+      - x: 4
+        y: 4
+        z: 14
+      - x: 4
+        y: 5
+        z: 14
+      - x: 4
+        y: 6
+        z: 14
+      - x: 4
+        y: 6
+        z: 15
+      - x: 4
+        y: 7
+        z: 15
+      - x: 4
+        y: 7
+        z: 18
+      - x: 4
+        y: 8
+        z: 17
+      - x: 4
+        y: 9
+        z: 17
+      - x: 5
+        y: 0
+        z: 14
+      - x: 5
+        y: 1
+        z: 14
+      - x: 5
+        y: 2
+        z: 14
+      - x: 5
+        y: 3
+        z: 14
+      - x: 5
+        y: 4
+        z: 14
+      - x: 5
+        y: 5
+        z: 14
+      - x: 5
+        y: 6
+        z: 14
+      - x: 5
+        y: 6
+        z: 15
+      - x: 5
+        y: 7
+        z: 15
+      - x: 5
+        y: 7
+        z: 18
+      - x: 5
+        y: 8
+        z: 17
+      - x: 5
+        y: 9
+        z: 17
+      - x: 6
+        y: 0
+        z: 14
+      - x: 6
+        y: 1
+        z: 14
+      - x: 6
+        y: 2
+        z: 14
+      - x: 6
+        y: 3
+        z: 14
+      - x: 6
+        y: 4
+        z: 14
+      - x: 6
+        y: 5
+        z: 14
+      - x: 6
+        y: 6
+        z: 14
+      - x: 6
+        y: 6
+        z: 15
+      - x: 6
+        y: 7
+        z: 14
+      - x: 6
+        y: 7
+        z: 15
+      - x: 6
+        y: 7
+        z: 18
+      - x: 6
+        y: 8
+        z: 17
+      - x: 6
+        y: 9
+        z: 17
+      - x: 7
+        y: 0
+        z: 14
+      - x: 7
+        y: 1
+        z: 14
+      - x: 7
+        y: 2
+        z: 14
+      - x: 7
+        y: 3
+        z: 14
+      - x: 7
+        y: 4
+        z: 14
+      - x: 7
+        y: 5
+        z: 14
+      - x: 7
+        y: 6
+        z: 14
+      - x: 7
+        y: 7
+        z: 14
+      - x: 7
+        y: 7
+        z: 15
+      - x: 7
+        y: 7
+        z: 18
+      - x: 7
+        y: 8
+        z: 17
+      - x: 7
+        y: 9
+        z: 17
+      - x: 8
+        y: 0
+        z: 14
+      - x: 8
+        y: 1
+        z: 14
+      - x: 8
+        y: 2
+        z: 14
+      - x: 8
+        y: 3
+        z: 14
+      - x: 8
+        y: 4
+        z: 14
+      - x: 8
+        y: 5
+        z: 14
+      - x: 8
+        y: 6
+        z: 14
+      - x: 8
+        y: 7
+        z: 14
+      - x: 8
+        y: 7
+        z: 15
+      - x: 8
+        y: 7
+        z: 18
+      - x: 8
+        y: 8
+        z: 17
+      - x: 8
+        y: 9
+        z: 17
+      - x: 9
+        y: 0
+        z: 14
+      - x: 9
+        y: 1
+        z: 14
+      - x: 9
+        y: 2
+        z: 14
+      - x: 9
+        y: 3
+        z: 14
+      - x: 9
+        y: 4
+        z: 14
+      - x: 9
+        y: 5
+        z: 14
+      - x: 9
+        y: 6
+        z: 14
+      - x: 9
+        y: 7
+        z: 14
+      - x: 9
+        y: 7
+        z: 15
+      - x: 9
+        y: 7
+        z: 18
+      - x: 9
+        y: 8
+        z: 17
+      - x: 9
+        y: 9
+        z: 17
+      contour:
+      - a: {x: -8.432836, y: 0.5, z: 8.656716}
+        b: {x: -8.656716, y: 0.5, z: 8.432836}
+        cell: 12
+      - a: {x: -7.761194, y: 1, z: 0}
+        b: {x: -7.761194, y: 1, z: 5.895522}
+        cell: 13
+      - a: {x: -7.761194, y: 1, z: 5.895522}
+        b: {x: -6.4925375, y: 1, z: 5.820895}
+        cell: 13
+      - a: {x: 0, y: 1, z: 7.7611938}
+        b: {x: 0, y: 1, z: 0}
+        cell: 14
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: -7.761194, y: 1, z: 0}
+        cell: 14
+      - a: {x: -6.4925375, y: 1, z: 5.820895}
+        b: {x: -5.9701495, y: 1, z: 6.343283}
+        cell: 14
+      - a: {x: -5.9701495, y: 1, z: 6.343283}
+        b: {x: -5.9701495, y: 1, z: 7.3880596}
+        cell: 15
+      - a: {x: -9.701492, y: 0.5, z: 0}
+        b: {x: -9.701492, y: 0.5, z: 9.626865}
+        cell: 16
+      - a: {x: -8.656716, y: 0.5, z: 8.432836}
+        b: {x: -8.656716, y: 0.5, z: 0}
+        cell: 16
+      - a: {x: -8.656716, y: 0.5, z: 0}
+        b: {x: -9.701492, y: 0.5, z: 0}
+        cell: 16
+      - a: {x: -9.701492, y: 0.5, z: 9.626865}
+        b: {x: 0, y: 0.5, z: 9.701492}
+        cell: 17
+      - a: {x: 0, y: 0.5, z: 9.701492}
+        b: {x: 0, y: 0.5, z: 8.656716}
+        cell: 17
+      - a: {x: 0, y: 0.5, z: 8.656716}
+        b: {x: -8.432836, y: 0.5, z: 8.656716}
+        cell: 17
+      - a: {x: -6.2686567, y: 1, z: 7.686567}
+        b: {x: 0, y: 1, z: 7.7611938}
+        cell: 18
+      - a: {x: -5.9701495, y: 1, z: 7.3880596}
+        b: {x: -6.2686567, y: 1, z: 7.686567}
+        cell: 18
+      borderData:
+      - a: {x: 0, y: 1, z: 7.7611938}
+        b: {x: 0, y: 1, z: 0}
+        cell: 14
+        direction: 0
+      - a: {x: 0, y: 0.5, z: 9.701492}
+        b: {x: 0, y: 0.5, z: 8.656716}
+        cell: 17
+        direction: 0
+      - a: {x: -8.656716, y: 0.5, z: 0}
+        b: {x: -9.701492, y: 0.5, z: 0}
+        cell: 16
+        direction: 3
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: -7.761194, y: 1, z: 0}
+        cell: 14
+        direction: 3
+    - posX: 0
+      posZ: -1
+      minY: -1
+      maxY: 0
+      serializedCells:
+      - id: 19
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 4.035291, y: 1, z: -6.9858046}
+        data:
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -6.4925375
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 5.597015
+          yRight: 1
+          zRight: -5.074627
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 0.37313432
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 0.37313432
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -6.4925375
+        originalEdges:
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -6.4925375
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 5.597015
+          yRight: 1
+          zRight: -5.074627
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 0.37313432
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 0.37313432
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -6.4925375
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 19
+          connectedCell: 21
+          costFrom: 2.6849415
+          costTo: 0.33267117
+          intersection: {x: 6.6200414, y: 1, z: -6.259184}
+          data:
+            xLeft: 5.597015
+            yLeft: 1
+            zLeft: -5.074627
+            xRight: 8.432836
+            yRight: 1
+            zRight: -8.358209
+        - interconnection: 0
+          fromCell: 19
+          connectedCell: 26
+          costFrom: 2.0223708
+          costTo: 0.9178806
+          intersection: {x: 2.472728, y: 1, z: -5.701912}
+          data:
+            xLeft: 0.29850745
+            yLeft: 1
+            zLeft: -6.4925375
+            xRight: 5.2238803
+            yRight: 1
+            zRight: -4.701493
+        serializedJumpConnections: []
+      - id: 20
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 4.330648, y: 1, z: -1.1822532}
+        data:
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -3.1343288
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 0
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 6.492537
+          yRight: 1
+          zRight: -2.985075
+        - xLeft: 6.492537
+          yLeft: 1
+          zLeft: -2.985075
+          xRight: 5.597015
+          yRight: 1
+          zRight: -3.1343288
+        originalEdges:
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -3.1343288
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 0
+          yRight: 1
+          zRight: -1.0447769
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -1.0447769
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 6.492537
+          yRight: 1
+          zRight: -2.985075
+        - xLeft: 6.492537
+          yLeft: 1
+          zLeft: -2.985075
+          xRight: 5.597015
+          yRight: 1
+          zRight: -3.1343288
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 20
+          connectedCell: 27
+          costFrom: 1.4238498
+          costTo: 0.1589814
+          intersection: {x: 3.7691612, y: 1, z: -2.4907184}
+          data:
+            xLeft: 5.597015
+            yLeft: 1
+            zLeft: -3.1343288
+            xRight: 0.29850745
+            yRight: 1
+            zRight: -1.2686567
+        - interconnection: 0
+          fromCell: 20
+          connectedCell: 28
+          costFrom: 2.929462
+          costTo: 0.2668975
+          intersection: {x: 7.132764, y: 1, z: -2.036591}
+          data:
+            xLeft: 8.5074625
+            yLeft: 1
+            zLeft: 0
+            xRight: 6.492537
+            yRight: 1
+            zRight: -2.985075
+        - interconnection: 1
+          fromCell: 20
+          connectedCell: 8
+          costFrom: 4.344708
+          costTo: 3.874509
+          intersection: {x: 0, y: 1, z: -0.8330016}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: -1.0447769
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        - interconnection: 1
+          fromCell: 20
+          connectedCell: 41
+          costFrom: 1.1831788
+          costTo: 0.5883465
+          intersection: {x: 4.377437, y: 1, z: 0}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: 8.5074625
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 21
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 6.9402986, y: 1, z: -6.1691537}
+        data:
+        - xLeft: 6.7910447
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 5.597015
+          yRight: 1
+          zRight: -5.074627
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 6.7910447
+          yRight: 1
+          zRight: -5.074627
+        originalEdges:
+        - xLeft: 6.7910447
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 6.7910447
+          yRight: 1
+          zRight: -5.074627
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 21
+          connectedCell: 19
+          costFrom: 0.33267117
+          costTo: 2.6849415
+          intersection: {x: 6.6200414, y: 1, z: -6.259184}
+          data:
+            xLeft: 8.432836
+            yLeft: 1
+            zLeft: -8.358209
+            xRight: 5.597015
+            yRight: 1
+            zRight: -5.074627
+        - interconnection: 0
+          fromCell: 21
+          connectedCell: 22
+          costFrom: 0.36561078
+          costTo: 0.17137983
+          intersection: {x: 7.295967, y: 1, z: -6.084471}
+          data:
+            xLeft: 6.7910447
+            yLeft: 1
+            zLeft: -5.074627
+            xRight: 8.432836
+            yRight: 1
+            zRight: -8.358209
+        serializedJumpConnections: []
+      - id: 22
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 7.4626865, y: 1, z: -6.0447764}
+        data:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 6.7910447
+          yRight: 1
+          zRight: -5.074627
+        - xLeft: 6.7910447
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 7.164179
+          yRight: 1
+          zRight: -4.701493
+        originalEdges:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 6.7910447
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 6.7910447
+          yLeft: 1
+          zLeft: -5.074627
+          xRight: 7.164179
+          yRight: 1
+          zRight: -4.701493
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 22
+          connectedCell: 21
+          costFrom: 0.17137983
+          costTo: 0.36561078
+          intersection: {x: 7.295967, y: 1, z: -6.084471}
+          data:
+            xLeft: 8.432836
+            yLeft: 1
+            zLeft: -8.358209
+            xRight: 6.7910447
+            yRight: 1
+            zRight: -5.074627
+        - interconnection: 0
+          fromCell: 22
+          connectedCell: 23
+          costFrom: 0.2830427
+          costTo: 1.712447
+          intersection: {x: 7.5353045, y: 1, z: -5.771208}
+          data:
+            xLeft: 7.164179
+            yLeft: 1
+            zLeft: -4.701493
+            xRight: 8.432836
+            yRight: 1
+            zRight: -8.358209
+        serializedJumpConnections: []
+      - id: 23
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 7.9746523, y: 1.0000001, z: -4.11608}
+        data:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -3.3582091
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: -8.358209
+          xRight: 7.164179
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 7.164179
+          yRight: 1
+          zRight: -3.3582091
+        originalEdges:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -3.3582091
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 8.432836
+          yRight: 1
+          zRight: -8.358209
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 7.164179
+          yRight: 1
+          zRight: -3.3582091
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 23
+          connectedCell: 22
+          costFrom: 1.712447
+          costTo: 0.2830427
+          intersection: {x: 7.5353045, y: 1, z: -5.771208}
+          data:
+            xLeft: 8.432836
+            yLeft: 1
+            zLeft: -8.358209
+            xRight: 7.164179
+            yRight: 1
+            zRight: -4.701493
+        - interconnection: 0
+          fromCell: 23
+          connectedCell: 28
+          costFrom: 1.6744084
+          costTo: 0.4114251
+          intersection: {x: 7.503763, y: 1, z: -2.5092485}
+          data:
+            xLeft: 7.164179
+            yLeft: 1
+            zLeft: -3.3582091
+            xRight: 8.5074625
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 24
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 4.5827303, y: 0.49999997, z: -9.461563}
+        data:
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: -9.626865
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.253732
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: -9.253732
+        originalEdges:
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: -9.626865
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.701492
+          xRight: 0
+          yRight: 0.5
+          zRight: -9.253732
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: -9.253732
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 24
+          connectedCell: 25
+          costFrom: 4.6763353
+          costTo: 0.17137296
+          intersection: {x: 9.256578, y: 0.5, z: -9.309071}
+          data:
+            xLeft: 9.179104
+            yLeft: 0.5
+            zLeft: -9.253732
+            xRight: 9.701492
+            yRight: 0.5
+            zRight: -9.626865
+        - interconnection: 1
+          fromCell: 24
+          connectedCell: 10
+          costFrom: 4.583085
+          costTo: 0.12438784
+          intersection: {x: 0, y: 0.5, z: -9.404533}
+          data:
+            xLeft: 0
+            yLeft: 0.5
+            zLeft: -9.701492
+            xRight: 0
+            yRight: 0.5
+            zRight: -9.253732
+        serializedJumpConnections: []
+      - id: 25
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 9.42786, y: 0.5, z: -9.303482}
+        data:
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: -9.626865
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: -9.253732
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: -9.029851
+        originalEdges:
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: -9.253732
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: -9.029851
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 25
+          connectedCell: 24
+          costFrom: 0.17137296
+          costTo: 4.6763353
+          intersection: {x: 9.256578, y: 0.5, z: -9.309071}
+          data:
+            xLeft: 9.701492
+            yLeft: 0.5
+            zLeft: -9.626865
+            xRight: 9.179104
+            yRight: 0.5
+            zRight: -9.253732
+        - interconnection: 0
+          fromCell: 25
+          connectedCell: 29
+          costFrom: 0.21242249
+          costTo: 4.426999
+          intersection: {x: 9.433628, y: 0.5, z: -9.091138}
+          data:
+            xLeft: 9.402985
+            yLeft: 0.5
+            zLeft: -9.029851
+            xRight: 9.701492
+            yRight: 0.5
+            zRight: -9.626865
+        serializedJumpConnections: []
+      - id: 26
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 1.7635374, y: 1, z: -5.1191998}
+        data:
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -6.2686567
+          xRight: 0
+          yRight: 1
+          zRight: -4.3283587
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -4.3283587
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -4.104478
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -4.104478
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -6.4925375
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -6.4925375
+          xRight: 0
+          yRight: 1
+          zRight: -6.2686567
+        - xLeft: 0
+          yLeft: 1.0083779
+          zLeft: -6.2686567
+          xRight: 0
+          yRight: 1.0083779
+          zRight: -4.3283587
+        originalEdges:
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -6.2686567
+          xRight: 0
+          yRight: 1
+          zRight: -4.3283587
+        - xLeft: 0
+          yLeft: 1
+          zLeft: -4.3283587
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -4.104478
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -4.104478
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -6.4925375
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -6.4925375
+          xRight: 0
+          yRight: 1
+          zRight: -6.2686567
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 26
+          connectedCell: 19
+          costFrom: 0.9178806
+          costTo: 2.0223708
+          intersection: {x: 2.472728, y: 1, z: -5.701912}
+          data:
+            xLeft: 5.2238803
+            yLeft: 1
+            zLeft: -4.701493
+            xRight: 0.29850745
+            yRight: 1
+            zRight: -6.4925375
+        - interconnection: 0
+          fromCell: 26
+          connectedCell: 30
+          costFrom: 0.8533039
+          costTo: 1.0837283
+          intersection: {x: 2.0556993, y: 1, z: -4.317471}
+          data:
+            xLeft: 0.29850745
+            yLeft: 1
+            zLeft: -4.104478
+            xRight: 5.2238803
+            yRight: 1
+            zRight: -4.701493
+        - interconnection: 1
+          fromCell: 26
+          connectedCell: 5
+          costFrom: 1.76727
+          costTo: 0.31367496
+          intersection: {x: 0, y: 1.0083779, z: -5.2336946}
+          data:
+            xLeft: 0
+            yLeft: 1.0083779
+            zLeft: -6.2686567
+            xRight: 0
+            yRight: 1.0083779
+            zRight: -4.3283587
+        serializedJumpConnections: []
+      - id: 27
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 3.7064676, y: 1, z: -2.6368163}
+        data:
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -3.1343288
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -3.507463
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -3.507463
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 5.597015
+          yRight: 1
+          zRight: -3.1343288
+        originalEdges:
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -3.1343288
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -3.507463
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -3.507463
+        - xLeft: 5.597015
+          yLeft: 1
+          zLeft: -3.1343288
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 27
+          connectedCell: 20
+          costFrom: 0.1589814
+          costTo: 1.4238498
+          intersection: {x: 3.7691612, y: 1, z: -2.4907184}
+          data:
+            xLeft: 0.29850745
+            yLeft: 1
+            zLeft: -1.2686567
+            xRight: 5.597015
+            yRight: 1
+            zRight: -3.1343288
+        - interconnection: 0
+          fromCell: 27
+          connectedCell: 30
+          costFrom: 0.20954297
+          costTo: 1.2314551
+          intersection: {x: 3.520378, y: 1, z: -2.7331436}
+          data:
+            xLeft: 5.2238803
+            yLeft: 1
+            zLeft: -3.507463
+            xRight: 0.29850745
+            yRight: 1
+            zRight: -1.2686567
+        serializedJumpConnections: []
+      - id: 28
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 7.388059, y: 1, z: -2.114428}
+        data:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -3.3582091
+          xRight: 6.492537
+          yRight: 1
+          zRight: -2.985075
+        - xLeft: 6.492537
+          yLeft: 1
+          zLeft: -2.985075
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 7.164179
+          yRight: 1
+          zRight: -3.3582091
+        originalEdges:
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -3.3582091
+          xRight: 6.492537
+          yRight: 1
+          zRight: -2.985075
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 6.492537
+          yRight: 1
+          zRight: -2.985075
+        - xLeft: 7.164179
+          yLeft: 1
+          zLeft: -3.3582091
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 28
+          connectedCell: 20
+          costFrom: 0.2668975
+          costTo: 2.929462
+          intersection: {x: 7.132764, y: 1, z: -2.036591}
+          data:
+            xLeft: 6.492537
+            yLeft: 1
+            zLeft: -2.985075
+            xRight: 8.5074625
+            yRight: 1
+            zRight: 0
+        - interconnection: 0
+          fromCell: 28
+          connectedCell: 23
+          costFrom: 0.4114251
+          costTo: 1.6744084
+          intersection: {x: 7.503763, y: 1, z: -2.5092485}
+          data:
+            xLeft: 8.5074625
+            yLeft: 1
+            zLeft: 0
+            xRight: 7.164179
+            yRight: 1
+            zRight: -3.3582091
+        serializedJumpConnections: []
+      - id: 29
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 9.553831, y: 0.5, z: -4.665771}
+        data:
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: -9.626865
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: -9.029851
+        originalEdges:
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: -9.029851
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: -9.626865
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 29
+          connectedCell: 25
+          costFrom: 4.426999
+          costTo: 0.21242249
+          intersection: {x: 9.433628, y: 0.5, z: -9.091138}
+          data:
+            xLeft: 9.701492
+            yLeft: 0.5
+            zLeft: -9.626865
+            xRight: 9.402985
+            yRight: 0.5
+            zRight: -9.029851
+        - interconnection: 1
+          fromCell: 29
+          connectedCell: 44
+          costFrom: 4.6657753
+          costTo: 3.3122237
+          intersection: {x: 9.560112, y: 0.5, z: 0}
+          data:
+            xLeft: 9.402985
+            yLeft: 0.5
+            zLeft: 0
+            xRight: 9.701492
+            yRight: 0.5
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 30
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 2.4267552, y: 1, z: -3.2992449}
+        data:
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -3.507463
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -4.104478
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -3.507463
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -4.104478
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        originalEdges:
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -3.507463
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -4.701493
+        - xLeft: 5.2238803
+          yLeft: 1
+          zLeft: -4.701493
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -4.104478
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -1.2686567
+          xRight: 5.2238803
+          yRight: 1
+          zRight: -3.507463
+        - xLeft: 0.29850745
+          yLeft: 1
+          zLeft: -4.104478
+          xRight: 0.29850745
+          yRight: 1
+          zRight: -1.2686567
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 30
+          connectedCell: 26
+          costFrom: 1.0837283
+          costTo: 0.8533039
+          intersection: {x: 2.0556993, y: 1, z: -4.317471}
+          data:
+            xLeft: 5.2238803
+            yLeft: 1
+            zLeft: -4.701493
+            xRight: 0.29850745
+            yRight: 1
+            zRight: -4.104478
+        - interconnection: 0
+          fromCell: 30
+          connectedCell: 27
+          costFrom: 1.2314551
+          costTo: 0.20954297
+          intersection: {x: 3.520378, y: 1, z: -2.7331436}
+          data:
+            xLeft: 0.29850745
+            yLeft: 1
+            zLeft: -1.2686567
+            xRight: 5.2238803
+            yRight: 1
+            zRight: -3.507463
+        serializedJumpConnections: []
+      serializedCovers: []
+      battleGrid:
+        points: []
+        lengthX: 0
+        lengthZ: 0
+      cellMapData:
+      - x: 0
+        y: 0
+        z: 24
+      - x: 0
+        y: 1
+        z: 19
+      - x: 0
+        y: 2
+        z: 19
+      - x: 0
+        y: 3
+        z: 19
+      - x: 0
+        y: 3
+        z: 26
+      - x: 0
+        y: 4
+        z: 26
+      - x: 0
+        y: 5
+        z: 26
+      - x: 0
+        y: 5
+        z: 30
+      - x: 0
+        y: 6
+        z: 30
+      - x: 0
+        y: 7
+        z: 30
+      - x: 0
+        y: 8
+        z: 20
+      - x: 0
+        y: 8
+        z: 27
+      - x: 0
+        y: 8
+        z: 30
+      - x: 0
+        y: 9
+        z: 20
+      - x: 1
+        y: 0
+        z: 24
+      - x: 1
+        y: 1
+        z: 19
+      - x: 1
+        y: 2
+        z: 19
+      - x: 1
+        y: 3
+        z: 19
+      - x: 1
+        y: 3
+        z: 26
+      - x: 1
+        y: 4
+        z: 19
+      - x: 1
+        y: 4
+        z: 26
+      - x: 1
+        y: 5
+        z: 26
+      - x: 1
+        y: 5
+        z: 30
+      - x: 1
+        y: 6
+        z: 30
+      - x: 1
+        y: 7
+        z: 27
+      - x: 1
+        y: 7
+        z: 30
+      - x: 1
+        y: 8
+        z: 20
+      - x: 1
+        y: 8
+        z: 27
+      - x: 1
+        y: 8
+        z: 30
+      - x: 1
+        y: 9
+        z: 20
+      - x: 2
+        y: 0
+        z: 24
+      - x: 2
+        y: 1
+        z: 19
+      - x: 2
+        y: 2
+        z: 19
+      - x: 2
+        y: 3
+        z: 19
+      - x: 2
+        y: 4
+        z: 19
+      - x: 2
+        y: 4
+        z: 26
+      - x: 2
+        y: 5
+        z: 26
+      - x: 2
+        y: 5
+        z: 30
+      - x: 2
+        y: 6
+        z: 30
+      - x: 2
+        y: 7
+        z: 20
+      - x: 2
+        y: 7
+        z: 27
+      - x: 2
+        y: 7
+        z: 30
+      - x: 2
+        y: 8
+        z: 20
+      - x: 2
+        y: 8
+        z: 27
+      - x: 2
+        y: 9
+        z: 20
+      - x: 3
+        y: 0
+        z: 24
+      - x: 3
+        y: 1
+        z: 19
+      - x: 3
+        y: 2
+        z: 19
+      - x: 3
+        y: 3
+        z: 19
+      - x: 3
+        y: 4
+        z: 19
+      - x: 3
+        y: 4
+        z: 26
+      - x: 3
+        y: 5
+        z: 26
+      - x: 3
+        y: 5
+        z: 30
+      - x: 3
+        y: 6
+        z: 30
+      - x: 3
+        y: 7
+        z: 20
+      - x: 3
+        y: 7
+        z: 27
+      - x: 3
+        y: 7
+        z: 30
+      - x: 3
+        y: 8
+        z: 20
+      - x: 3
+        y: 9
+        z: 20
+      - x: 4
+        y: 0
+        z: 24
+      - x: 4
+        y: 1
+        z: 19
+      - x: 4
+        y: 2
+        z: 19
+      - x: 4
+        y: 3
+        z: 19
+      - x: 4
+        y: 4
+        z: 19
+      - x: 4
+        y: 4
+        z: 26
+      - x: 4
+        y: 5
+        z: 19
+      - x: 4
+        y: 5
+        z: 26
+      - x: 4
+        y: 5
+        z: 30
+      - x: 4
+        y: 6
+        z: 27
+      - x: 4
+        y: 6
+        z: 30
+      - x: 4
+        y: 7
+        z: 20
+      - x: 4
+        y: 7
+        z: 27
+      - x: 4
+        y: 7
+        z: 30
+      - x: 4
+        y: 8
+        z: 20
+      - x: 4
+        y: 9
+        z: 20
+      - x: 5
+        y: 0
+        z: 24
+      - x: 5
+        y: 1
+        z: 19
+      - x: 5
+        y: 2
+        z: 19
+      - x: 5
+        y: 3
+        z: 19
+      - x: 5
+        y: 4
+        z: 19
+      - x: 5
+        y: 4
+        z: 21
+      - x: 5
+        y: 5
+        z: 19
+      - x: 5
+        y: 5
+        z: 26
+      - x: 5
+        y: 5
+        z: 30
+      - x: 5
+        y: 6
+        z: 20
+      - x: 5
+        y: 6
+        z: 27
+      - x: 5
+        y: 6
+        z: 30
+      - x: 5
+        y: 7
+        z: 20
+      - x: 5
+        y: 7
+        z: 27
+      - x: 5
+        y: 8
+        z: 20
+      - x: 5
+        y: 9
+        z: 20
+      - x: 6
+        y: 0
+        z: 24
+      - x: 6
+        y: 1
+        z: 19
+      - x: 6
+        y: 2
+        z: 19
+      - x: 6
+        y: 3
+        z: 19
+      - x: 6
+        y: 3
+        z: 21
+      - x: 6
+        y: 4
+        z: 19
+      - x: 6
+        y: 4
+        z: 21
+      - x: 6
+        y: 4
+        z: 22
+      - x: 6
+        y: 5
+        z: 22
+      - x: 6
+        y: 6
+        z: 20
+      - x: 6
+        y: 6
+        z: 28
+      - x: 6
+        y: 7
+        z: 20
+      - x: 6
+        y: 7
+        z: 28
+      - x: 6
+        y: 8
+        z: 20
+      - x: 6
+        y: 9
+        z: 20
+      - x: 7
+        y: 0
+        z: 24
+      - x: 7
+        y: 1
+        z: 19
+      - x: 7
+        y: 2
+        z: 19
+      - x: 7
+        y: 2
+        z: 21
+      - x: 7
+        y: 2
+        z: 22
+      - x: 7
+        y: 2
+        z: 23
+      - x: 7
+        y: 3
+        z: 19
+      - x: 7
+        y: 3
+        z: 21
+      - x: 7
+        y: 3
+        z: 22
+      - x: 7
+        y: 3
+        z: 23
+      - x: 7
+        y: 4
+        z: 21
+      - x: 7
+        y: 4
+        z: 22
+      - x: 7
+        y: 4
+        z: 23
+      - x: 7
+        y: 5
+        z: 22
+      - x: 7
+        y: 5
+        z: 23
+      - x: 7
+        y: 6
+        z: 23
+      - x: 7
+        y: 6
+        z: 28
+      - x: 7
+        y: 7
+        z: 20
+      - x: 7
+        y: 7
+        z: 23
+      - x: 7
+        y: 7
+        z: 28
+      - x: 7
+        y: 8
+        z: 20
+      - x: 7
+        y: 8
+        z: 23
+      - x: 7
+        y: 8
+        z: 28
+      - x: 7
+        y: 9
+        z: 20
+      - x: 7
+        y: 9
+        z: 28
+      - x: 8
+        y: 0
+        z: 24
+      - x: 8
+        y: 1
+        z: 19
+      - x: 8
+        y: 1
+        z: 21
+      - x: 8
+        y: 1
+        z: 22
+      - x: 8
+        y: 1
+        z: 23
+      - x: 8
+        y: 2
+        z: 19
+      - x: 8
+        y: 2
+        z: 21
+      - x: 8
+        y: 2
+        z: 22
+      - x: 8
+        y: 2
+        z: 23
+      - x: 8
+        y: 3
+        z: 23
+      - x: 8
+        y: 4
+        z: 23
+      - x: 8
+        y: 5
+        z: 23
+      - x: 8
+        y: 6
+        z: 23
+      - x: 8
+        y: 7
+        z: 23
+      - x: 8
+        y: 8
+        z: 23
+      - x: 8
+        y: 8
+        z: 28
+      - x: 8
+        y: 9
+        z: 20
+      - x: 8
+        y: 9
+        z: 23
+      - x: 8
+        y: 9
+        z: 28
+      - x: 9
+        y: 0
+        z: 24
+      - x: 9
+        y: 0
+        z: 25
+      - x: 9
+        y: 0
+        z: 29
+      - x: 9
+        y: 1
+        z: 29
+      - x: 9
+        y: 2
+        z: 29
+      - x: 9
+        y: 3
+        z: 29
+      - x: 9
+        y: 4
+        z: 29
+      - x: 9
+        y: 5
+        z: 29
+      - x: 9
+        y: 6
+        z: 29
+      - x: 9
+        y: 7
+        z: 29
+      - x: 9
+        y: 8
+        z: 29
+      - x: 9
+        y: 9
+        z: 29
+      contour:
+      - a: {x: 5.2238803, y: 1, z: -4.701493}
+        b: {x: 5.597015, y: 1, z: -5.074627}
+        cell: 19
+      - a: {x: 8.432836, y: 1, z: -8.358209}
+        b: {x: 0.37313432, y: 1, z: -8.358209}
+        cell: 19
+      - a: {x: 0.37313432, y: 1, z: -8.358209}
+        b: {x: 0.29850745, y: 1, z: -6.4925375}
+        cell: 19
+      - a: {x: 0.29850745, y: 1, z: -1.2686567}
+        b: {x: 0, y: 1, z: -1.0447769}
+        cell: 20
+      - a: {x: 0, y: 1, z: -1.0447769}
+        b: {x: 0, y: 1, z: 0}
+        cell: 20
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 8.5074625, y: 1, z: 0}
+        cell: 20
+      - a: {x: 6.492537, y: 1, z: -2.985075}
+        b: {x: 5.597015, y: 1, z: -3.1343288}
+        cell: 20
+      - a: {x: 5.597015, y: 1, z: -5.074627}
+        b: {x: 6.7910447, y: 1, z: -5.074627}
+        cell: 21
+      - a: {x: 6.7910447, y: 1, z: -5.074627}
+        b: {x: 7.164179, y: 1, z: -4.701493}
+        cell: 22
+      - a: {x: 8.5074625, y: 1, z: 0}
+        b: {x: 8.432836, y: 1, z: -8.358209}
+        cell: 23
+      - a: {x: 7.164179, y: 1, z: -4.701493}
+        b: {x: 7.164179, y: 1, z: -3.3582091}
+        cell: 23
+      - a: {x: 9.701492, y: 0.5, z: -9.626865}
+        b: {x: 0, y: 0.5, z: -9.701492}
+        cell: 24
+      - a: {x: 0, y: 0.5, z: -9.701492}
+        b: {x: 0, y: 0.5, z: -9.253732}
+        cell: 24
+      - a: {x: 0, y: 0.5, z: -9.253732}
+        b: {x: 9.179104, y: 0.5, z: -9.253732}
+        cell: 24
+      - a: {x: 9.179104, y: 0.5, z: -9.253732}
+        b: {x: 9.402985, y: 0.5, z: -9.029851}
+        cell: 25
+      - a: {x: 0, y: 1, z: -6.2686567}
+        b: {x: 0, y: 1, z: -4.3283587}
+        cell: 26
+      - a: {x: 0, y: 1, z: -4.3283587}
+        b: {x: 0.29850745, y: 1, z: -4.104478}
+        cell: 26
+      - a: {x: 0.29850745, y: 1, z: -6.4925375}
+        b: {x: 0, y: 1, z: -6.2686567}
+        cell: 26
+      - a: {x: 5.597015, y: 1, z: -3.1343288}
+        b: {x: 5.2238803, y: 1, z: -3.507463}
+        cell: 27
+      - a: {x: 7.164179, y: 1, z: -3.3582091}
+        b: {x: 6.492537, y: 1, z: -2.985075}
+        cell: 28
+      - a: {x: 9.402985, y: 0.5, z: -9.029851}
+        b: {x: 9.402985, y: 0.5, z: 0}
+        cell: 29
+      - a: {x: 9.402985, y: 0.5, z: 0}
+        b: {x: 9.701492, y: 0.5, z: 0}
+        cell: 29
+      - a: {x: 9.701492, y: 0.5, z: 0}
+        b: {x: 9.701492, y: 0.5, z: -9.626865}
+        cell: 29
+      - a: {x: 5.2238803, y: 1, z: -3.507463}
+        b: {x: 5.2238803, y: 1, z: -4.701493}
+        cell: 30
+      - a: {x: 0.29850745, y: 1, z: -4.104478}
+        b: {x: 0.29850745, y: 1, z: -1.2686567}
+        cell: 30
+      borderData:
+      - a: {x: 0, y: 0.5, z: -9.701492}
+        b: {x: 0, y: 0.5, z: -9.253732}
+        cell: 24
+        direction: 1
+      - a: {x: 0, y: 1, z: -6.2686567}
+        b: {x: 0, y: 1, z: -4.3283587}
+        cell: 26
+        direction: 1
+      - a: {x: 0, y: 1, z: -1.0447769}
+        b: {x: 0, y: 1, z: 0}
+        cell: 20
+        direction: 1
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 8.5074625, y: 1, z: 0}
+        cell: 20
+        direction: 2
+      - a: {x: 9.402985, y: 0.5, z: 0}
+        b: {x: 9.701492, y: 0.5, z: 0}
+        cell: 29
+        direction: 2
+    - posX: 0
+      posZ: 0
+      minY: -1
+      maxY: 0
+      serializedCells:
+      - id: 31
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 0.21594155, y: 1, z: 4.2045093}
+        data:
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 1.4179103
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: 0.44776118
+          yRight: 1
+          zRight: 7.686567
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 7.686567
+          xRight: 0.44776118
+          yRight: 1
+          zRight: 1.4179103
+        originalEdges:
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 1.4179103
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 7.7611938
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 7.7611938
+          xRight: 0.44776118
+          yRight: 1
+          zRight: 7.686567
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 7.686567
+          xRight: 0.44776118
+          yRight: 1
+          zRight: 1.4179103
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 31
+          connectedCell: 32
+          costFrom: 3.0667162
+          costTo: 0.2708501
+          intersection: {x: 0.3603778, y: 1, z: 1.1411963}
+          data:
+            xLeft: 0.44776118
+            yLeft: 1
+            zLeft: 1.4179103
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        - interconnection: 1
+          fromCell: 31
+          connectedCell: 14
+          costFrom: 0.22139528
+          costTo: 3.4917939
+          intersection: {x: 0, y: 1, z: 4.1556716}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: 0
+            yRight: 1
+            zRight: 7.7611938
+        serializedJumpConnections: []
+      - id: 32
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 0.3731343, y: 1, z: 0.8706467}
+        data:
+        - xLeft: 0.67164177
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0.44776118
+          yRight: 1
+          zRight: 1.4179103
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 1.4179103
+          xRight: 0.67164177
+          yRight: 1
+          zRight: 1.1940298
+        originalEdges:
+        - xLeft: 0.67164177
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 1.4179103
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0.44776118
+          yLeft: 1
+          zLeft: 1.4179103
+          xRight: 0.67164177
+          yRight: 1
+          zRight: 1.1940298
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 32
+          connectedCell: 31
+          costFrom: 0.2708501
+          costTo: 3.0667162
+          intersection: {x: 0.3603778, y: 1, z: 1.1411963}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: 0.44776118
+            yRight: 1
+            zRight: 1.4179103
+        - interconnection: 0
+          fromCell: 32
+          connectedCell: 41
+          costFrom: 0.11245071
+          costTo: 3.9250314
+          intersection: {x: 0.4853089, y: 1, z: 0.8627714}
+          data:
+            xLeft: 0.67164177
+            yLeft: 1
+            zLeft: 1.1940298
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 33
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 5.5596943, y: 0.5, z: 8.470396}
+        data:
+        - xLeft: 1.1194029
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 1.1194029
+          yRight: 0.5
+          zRight: 8.656716
+        originalEdges:
+        - xLeft: 1.1194029
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 1.1194029
+          yRight: 0.5
+          zRight: 8.656716
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 33
+          connectedCell: 40
+          costFrom: 1.593352
+          costTo: 0.86864203
+          intersection: {x: 4.0634985, y: 0.5, z: 9.018272}
+          data:
+            xLeft: 1.1194029
+            yLeft: 0.5
+            zLeft: 8.656716
+            xRight: 9.626865
+            yRight: 0.5
+            zRight: 9.701492
+        - interconnection: 0
+          fromCell: 33
+          connectedCell: 42
+          costFrom: 1.670668
+          costTo: 0.284123
+          intersection: {x: 4.103389, y: 0.5, z: 7.651674}
+          data:
+            xLeft: 5.298507
+            yLeft: 0.5
+            zLeft: 7.3134327
+            xRight: 1.3432835
+            yRight: 0.5
+            zRight: 8.432836
+        - interconnection: 0
+          fromCell: 33
+          connectedCell: 43
+          costFrom: 2.0296981
+          costTo: 0.2246615
+          intersection: {x: 7.5418, y: 0.5, z: 8.03344}
+          data:
+            xLeft: 9.626865
+            yLeft: 0.5
+            zLeft: 9.701492
+            xRight: 6.641791
+            yRight: 0.5
+            zRight: 7.3134327
+        serializedJumpConnections: []
+      - id: 34
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 3.7313433, y: 0.5, z: 7.039801}
+        data:
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 6.7910447
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 6.7910447
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 5.895522
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 5.895522
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        originalEdges:
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 6.7910447
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 6.7910447
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 5.895522
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 5.895522
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 34
+          connectedCell: 35
+          costFrom: 0.33005434
+          costTo: 0.071053326
+          intersection: {x: 3.7722816, y: 0.5, z: 6.7122955}
+          data:
+            xLeft: 4.925373
+            yLeft: 0.5
+            zLeft: 5.895522
+            xRight: 1.3432835
+            yRight: 0.5
+            zRight: 8.432836
+        - interconnection: 0
+          fromCell: 34
+          connectedCell: 42
+          costFrom: 0.27544725
+          costTo: 0.21328063
+          intersection: {x: 3.801443, y: 0.5, z: 7.306179}
+          data:
+            xLeft: 1.3432835
+            yLeft: 0.5
+            zLeft: 8.432836
+            xRight: 4.925373
+            yRight: 0.5
+            zRight: 6.7910447
+        serializedJumpConnections: []
+      - id: 35
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 3.7810946, y: 0.5, z: 6.641791}
+        data:
+        - xLeft: 5.074627
+          yLeft: 0.5
+          zLeft: 5.597015
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 5.895522
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 5.895522
+          xRight: 5.074627
+          yRight: 0.5
+          zRight: 5.597015
+        originalEdges:
+        - xLeft: 5.074627
+          yLeft: 0.5
+          zLeft: 5.597015
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 5.895522
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 5.895522
+          xRight: 5.074627
+          yRight: 0.5
+          zRight: 5.597015
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 35
+          connectedCell: 34
+          costFrom: 0.071053326
+          costTo: 0.33005434
+          intersection: {x: 3.7722816, y: 0.5, z: 6.7122955}
+          data:
+            xLeft: 1.3432835
+            yLeft: 0.5
+            zLeft: 8.432836
+            xRight: 4.925373
+            yRight: 0.5
+            zRight: 5.895522
+        - interconnection: 0
+          fromCell: 35
+          connectedCell: 36
+          costFrom: 0.049143147
+          costTo: 1.6701905
+          intersection: {x: 3.750089, y: 0.5, z: 6.6036634}
+          data:
+            xLeft: 5.074627
+            yLeft: 0.5
+            zLeft: 5.597015
+            xRight: 1.3432835
+            yRight: 0.5
+            zRight: 8.432836
+        serializedJumpConnections: []
+      - id: 36
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 2.6963186, y: 0.50000006, z: 5.307861}
+        data:
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 1.4179103
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 1.4179103
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 5.074627
+          yRight: 0.5
+          zRight: 5.597015
+        - xLeft: 5.074627
+          yLeft: 0.5
+          zLeft: 5.597015
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 5.373134
+        originalEdges:
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 1.4179103
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 1.4179103
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 5.074627
+          yLeft: 0.5
+          zLeft: 5.597015
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 5.074627
+          yLeft: 0.5
+          zLeft: 5.597015
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 5.373134
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 36
+          connectedCell: 35
+          costFrom: 1.6701905
+          costTo: 0.049143147
+          intersection: {x: 3.750089, y: 0.5, z: 6.6036634}
+          data:
+            xLeft: 1.3432835
+            yLeft: 0.5
+            zLeft: 8.432836
+            xRight: 5.074627
+            yRight: 0.5
+            zRight: 5.597015
+        - interconnection: 0
+          fromCell: 36
+          connectedCell: 37
+          costFrom: 1.6909715
+          costTo: 1.7767444
+          intersection: {x: 4.0905094, y: 0.5, z: 4.350982}
+          data:
+            xLeft: 5.298507
+            yLeft: 0.5
+            zLeft: 5.373134
+            xRight: 1.4179103
+            yRight: 0.5
+            zRight: 2.0895522
+        serializedJumpConnections: []
+      - id: 37
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 5.5554194, y: 0.5, z: 3.3455672}
+        data:
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 1.4179103
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 1.4179103
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 5.373134
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 5.373134
+        originalEdges:
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 1.4179103
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 1.4179103
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 5.373134
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 37
+          connectedCell: 36
+          costFrom: 1.7767444
+          costTo: 1.6909715
+          intersection: {x: 4.0905094, y: 0.5, z: 4.350982}
+          data:
+            xLeft: 1.4179103
+            yLeft: 0.5
+            zLeft: 2.0895522
+            xRight: 5.298507
+            yRight: 0.5
+            zRight: 5.373134
+        - interconnection: 0
+          fromCell: 37
+          connectedCell: 38
+          costFrom: 2.135016
+          costTo: 0.17743026
+          intersection: {x: 7.4541464, y: 0.5, z: 4.321851}
+          data:
+            xLeft: 6.641791
+            yLeft: 0.5
+            zLeft: 5.373134
+            xRight: 9.179104
+            yRight: 0.5
+            zRight: 2.0895522
+        serializedJumpConnections: []
+      - id: 38
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 7.61194, y: 0.5, z: 4.4029846}
+        data:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 5.7462683
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 5.373134
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 5.7462683
+        originalEdges:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 5.7462683
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 5.373134
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 5.7462683
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 38
+          connectedCell: 37
+          costFrom: 0.17743026
+          costTo: 2.135016
+          intersection: {x: 7.4541464, y: 0.5, z: 4.321851}
+          data:
+            xLeft: 9.179104
+            yLeft: 0.5
+            zLeft: 2.0895522
+            xRight: 6.641791
+            yRight: 0.5
+            zRight: 5.373134
+        - interconnection: 0
+          fromCell: 38
+          connectedCell: 39
+          costFrom: 0.1925954
+          costTo: 1.6392965
+          intersection: {x: 7.7128386, y: 0.5, z: 4.5670347}
+          data:
+            xLeft: 7.014925
+            yLeft: 0.5
+            zLeft: 5.7462683
+            xRight: 9.179104
+            yRight: 0.5
+            zRight: 2.0895522
+        serializedJumpConnections: []
+      - id: 39
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 8.571649, y: 0.50000006, z: 5.963365}
+        data:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 6.940298
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 1.8656716
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 1.8656716
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 9.179104
+          yLeft: 0.5
+          zLeft: 2.0895522
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 5.7462683
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 5.7462683
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 6.940298
+        originalEdges:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 6.940298
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 1.8656716
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 1.8656716
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 5.7462683
+          xRight: 9.179104
+          yRight: 0.5
+          zRight: 2.0895522
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 5.7462683
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 6.940298
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 39
+          connectedCell: 38
+          costFrom: 1.6392965
+          costTo: 0.1925954
+          intersection: {x: 7.7128386, y: 0.5, z: 4.5670347}
+          data:
+            xLeft: 9.179104
+            yLeft: 0.5
+            zLeft: 2.0895522
+            xRight: 7.014925
+            yRight: 0.5
+            zRight: 5.7462683
+        - interconnection: 0
+          fromCell: 39
+          connectedCell: 43
+          costFrom: 1.9844972
+          costTo: 0.19360888
+          intersection: {x: 7.833234, y: 0.5, z: 7.8053675}
+          data:
+            xLeft: 7.014925
+            yLeft: 0.5
+            zLeft: 6.940298
+            xRight: 9.626865
+            yRight: 0.5
+            zRight: 9.701492
+        - interconnection: 0
+          fromCell: 39
+          connectedCell: 44
+          costFrom: 2.5124137
+          costTo: 0.31856897
+          intersection: {x: 9.452838, y: 0.5, z: 3.6105523}
+          data:
+            xLeft: 9.626865
+            yLeft: 0.5
+            zLeft: 9.701492
+            xRight: 9.402985
+            yRight: 0.5
+            zRight: 1.8656716
+        serializedJumpConnections: []
+      - id: 40
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 3.2478225, y: 0.49999994, z: 9.316956}
+        data:
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 0
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 1.1194029
+          yRight: 0.5
+          zRight: 8.656716
+        - xLeft: 1.1194029
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 0
+          yRight: 0.5
+          zRight: 8.656716
+        originalEdges:
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 0
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 0
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 1.1194029
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 1.1194029
+          yLeft: 0.5
+          zLeft: 8.656716
+          xRight: 0
+          yRight: 0.5
+          zRight: 8.656716
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 40
+          connectedCell: 33
+          costFrom: 0.86864203
+          costTo: 1.593352
+          intersection: {x: 4.0634985, y: 0.5, z: 9.018272}
+          data:
+            xLeft: 9.626865
+            yLeft: 0.5
+            zLeft: 9.701492
+            xRight: 1.1194029
+            yRight: 0.5
+            zRight: 8.656716
+        - interconnection: 1
+          fromCell: 40
+          connectedCell: 17
+          costFrom: 3.2483861
+          costTo: 4.490091
+          intersection: {x: 0, y: 0.5, z: 9.256448}
+          data:
+            xLeft: 0
+            yLeft: 0.5
+            zLeft: 8.656716
+            xRight: 0
+            yRight: 0.5
+            zRight: 9.701492
+        serializedJumpConnections: []
+      - id: 41
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 4.400703, y: 1, z: 0.5878863}
+        data:
+        - xLeft: 0.67164177
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 8.432836
+          yRight: 1
+          zRight: 1.1940298
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0
+          yLeft: 1
+          zLeft: 0
+          xRight: 0.67164177
+          yRight: 1
+          zRight: 1.1940298
+        originalEdges:
+        - xLeft: 0.67164177
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 8.432836
+          yRight: 1
+          zRight: 1.1940298
+        - xLeft: 8.432836
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 8.5074625
+          yRight: 1
+          zRight: 0
+        - xLeft: 8.5074625
+          yLeft: 1
+          zLeft: 0
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        - xLeft: 0.67164177
+          yLeft: 1
+          zLeft: 1.1940298
+          xRight: 0
+          yRight: 1
+          zRight: 0
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 41
+          connectedCell: 32
+          costFrom: 3.9250314
+          costTo: 0.11245071
+          intersection: {x: 0.4853089, y: 1, z: 0.8627714}
+          data:
+            xLeft: 0
+            yLeft: 1
+            zLeft: 0
+            xRight: 0.67164177
+            yRight: 1
+            zRight: 1.1940298
+        - interconnection: 1
+          fromCell: 41
+          connectedCell: 20
+          costFrom: 0.5883465
+          costTo: 1.1831788
+          intersection: {x: 4.377437, y: 1, z: 0}
+          data:
+            xLeft: 8.5074625
+            yLeft: 1
+            zLeft: 0
+            xRight: 0
+            yRight: 1
+            zRight: 0
+        serializedJumpConnections: []
+      - id: 42
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 3.8557215, y: 0.5, z: 7.5124373}
+        data:
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 6.7910447
+        - xLeft: 4.925373
+          yLeft: 0.5
+          zLeft: 6.7910447
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 5.298507
+          yRight: 0.5
+          zRight: 7.3134327
+        originalEdges:
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 6.7910447
+        - xLeft: 1.3432835
+          yLeft: 0.5
+          zLeft: 8.432836
+          xRight: 4.925373
+          yRight: 0.5
+          zRight: 6.7910447
+        - xLeft: 5.298507
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 1.3432835
+          yRight: 0.5
+          zRight: 8.432836
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 42
+          connectedCell: 34
+          costFrom: 0.21328063
+          costTo: 0.27544725
+          intersection: {x: 3.801443, y: 0.5, z: 7.306179}
+          data:
+            xLeft: 4.925373
+            yLeft: 0.5
+            zLeft: 6.7910447
+            xRight: 1.3432835
+            yRight: 0.5
+            zRight: 8.432836
+        - interconnection: 0
+          fromCell: 42
+          connectedCell: 33
+          costFrom: 0.284123
+          costTo: 1.670668
+          intersection: {x: 4.103389, y: 0.5, z: 7.651674}
+          data:
+            xLeft: 1.3432835
+            yLeft: 0.5
+            zLeft: 8.432836
+            xRight: 5.298507
+            yRight: 0.5
+            zRight: 7.3134327
+        serializedJumpConnections: []
+      - id: 43
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 7.7611938, y: 0.5, z: 7.9850745}
+        data:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 6.940298
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 6.641791
+          yLeft: 0.5
+          zLeft: 7.3134327
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 7.014925
+          yRight: 0.5
+          zRight: 6.940298
+        originalEdges:
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 6.940298
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 6.641791
+          yRight: 0.5
+          zRight: 7.3134327
+        - xLeft: 7.014925
+          yLeft: 0.5
+          zLeft: 6.940298
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 43
+          connectedCell: 33
+          costFrom: 0.2246615
+          costTo: 2.0296981
+          intersection: {x: 7.5418, y: 0.5, z: 8.03344}
+          data:
+            xLeft: 6.641791
+            yLeft: 0.5
+            zLeft: 7.3134327
+            xRight: 9.626865
+            yRight: 0.5
+            zRight: 9.701492
+        - interconnection: 0
+          fromCell: 43
+          connectedCell: 39
+          costFrom: 0.19360888
+          costTo: 1.9844972
+          intersection: {x: 7.833234, y: 0.5, z: 7.8053675}
+          data:
+            xLeft: 9.626865
+            yLeft: 0.5
+            zLeft: 9.701492
+            xRight: 7.014925
+            yRight: 0.5
+            zRight: 6.940298
+        serializedJumpConnections: []
+      - id: 44
+        layer: 0
+        area: 0
+        passability: 3
+        isAdvancedAreaCell: 0
+        center: {x: 9.564571, y: 0.50000006, z: 3.3122206}
+        data:
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 1.8656716
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 1.8656716
+          xRight: 9.626865
+          yRight: 0.5
+          zRight: 9.701492
+        originalEdges:
+        - xLeft: 9.701492
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.402985
+          yLeft: 0.5
+          zLeft: 0
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 1.8656716
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.701492
+          yRight: 0.5
+          zRight: 0
+        - xLeft: 9.626865
+          yLeft: 0.5
+          zLeft: 9.701492
+          xRight: 9.402985
+          yRight: 0.5
+          zRight: 1.8656716
+        serializedNormalConnections:
+        - interconnection: 0
+          fromCell: 44
+          connectedCell: 39
+          costFrom: 0.31856897
+          costTo: 2.5124137
+          intersection: {x: 9.452838, y: 0.5, z: 3.6105523}
+          data:
+            xLeft: 9.402985
+            yLeft: 0.5
+            zLeft: 1.8656716
+            xRight: 9.626865
+            yRight: 0.5
+            zRight: 9.701492
+        - interconnection: 1
+          fromCell: 44
+          connectedCell: 29
+          costFrom: 3.3122237
+          costTo: 4.6657753
+          intersection: {x: 9.560112, y: 0.5, z: 0}
+          data:
+            xLeft: 9.701492
+            yLeft: 0.5
+            zLeft: 0
+            xRight: 9.402985
+            yRight: 0.5
+            zRight: 0
+        serializedJumpConnections: []
+      serializedCovers: []
+      battleGrid:
+        points: []
+        lengthX: 0
+        lengthZ: 0
+      cellMapData:
+      - x: 0
+        y: 0
+        z: 31
+      - x: 0
+        y: 0
+        z: 32
+      - x: 0
+        y: 0
+        z: 41
+      - x: 0
+        y: 1
+        z: 31
+      - x: 0
+        y: 1
+        z: 32
+      - x: 0
+        y: 1
+        z: 41
+      - x: 0
+        y: 2
+        z: 31
+      - x: 0
+        y: 3
+        z: 31
+      - x: 0
+        y: 4
+        z: 31
+      - x: 0
+        y: 5
+        z: 31
+      - x: 0
+        y: 6
+        z: 31
+      - x: 0
+        y: 7
+        z: 31
+      - x: 0
+        y: 8
+        z: 40
+      - x: 0
+        y: 9
+        z: 40
+      - x: 1
+        y: 0
+        z: 41
+      - x: 1
+        y: 1
+        z: 41
+      - x: 1
+        y: 2
+        z: 36
+      - x: 1
+        y: 2
+        z: 37
+      - x: 1
+        y: 3
+        z: 36
+      - x: 1
+        y: 4
+        z: 36
+      - x: 1
+        y: 5
+        z: 36
+      - x: 1
+        y: 6
+        z: 36
+      - x: 1
+        y: 7
+        z: 34
+      - x: 1
+        y: 7
+        z: 35
+      - x: 1
+        y: 7
+        z: 36
+      - x: 1
+        y: 8
+        z: 33
+      - x: 1
+        y: 8
+        z: 34
+      - x: 1
+        y: 8
+        z: 35
+      - x: 1
+        y: 8
+        z: 36
+      - x: 1
+        y: 8
+        z: 40
+      - x: 1
+        y: 8
+        z: 42
+      - x: 1
+        y: 9
+        z: 40
+      - x: 2
+        y: 0
+        z: 41
+      - x: 2
+        y: 1
+        z: 41
+      - x: 2
+        y: 2
+        z: 36
+      - x: 2
+        y: 2
+        z: 37
+      - x: 2
+        y: 3
+        z: 36
+      - x: 2
+        y: 3
+        z: 37
+      - x: 2
+        y: 4
+        z: 36
+      - x: 2
+        y: 5
+        z: 36
+      - x: 2
+        y: 6
+        z: 36
+      - x: 2
+        y: 7
+        z: 33
+      - x: 2
+        y: 7
+        z: 34
+      - x: 2
+        y: 7
+        z: 35
+      - x: 2
+        y: 7
+        z: 36
+      - x: 2
+        y: 7
+        z: 42
+      - x: 2
+        y: 8
+        z: 33
+      - x: 2
+        y: 8
+        z: 34
+      - x: 2
+        y: 8
+        z: 40
+      - x: 2
+        y: 8
+        z: 42
+      - x: 2
+        y: 9
+        z: 40
+      - x: 3
+        y: 0
+        z: 41
+      - x: 3
+        y: 1
+        z: 41
+      - x: 3
+        y: 2
+        z: 37
+      - x: 3
+        y: 3
+        z: 36
+      - x: 3
+        y: 3
+        z: 37
+      - x: 3
+        y: 4
+        z: 36
+      - x: 3
+        y: 4
+        z: 37
+      - x: 3
+        y: 5
+        z: 36
+      - x: 3
+        y: 6
+        z: 34
+      - x: 3
+        y: 6
+        z: 35
+      - x: 3
+        y: 6
+        z: 36
+      - x: 3
+        y: 7
+        z: 33
+      - x: 3
+        y: 7
+        z: 34
+      - x: 3
+        y: 7
+        z: 35
+      - x: 3
+        y: 7
+        z: 36
+      - x: 3
+        y: 7
+        z: 42
+      - x: 3
+        y: 8
+        z: 33
+      - x: 3
+        y: 8
+        z: 40
+      - x: 3
+        y: 9
+        z: 33
+      - x: 3
+        y: 9
+        z: 40
+      - x: 4
+        y: 0
+        z: 41
+      - x: 4
+        y: 1
+        z: 41
+      - x: 4
+        y: 2
+        z: 37
+      - x: 4
+        y: 3
+        z: 37
+      - x: 4
+        y: 4
+        z: 36
+      - x: 4
+        y: 4
+        z: 37
+      - x: 4
+        y: 5
+        z: 34
+      - x: 4
+        y: 5
+        z: 35
+      - x: 4
+        y: 5
+        z: 36
+      - x: 4
+        y: 5
+        z: 37
+      - x: 4
+        y: 6
+        z: 34
+      - x: 4
+        y: 6
+        z: 35
+      - x: 4
+        y: 6
+        z: 36
+      - x: 4
+        y: 6
+        z: 42
+      - x: 4
+        y: 7
+        z: 33
+      - x: 4
+        y: 7
+        z: 34
+      - x: 4
+        y: 7
+        z: 42
+      - x: 4
+        y: 8
+        z: 33
+      - x: 4
+        y: 9
+        z: 33
+      - x: 4
+        y: 9
+        z: 40
+      - x: 5
+        y: 0
+        z: 41
+      - x: 5
+        y: 1
+        z: 41
+      - x: 5
+        y: 2
+        z: 37
+      - x: 5
+        y: 3
+        z: 37
+      - x: 5
+        y: 4
+        z: 37
+      - x: 5
+        y: 5
+        z: 35
+      - x: 5
+        y: 5
+        z: 36
+      - x: 5
+        y: 5
+        z: 37
+      - x: 5
+        y: 6
+        z: 42
+      - x: 5
+        y: 7
+        z: 33
+      - x: 5
+        y: 7
+        z: 42
+      - x: 5
+        y: 8
+        z: 33
+      - x: 5
+        y: 9
+        z: 33
+      - x: 5
+        y: 9
+        z: 40
+      - x: 6
+        y: 0
+        z: 41
+      - x: 6
+        y: 1
+        z: 41
+      - x: 6
+        y: 2
+        z: 37
+      - x: 6
+        y: 3
+        z: 37
+      - x: 6
+        y: 4
+        z: 37
+      - x: 6
+        y: 4
+        z: 38
+      - x: 6
+        y: 5
+        z: 37
+      - x: 6
+        y: 5
+        z: 38
+      - x: 6
+        y: 6
+        z: 43
+      - x: 6
+        y: 7
+        z: 33
+      - x: 6
+        y: 7
+        z: 43
+      - x: 6
+        y: 8
+        z: 33
+      - x: 6
+        y: 9
+        z: 33
+      - x: 6
+        y: 9
+        z: 40
+      - x: 7
+        y: 0
+        z: 41
+      - x: 7
+        y: 1
+        z: 41
+      - x: 7
+        y: 2
+        z: 37
+      - x: 7
+        y: 3
+        z: 37
+      - x: 7
+        y: 3
+        z: 38
+      - x: 7
+        y: 4
+        z: 37
+      - x: 7
+        y: 4
+        z: 38
+      - x: 7
+        y: 4
+        z: 39
+      - x: 7
+        y: 5
+        z: 38
+      - x: 7
+        y: 5
+        z: 39
+      - x: 7
+        y: 6
+        z: 39
+      - x: 7
+        y: 6
+        z: 43
+      - x: 7
+        y: 7
+        z: 33
+      - x: 7
+        y: 7
+        z: 39
+      - x: 7
+        y: 7
+        z: 43
+      - x: 7
+        y: 8
+        z: 33
+      - x: 7
+        y: 8
+        z: 43
+      - x: 7
+        y: 9
+        z: 33
+      - x: 7
+        y: 9
+        z: 40
+      - x: 8
+        y: 0
+        z: 41
+      - x: 8
+        y: 1
+        z: 41
+      - x: 8
+        y: 2
+        z: 37
+      - x: 8
+        y: 2
+        z: 38
+      - x: 8
+        y: 2
+        z: 39
+      - x: 8
+        y: 3
+        z: 37
+      - x: 8
+        y: 3
+        z: 38
+      - x: 8
+        y: 3
+        z: 39
+      - x: 8
+        y: 4
+        z: 38
+      - x: 8
+        y: 4
+        z: 39
+      - x: 8
+        y: 5
+        z: 39
+      - x: 8
+        y: 6
+        z: 39
+      - x: 8
+        y: 7
+        z: 39
+      - x: 8
+        y: 7
+        z: 43
+      - x: 8
+        y: 8
+        z: 33
+      - x: 8
+        y: 8
+        z: 39
+      - x: 8
+        y: 8
+        z: 43
+      - x: 8
+        y: 9
+        z: 33
+      - x: 8
+        y: 9
+        z: 39
+      - x: 8
+        y: 9
+        z: 40
+      - x: 8
+        y: 9
+        z: 43
+      - x: 9
+        y: 0
+        z: 44
+      - x: 9
+        y: 1
+        z: 39
+      - x: 9
+        y: 1
+        z: 44
+      - x: 9
+        y: 2
+        z: 37
+      - x: 9
+        y: 2
+        z: 38
+      - x: 9
+        y: 2
+        z: 39
+      - x: 9
+        y: 2
+        z: 44
+      - x: 9
+        y: 3
+        z: 39
+      - x: 9
+        y: 3
+        z: 44
+      - x: 9
+        y: 4
+        z: 39
+      - x: 9
+        y: 4
+        z: 44
+      - x: 9
+        y: 5
+        z: 39
+      - x: 9
+        y: 5
+        z: 44
+      - x: 9
+        y: 6
+        z: 39
+      - x: 9
+        y: 6
+        z: 44
+      - x: 9
+        y: 7
+        z: 39
+      - x: 9
+        y: 7
+        z: 44
+      - x: 9
+        y: 8
+        z: 39
+      - x: 9
+        y: 8
+        z: 44
+      - x: 9
+        y: 9
+        z: 33
+      - x: 9
+        y: 9
+        z: 39
+      - x: 9
+        y: 9
+        z: 40
+      - x: 9
+        y: 9
+        z: 43
+      - x: 9
+        y: 9
+        z: 44
+      contour:
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 7.7611938}
+        cell: 31
+      - a: {x: 0, y: 1, z: 7.7611938}
+        b: {x: 0.44776118, y: 1, z: 7.686567}
+        cell: 31
+      - a: {x: 0.44776118, y: 1, z: 7.686567}
+        b: {x: 0.44776118, y: 1, z: 1.4179103}
+        cell: 31
+      - a: {x: 0.44776118, y: 1, z: 1.4179103}
+        b: {x: 0.67164177, y: 1, z: 1.1940298}
+        cell: 32
+      - a: {x: 6.641791, y: 0.5, z: 7.3134327}
+        b: {x: 5.298507, y: 0.5, z: 7.3134327}
+        cell: 33
+      - a: {x: 1.3432835, y: 0.5, z: 8.432836}
+        b: {x: 1.1194029, y: 0.5, z: 8.656716}
+        cell: 33
+      - a: {x: 4.925373, y: 0.5, z: 6.7910447}
+        b: {x: 4.925373, y: 0.5, z: 5.895522}
+        cell: 34
+      - a: {x: 4.925373, y: 0.5, z: 5.895522}
+        b: {x: 5.074627, y: 0.5, z: 5.597015}
+        cell: 35
+      - a: {x: 1.4179103, y: 0.5, z: 2.0895522}
+        b: {x: 1.3432835, y: 0.5, z: 8.432836}
+        cell: 36
+      - a: {x: 5.074627, y: 0.5, z: 5.597015}
+        b: {x: 5.298507, y: 0.5, z: 5.373134}
+        cell: 36
+      - a: {x: 9.179104, y: 0.5, z: 2.0895522}
+        b: {x: 1.4179103, y: 0.5, z: 2.0895522}
+        cell: 37
+      - a: {x: 5.298507, y: 0.5, z: 5.373134}
+        b: {x: 6.641791, y: 0.5, z: 5.373134}
+        cell: 37
+      - a: {x: 6.641791, y: 0.5, z: 5.373134}
+        b: {x: 7.014925, y: 0.5, z: 5.7462683}
+        cell: 38
+      - a: {x: 9.402985, y: 0.5, z: 1.8656716}
+        b: {x: 9.179104, y: 0.5, z: 2.0895522}
+        cell: 39
+      - a: {x: 7.014925, y: 0.5, z: 5.7462683}
+        b: {x: 7.014925, y: 0.5, z: 6.940298}
+        cell: 39
+      - a: {x: 0, y: 0.5, z: 8.656716}
+        b: {x: 0, y: 0.5, z: 9.701492}
+        cell: 40
+      - a: {x: 0, y: 0.5, z: 9.701492}
+        b: {x: 9.626865, y: 0.5, z: 9.701492}
+        cell: 40
+      - a: {x: 1.1194029, y: 0.5, z: 8.656716}
+        b: {x: 0, y: 0.5, z: 8.656716}
+        cell: 40
+      - a: {x: 0.67164177, y: 1, z: 1.1940298}
+        b: {x: 8.432836, y: 1, z: 1.1940298}
+        cell: 41
+      - a: {x: 8.432836, y: 1, z: 1.1940298}
+        b: {x: 8.5074625, y: 1, z: 0}
+        cell: 41
+      - a: {x: 8.5074625, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 0}
+        cell: 41
+      - a: {x: 5.298507, y: 0.5, z: 7.3134327}
+        b: {x: 4.925373, y: 0.5, z: 6.7910447}
+        cell: 42
+      - a: {x: 7.014925, y: 0.5, z: 6.940298}
+        b: {x: 6.641791, y: 0.5, z: 7.3134327}
+        cell: 43
+      - a: {x: 9.701492, y: 0.5, z: 0}
+        b: {x: 9.402985, y: 0.5, z: 0}
+        cell: 44
+      - a: {x: 9.402985, y: 0.5, z: 0}
+        b: {x: 9.402985, y: 0.5, z: 1.8656716}
+        cell: 44
+      - a: {x: 9.626865, y: 0.5, z: 9.701492}
+        b: {x: 9.701492, y: 0.5, z: 0}
+        cell: 44
+      borderData:
+      - a: {x: 0, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 7.7611938}
+        cell: 31
+        direction: 1
+      - a: {x: 0, y: 0.5, z: 8.656716}
+        b: {x: 0, y: 0.5, z: 9.701492}
+        cell: 40
+        direction: 1
+      - a: {x: 8.5074625, y: 1, z: 0}
+        b: {x: 0, y: 1, z: 0}
+        cell: 41
+        direction: 3
+      - a: {x: 9.701492, y: 0.5, z: 0}
+        b: {x: 9.402985, y: 0.5, z: 0}
+        cell: 44
+        direction: 3

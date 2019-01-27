@@ -1,0 +1,32 @@
+<b><size=20>Path</size></b>
+
+Path is class. It contains List<PathNode> that describe path. PathNode is struct with (x, y, z) and PathNodeType. And PathNodeType are used to describe what kind of node there is. Actual code in PathFinder/PathInformation.cs if you want to read.
+In details:
+
+Path descrive path in siquence of nodes. It dont remove current node and just store current index of node.
+It contains two important fields:
+<i>PathResultType pathType</i> which describe if path valid. There is multiple things that can go wrong:
+InvalidAgentOutsideNavmesh - requested path start outside navmesh
+InvalidTargetOutsideNavmesh - requested target are outside navmesh
+InvalidNoPath - there is no path to target point
+InvalidInternalIssue - i have no clue how you get this. please tell developer cool story how you get this
+In other cases it will be just "Valid"
+
+<i>PathFinderAgent owner</i> last agent that recieve this path. In case you want validation. Or just want to add your own code into Path.
+
+Also since you probably will request Path gazillion times there is pool of objects exist that contain Path. Agent will return old Path after it recieve new one. So if you want to store Path somwhere you should call Path.Copy().
+
+<b>PathNodeType</b>
+Now about what type mean what. There is 6 types of node:
+
+MoveCrouch - Agent need to crouch in order to get to this position
+MoveWalk - Agent need just walk in order to get to this position
+JumpUpFirstNode - In order to jump Up agent need to stand here
+JumpUpSecondNode - This is upper corner agent probably should grab
+JumpDownFirstNode = In order to jump down this is point from where agent will start fall
+JumpDownSecondNode = This is where will land after it jump down
+
+Also there is just Invalid type for cases when there is no point. 
+Now pictures:
+
+<b>Jump down</b>

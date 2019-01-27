@@ -1,0 +1,59 @@
+//Simple version of rasterization
+
+bool PointInTriangle2(float2 a, float2 b, float2 c, float2 po) {
+	float s = a.y * c.x - a.x * c.y + (c.y - a.y) * po.x + (a.x - c.x) * po.y;
+	float t = a.x * b.y - a.y * b.x + (a.y - b.y) * po.x + (b.x - a.x) * po.y;
+
+	if ((s <= 0) != (t <= 0))
+		return false;
+
+	float A = -b.y * c.x + a.y * (c.x - b.x) + a.x * (b.y - c.y) + b.x * c.y;
+	if (A < 0.0) {
+		s = -s;
+		t = -t;
+		A = -A;
+	}
+	return s > 0 && t > 0 && (s + t) < A;
+}
+
+float CalculateHeight(float3 A, float3 B, float3 C, float2 pos) {
+	float det = (B.z - C.z) * (A.x - C.x) + (C.x - B.x) * (A.z - C.z);
+
+	float l1 = ((B.z - C.z) * (pos.x - C.x) + (C.x - B.x) * (pos.y - C.z)) / det;
+	float l2 = ((C.z - A.z) * (pos.x - C.x) + (A.x - C.x) * (pos.y - C.z)) / det;
+	float l3 = 1.0f - l1 - l2;
+
+	return l1 * A.y + l2 * B.y + l3 * C.y;
+}
+
+
+//float testS(float2 a, float2 b, float2 c) {
+//	return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+//}
+//
+//bool PointInTriangle(float2 v0, float2 v1, float2 v2, float2 pt) {
+//	float w0 = testS(v1, v2, pt);
+//	float w1 = testS(v2, v0, pt);
+//	float w2 = testS(v0, v1, pt);
+//	return w0 <= 0 && w1 <= 0 && w2 <= 0;
+//}
+
+float LineSide(float2 A, float2 B, float2 P) {
+	return (B.x - A.x) * (P.y - A.y) - (B.y - A.y) * (P.x - A.x);
+}
+
+float sr(float2 p1, float2 p2, float2 p3)
+{
+	return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
+}
+
+bool PointInTriangle(float2 pt, float2 v1, float2 v2, float2 v3)
+{
+	bool b1, b2, b3;
+
+	b1 = sr(pt, v1, v2) < 0.0f;
+	b2 = sr(pt, v2, v3) < 0.0f;
+	b3 = sr(pt, v3, v1) < 0.0f;
+
+	return ((b1 == b2) && (b2 == b3));
+}

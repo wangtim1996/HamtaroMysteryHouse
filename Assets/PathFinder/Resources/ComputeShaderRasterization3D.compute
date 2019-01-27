@@ -1,0 +1,127 @@
+﻿#include "Assets\PathFinder\Resources\CSRasterization3D.compute"
+#include "Assets\PathFinder\Resources\CSDebug.compute"
+#pragma kernel Rasterize
+
+#define groupDim_x 8
+#define groupDim_y 8
+#define groupDim_z 8
+
+StructuredBuffer<float3> CurVerts;
+StructuredBuffer<int> CurTris;
+StructuredBuffer<DataSegment> TargetSegments;
+RWStructuredBuffer<Voxel> Result;
+//RWStructuredBuffer<DebugArrayVector3> DebugValues;
+
+groupshared Voxel GroupShaderVoxels[groupDim_x * groupDim_y * (groupDim_z / 2)]; //when combining results only second half of threads actualy stores result here
+
+float4 ChunkPos;
+float VoxelSize;
+uint SizeX;
+uint SizeZ;
+uint maxSegment;
+
+
+[numthreads(groupDim_x, groupDim_y, groupDim_z)]
+void Rasterize(uint3 dispatchID : SV_DispatchThreadID, uint3 groupID : SV_GroupID, uint3 threadId : SV_GroupThreadID){	
+	DataSegment ds = TargetSegments[threadId.z];
+	float posX = (dispatchID.x * VoxelSize) + ChunkPos.x;
+	float posZ = (dispatchID.y * VoxelSize) + ChunkPos.z;
+
+	
+	float3 fia[3];//first iteration array	
+	float3 sia[16];//secont iteration array
+	uint sia_maxIndex = 0;
+	ClipLineToSegmentResult result;
+	//ds.length
+	[loop]
+	for (int fia_Index = 0; fia_Index < ds.length; fia_Index++){
+		fia[fia_Index] = CurVerts[CurTris[ds.index + fia_Index]];
+	}
+	
+	[loop]
+	for (uint curIndex = 0; curIndex < 3; curIndex++){
+		uint i1 = curIndex;
+		uint i2 = curIndex + 1;
+		if (i2 == 3)
+			i2 = 0;
+
+		result = ClipLineToSegment(1, 0, posX, posX + VoxelSize, fia[i1], fia[i2]);
+		if (result.value) {
+			sia[sia_maxIndex] = result.newA;
+			sia[sia_maxIndex + 1] = result.newB;
+			sia_maxIndex += 2;
+		}
+	}
+
+	Voxel vox;
+	//vox.exist = false; //!!!
+	vox.min = 0;
+	vox.max = 0;
+	vox.pas = -1;
+	//vox.pas = ds.pas;
+
+	//float3 debugArray[20];
+	//int debugIndex = 0;
+
+	[loop]
+	for (uint i = 0; i < sia_maxIndex; i++) {
+		uint i1 = i;
+		uint i2 = i + 1;
+		if (i2 == sia_maxIndex)
+			i2 = 0;
+
+		result = ClipLineToSegment(0, 1, posZ, posZ + VoxelSize, sia[i1], sia[i2]);
+
+		if (result.value) {
+			//debugArray[debugIndex] = result.newA;
+			//debugArray[debugIndex + 1] = result.newB;
+			//debugIndex += 2;
+
+			if (vox.pas != -1) {
+				vox.min = min(min(result.newA.y, result.newB.y), vox.min);
+				vox.max = max(max(result.newA.y, result.newB.y), vox.max);
+			}
+			else {
+				vox.pas = ds.pas;
+				vox.min = min(result.newA.y, result.newB.y);
+				vox.max = max(result.newA.y, result.newB.y);
+			}
+		}
+	}
+
+	uint tID_x = threadId.x;
+	uint tID_y = threadId.y;
+	uint tID_z = threadId.z;
+	uint tID_g = tID_x + (tID_y * groupDim_x) + (tID_z * groupDim_x * groupDim_y);
+
+	//DebugValues[tID_g] = WriteToArray(debugArray, debugIndex);
+
+	if (tID_z >= 4) { //if second half then save data
+		GroupShaderVoxels[tID_x + (tID_y * groupDim_x) + ((tID_z - 4) * groupDim_x * groupDim_y)] = vox;
+	}
+
+	GroupMemoryBarrierWithGroupSync();
+
+	if (tID_z < 4) { 
+		GroupShaderVoxels[tID_g] = CombineVoxels(vox, GroupShaderVoxels[tID_g]);
+	}
+
+	GroupMemoryBarrierWithGroupSync();
+
+	if (tID_z < 2) {//if first two then read second two
+		GroupShaderVoxels[tID_g] = CombineVoxels(GroupShaderVoxels[tID_g], GroupShaderVoxels[tID_x + (tID_y * groupDim_x) + ((tID_z + 2) * groupDim_x * groupDim_y)]);
+	}
+
+	GroupMemoryBarrierWithGroupSync();
+
+	if (tID_z == 0) {//if last then read next and apply it to current pool
+		Result[dispatchID.x + (dispatchID.y * SizeX)] = 
+			CombineVoxels(
+				CombineVoxels(
+					GroupShaderVoxels[tID_g],
+					GroupShaderVoxels[tID_x + (tID_y * groupDim_x) + ((tID_z + 1) * groupDim_x * groupDim_y)]
+				), 
+				Result[dispatchID.x + (dispatchID.y * SizeX)]
+			);
+	}
+}

@@ -1,0 +1,4 @@
+Here i describe in depth some options in main menu and how it can be executed from code.
+
+
+<b><size=20>Main buttons</size></b>

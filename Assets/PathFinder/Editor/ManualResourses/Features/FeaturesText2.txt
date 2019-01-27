@@ -1,0 +1,4 @@
+<b><size=20>Pathfinder can read Splat Maps</size></b>
+   With relative success. You can put Terrain Navmesh Settings component on terrain. You can find this component in PathFinder/Components folder. And set up what splat equal what area. Useful in many ways.
+<color=silver>Yay! You can draw dick on NavMesh!</color> 
+   Also, there is component for GameObject called AreaGameObject in the same folder which will tell Pathfinder Area of that GameObject. Sadly, currently i get rid of custom area. Cause way of serialization it kinda doesen't work with custom areas. Also, if anybody have good advice about serialization references to GameObjects then feel free to suggest. I want to put reference to gamobject in custom area so for example area component will able to flip some values in cells it made of. Toggle door for example.

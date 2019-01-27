@@ -1,0 +1,2 @@
+<b>lines, dots, meshes, paths, labels</b>: Options to debug bunch of debugger groups. This is actually helpful tool and you may want to use it. There is a namespace K_PathFinder.PFDebugger and there is static class Debuger_K. Open generic region and you will find a bunch of options like AddBounds, AddDot, AddLine, AddLabel(my favorite. you can draw text with coordinates in scene. yay!) and functions like ClearGeneric(DebugGroup group)
+Path are considered as Generic

@@ -1,0 +1,234 @@
+///////////////////////////////////////
+0.3:
+
+First piblic release
+
+
+///////////////////////////////////////
+0.33:
+
+Whats new:
+* Changlelog :)
+in changelog.txt
+
+* Navmesh Raycasting
+There is now simple navmesh Raycasting. You can call it using PathFinder.Raycast() function. It's a static function and there is no stuff in thread.
+It return RaycastHitNavMesh struct where contain point, and some flags about "if we fing navmesh below at all" and if it reach max iterations while searching. Intend to use it to test navmesh "if there is space to dodge" but will probably have lots of cool uses.
+
+* Agent now have threadsafe recieve info delegates:
+It now have "AgentDelegateMode" and it can be threadsafe or not threadsafe. All current functions related to this now have this parameter. 
+Default are AgentDelegateMode.NotThreadSafe. So nothing will change if you dont want. 
+Threadsafe called in Update so it's can be a bit delayed (you can somewhat fix delay by changins scrip execution order)
+
+* BattleGridPoint now contains field "passability" where it can be Crouchable or Walkable.
+In case you want to take passability into account.
+
+* Debugger are now Debuger_K
+cause anyway all people write their own debuger and this word is too common. Namespaces dont help much to fix that.
+
+* You can now disable NavMesh generation (lol)
+If you just need covers or battle grid then here you go. Save up some processor time cause lots of code skipped in that case.
+
+* "Debug Paths" checkbox in Debuger menu to enable or disable debuging of paths.
+Cause there was not option to stop debuging it :P And we end up with lots of stuff being debuged even if you dont see it
+
+* PathFinderAgent.SetGoalGetBattleGrid now have (params Vector3[] positions) to request grid from multiple points at same time
+Will request it's own position if you left it empty
+
+* PathFinderAgent.SetGoalMoveHere(Vector3 destination) now have optional parameter bool snapToNavMesh = false.
+If true then it will snap end position to navMesh
+If false then end position will be target destination
+
+*Bunch of internal changes. More important ones:
+Point on graph search now alot faster.
+New class dedicated to combine cells into graph. Cause lots of stuff in graph have no use after it was generated. This stuff moved into this class.
+There is now no "Edge" is cells. It was replaced by struct witch represent two points.
+There is no "Nodes" in cells and graphs.
+Internaly jump points up and down stored in one class.
+
+
+Whats fixed:
+* Battle grid now connect more properly on border if there multiple levels
+* NodeCoverPoint.normalV3 now Vector3 (was Vector2)
+* Covers wount generate on top of objects if there another cover nearby
+* NodeCoverPoint now reference Cover it belongs as intended and dont throw exeptions 
+* Serialized data will no longer loaded twice
+
+Whats Broken:
+* You definatly can't load old serialized data with new version. So clean it and redo navmesh.
+
+
+
+///////////////////////////////////////
+0.37:
+Whats new:
+* ComputeShader rasterization
+You can now get voxels using ComputeShaders. This GPU magic are fast and have some pros and cons. 
+Pros: 
+It's fast.
+Cons: 
+It's can hit perfomance if you do it in big chunks.
+Options to control it are in Menu. Just below threads options. It's separated for terrain and for other colliders. Also in that menu presented old options. "Precise" renamed to "UnityWay" and "Fast" renamed to "CPU". Also there is tooltips for this options.
+
+* Minor optimisations here and there. Terrain CPU rasterization is now much faster. 
+Overal around 20% speed increase in navmesh generation
+
+* Rewrited big chunk of Debuger. 
+Now it uses shaders and StructuredBuffer to debug point, lines and meshes. It's much-much faster.
+Pros: 
+Speed. 
+Now you can see debuged stuff in scene.
+Cons: 
+No more color picker. 
+Cant be updated to often.
+You see debug in scene and game window and can't separate it. (but still can turn it off)
+Require DX10 (i think)
+
+Also since when new data debuged it need to recreate StructuredBuffers. There is now button to "Update" debuged things manualy and checkbox to auto update when new data coming in. If you debug voxels you might want to turn off auto update cause it's moving ALL voxels to GPU every time it get voxels.
+There is now checkboxes to enable and disable some info groups like "Cells" or "Voxels"
+
+* Agent Properties now have button to set target chunk resolution to make sure it at least have sellected amount of voxels per agent radius. Recomend 2-3.
+
+* Debuging path are now also debug end point and cell
+To make sure nearest point on navmesh are what you expect it to be.
+
+Whats fixed:
+* Finding nearest point to mesh now return correct position on multiple layers of navmesh
+* Saving data no longer cause exeption if there was no pathfinder helper yet in scene
+* Loading non existed data no longer cause exeption
+* You no longer need to rebuild project after you start using pathfinder in new scene
+* VolumeContainer will no longer get error related to growt of obstacles when crouch enabled
+
+
+Whats Broken:
+* Probably triangulation was a bit broken so can be new awesome errors in navmesh generation
+
+///////////////////////////////////////
+
+0.38:
+Whats new:
+* Pathfinder.GetPath now have "Vector3 start" parameter to specify start position if needed. By default it was PathFinderAgent.position
+Also PathFinderAgent now have SetGoalMoveHere(Vector3 start, Vector3 destination, bool snapToNavMesh = false) to search path if you want to specify another starting poit to path search
+* Some basic example scenes
+* You can apply raycast before funnel:
+requesting path now have two optional parameters bool applyRaycastBeforeFunnel and int maxRaycastIterations. 
+by default applyRaycastBeforeFunnel is false. if it true then before applying funnel algorithm PathFinder alfo check visibility of end node.
+if node is visible then it return path. if not then do usual stuff
+
+Whats fixed:
+* PathFinderScene will no longer cause exeption when it tries to fix existed in scene TerrainNavmeshSettings
+* Newly created agent properties are will at least have enabled default physics Layer
+* Fixed bug when adding new volumes dont fully apply to existing volumes
+* Fixed bug with tree colliders
+* Fixed zero length buffer bug related to collection trees using ComputeShaders
+* Position inside navmesh after deserializing it now works as intended
+* Navmesh serialization in scenes now actualy works
+* CapsuleCollider now scale properly into collider shape
+* CharacterControler now scale properly into collider shape
+* Queue multiple work at same space no longer cause dictionary exeption (i hope)
+* Fixed threading issue during template population loop
+* Fixed default graph being used during connection
+* Fixed adding same work multiple times on huge perfomance hits
+* navmesh raycasting no longer return incorrect result if hit was before target length
+
+Whats changed:
+* huge internal changes related to storing graph chunks. expect some bizarre issues related to finding data in navmesh
+* Some folders was moved arround in more proper places so if you want proper folders alighment then remove PathFinder folder and reimport asset
+
+
+///////////////////////////////////////
+0.39:
+
+Whats new:
+* Added option to add extra voxels into sampling covers.
+You can find in on agent properties. 0 by default. If you agent are too thin then it fixes issue with fragmented covers
+* PathFinderAgent now have "bool ignoreCrouchCost"
+if it true then generated path and search for nearest cover will set crouch areas cost as normal moving cost. 
+userful if your agent swich state to permament crouching
+
+Whats fixed:
+* compatability with Unity 2017.2
+* some conditions for allerts. less false alarm
+
+Whats changed:
+* triangulation now around 40% faster. more noticible on large graphs
+* some UI tweaks
+* lots of small internal changes
+* some important part of code are better commented
+
+
+///////////////////////////////////////
+
+0.47:
+
+Whats new:
+* Local Avoidance
+* PathFinder now have one separated thread to make batches of work in specific order. You can find it's function in PathFinder.PathFinderMainThread in case you want to add stuff there.
+* Greatly improved perfomance of PathFinder.Raycast. Also now it have option to perform multiple raycasts from single starting point. 
+* Agents now have checkbox that enable update of it neighbours
+* Agents now have checkbox that enable update of it position on navmesh
+
+Whats fixed:
+* PathFinderAgent.SetGoalMoveHere now works as intended
+* PathFinderAgent.SetGoalGetBattleGrid and SetGoalFindCover errors now fixed
+* PathFinder.Raycast now will not stuck if raycast started exactly on Cell border
+* PathFinder.Raycast now return proper result when you specify expected area or passability
+
+Whats changed:
+* UI changes and tooltips
+* actual pathfinding now a lot faster and dont generate garbage
+* applyRaycastBeforeFunnel in PathFinderAgent.SetGoalMoveHere renamed to applyRaycast and it's now applyed before and after funnel to give more expected results
+* Removed automatic graph queue from path, cover and grid search. So queue reasonable portion of graph in advance
+* Greatly changed how Path works. To reduce garbage genertion there is now exist path pool. Path now store nodes as structs.
+So path information now have very different way of returning it's information. More in documentation and comments.
+* Debuger now uses PathFinder scene gameObject to debug stuff to avoid further confussion with it. You can delete old one
+* PathFinder.TryGetCell now DO NOT return closest point to navmesh hull. it return something if point inside navmesh top projection at all
+* PathFinder.TryGetCell renamed to PathFinder.TryGetClosestCell and now check bouth navmesh and hull. not one after another
+* Added PathFinder.TryGetNearestHull to search nearest point just on navmesh hull
+* Profiler now show a bit more information
+* PathFinder.Raycast now return bool if it hit something or casted outside graph.
+* RaycastHitNavMesh now contains more information
+* PathFinder.Raycast now faster. Due to changes in Cells edges to do it - it wount work on old navmesh. So recreate it.
+* PathFinder.gridSize are now cashed. expect some related to this bugs. (this is value that define chunk size)
+* CellContentData represented Cell edges now all clockwise
+* Added temporary checkbox for AreaGameObject that forcively add it childs meshes from mesh filter with target Area
+
+///////////////////////////////////////
+
+0.49:
+Whats new:
+* Added AreaWorldMod component for more precise Area painting and navmesh generation. Also have userful features to build AI. More in examples.
+* Added AdvancedArea which only currently used by AreaWorldMod. This is new type of Area that contains reference to NavMesh and have some related to that functional
+* Added Attributes.cs for common UI needs. To draw Area sellector for example
+* Rewriten whole buch of code related to handling voxels. Big perfomance boost when lots of small objects in scene and fixed tunnels in mesh colliders.
+* PathFinderAgent now have SetGoalFindNearestArea for search path to some specific area. (A bit rudimental)
+* Added "Tag Associations" for areas. Now you can set default Area for specific Tag
+* Agent Properties now have checkbox near ignored tags list that tell to check not only gameobject tag but also check all upper hierarchy tags
+* Scene now have sellector to target area for navmesh building. It linked to "Build Area Sellector" in Menu
+
+Whats fixed:
+* Path.pathType now return valid path type
+* Raycasting no longer return Null Exception after performed on graph loaded in OnEnable
+* Rebuilding of loaded navmesh no longer cause edge exceptions 
+* Adding new Area now dont break NavMesh generation
+* Compute Shader rasterization no longer return "must be blittable" in newer version of Unity
+* Tree Colliders in scene now appear as Unity represent them (for the most part)
+* Trees with multiple colliders no longer cause exeptions
+* Non convex mesh colliders no longer remove hollow spots
+* Adding multiple colliders no longer exponentialy reduce perfomance
+* Smaller objects now added faster
+* Fixed cases when specifit orientation of covers won't be generated
+
+Whats changed:
+* UI of AgentProperties now better organized and have some rudimental graphics for agent represintation
+* UI of AgentProperties now have big warnings when you trying to shoot youself in the foot
+* UI in Menu slightly better organized
+* Sphere Colliders now appear on navmesh a 15-25 times faster and with more precision
+* Capsule Collider now appear 12-20 times faster with little less precission
+* Added more exception messages for more precise troubleshooting
+* Added some missing tooltips
+* Added graphical representation and handles for thing that sellect chunks to build from menu
+* Remporary removed PathFinder.Deserialize and PathFinder.Serialize due to changes in serialization process
+* Removed Unity Way of terrain collection cause it is obsolete
+* Slight changes in existed example scenes
+*

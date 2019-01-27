@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1774429681659554}
+  m_IsPrefabParent: 1
+--- !u!1 &1774429681659554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4514905808000660}
+  - component: {fileID: 114815788940910994}
+  - component: {fileID: 114994516307404238}
+  m_Layer: 0
+  m_Name: RaycastTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4514905808000660
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774429681659554}
+  m_LocalRotation: {x: 0.000000091475364, y: 0.64122725, z: -6.6103515e-16, w: 0.7673511}
+  m_LocalPosition: {x: 32.53, y: 1.266, z: 36.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 79.767006, z: 0}
+--- !u!114 &114815788940910994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774429681659554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02cffd882898414282606eb09e62340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties: {fileID: 11400000, guid: 02dbf019953284b4db1b1fefacd5223b, type: 2}
+  range: 5
+  tests: 1000
+  doForward: 0
+  dataList:
+  - enabled: 0
+    position: {x: 40.45, y: 0.5, z: 38.67}
+    direction: {x: 0.3209439, y: -0.9470982}
+  - enabled: 0
+    position: {x: 34.85, y: 0.5, z: 33.38}
+    direction: {x: 0.9921147, y: -0.1253331}
+  - enabled: 0
+    position: {x: 34.849, y: 0.5, z: 32.45008}
+    direction: {x: 0.00000001192488, y: -1}
+  - enabled: 0
+    position: {x: 37.15, y: 0.5, z: 38.2}
+    direction: {x: 0.9822873, y: -0.1873812}
+  - enabled: 0
+    position: {x: 37.15, y: 0.5, z: 38.2}
+    direction: {x: 0.9921147, y: -0.1253331}
+--- !u!114 &114994516307404238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774429681659554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2663be383dde3d641b2da7d838c0dc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 0.3}
+  size: 0.5

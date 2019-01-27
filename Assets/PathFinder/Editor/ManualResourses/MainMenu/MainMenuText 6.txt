@@ -1,0 +1,12 @@
+<b>Debug options</b>: Under this tab are lots of option what you want to draw from debugged information. Here is only NavMesh related options.
+
+<b>Auto update and Update button</b>: Currently debug done through using StructuredBuffer. PathFinder need to move all data to specific buffer in order to update it' This can be wasteful. Data can be big and no need to debug it on every iteration. Here you can disable automatic update and have button to update it manualy.
+
+<b>Debug related options</b>:
+On top are counder of how much data was debuged.
+
+Next are checkboxes for Cell related information. Cells are what NavMesh are. Convex areas that connected through single gate. You can enable or disable debug of certain aspects of it or all of it.
+
+Then checkboxes related to Voxels. To generate NavMesh Pathfinder firstly generate lots of data points. here you can enable or disable debig of them. In order to it even appear you should enable "Full Debug". Eats up lots of memory.
+
+And rest of options are related with less importand aspects of generation. Here you can enable or disable debuging od Covers and Battle Grid. Also it error occure it Triangulator it will appear here. Triangulator are not that robust so debug have some important uses here.

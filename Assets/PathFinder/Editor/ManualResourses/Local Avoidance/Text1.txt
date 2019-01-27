@@ -1,0 +1,6 @@
+<b><size=20>Local Avoidance</size></b>
+
+Right now agents will avoid only other agents. Will expand this later on.
+
+In order to agents avoid each other there is mutiple things need to happen:
+PathFinderAgent should have enabled "Dynamic Obstacles Agent"

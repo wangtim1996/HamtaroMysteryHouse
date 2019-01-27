@@ -1,0 +1,3 @@
+
+
+   <b>2)</b>  Open Pathfinder Menu. Button to open it are located here: "Window / K-PathFinder / Menu". Open "Settings" foldout and specify "World grid size". This number will tell how big your NavMesh chunks in world space. Default is 10 but it might be a bit small. Good chunk size depends on your world size, around 20-50 chunks per side is a good number. Too big chunks will take too long time to update and too small will take long time to create in row and will also lead to bad pathfinding. So if you want some optimisation this is probably where you should start.

@@ -1,0 +1,22 @@
+<b><size=20>Overview</size></b>
+
+   Hi there! This is K-Pathfinder. A tool to generate navigation mesh in a grid pattern and some additional data. And possibly navigate your stuff through it. Was designed with goal in mind to use it in procedural shooter-like world. It's provided "as is" and I take no responsibility if it break something or if you lose something.  
+
+
+Features:
+ * Open source
+ * Multiple types of agent
+ * Generate navmesh in runtime
+ * Remove and add chunks of navmesh in runtime
+ * Areas with different move cost. Also areas can be readed from Unity terrain splat map
+ * Areas with different passability. Current is "walking" and "crouching" 
+ * Covers. Low and high
+ * Grid. For providing bunch of world space points wich can be reachable from target position
+ * Jump spots to move up and down (works kinda bad. object to change)
+ * Navmesh Raycasting
+ * Dynamic Obstacles
+
+
+<b><size=20>Getting Started</size></b>
+
+   <b>1)</b> Create agent properties. Button to create agent properties are located in "Window / K-PathFinder / Create Agent Properties". It will create Scriptable Object which is used to describe your Agent. Pathfinder will return navmesh from dictionary using this file as key or create new navmesh also by using this file.

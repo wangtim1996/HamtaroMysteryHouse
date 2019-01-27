@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480677c42a40eb2498f7b40cf785dbe4, type: 3}
+  m_Name: PathfinderSettings
+  m_EditorClassIdentifier: 
+  helperName: _pathFinderHelper
+  useMultithread: 1
+  maxThreads: 8
+  gridSize: 10
+  gridLowest: -100
+  gridHighest: 100
+  terrainCollectionType: 1
+  colliderCollectionType: 0
+  terrainFastMinimalSize: 0
+  drawAreaEditor: 1
+  areaLibrary:
+  - name: Default
+    id: 0
+    color: {r: 0, g: 1, b: 0, a: 1}
+    overridePriority: 1
+    cost: 1
+  - name: Not Walkable
+    id: 1
+    color: {r: 1, g: 0, b: 0, a: 1}
+    overridePriority: 1
+    cost: 3.4028235e+38
+  - name: Yellow
+    id: 2
+    color: {r: 1, g: 1, b: 0, a: 1}
+    overridePriority: 2
+    cost: 20
+  - name: Muddy
+    id: 3
+    color: {r: 0.5921569, g: 0.5058824, b: 0.45098042, a: 1}
+    overridePriority: 3
+    cost: 2
+  lastLaunchedVersion: 0.49
+  targetProperties: {fileID: 0}
+  areaNames:
+  - m_Text: Default
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: Not Walkable
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: Yellow
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: Muddy
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  areaIDs: 00000000010000000200000003000000
+  drawUnityAssociations: 1
+  checkRootTag: 1
+  tagAssociationsSerialized:
+  - tag: Untagged
+    area: 0
+  - tag: Respawn
+    area: 1
+  - tag: Finish
+    area: 1
+  - tag: EditorOnly
+    area: 1
+  - tag: MainCamera
+    area: 1
+  - tag: Player
+    area: 1
+  - tag: GameController
+    area: 1
+  areaPointer:
+    startX: -1
+    startZ: -1
+    endX: 9
+    endZ: 9
+    y: 0.012591362
+  removeAndRebuild: 1
+  drawBuilder: 1

@@ -1,0 +1,3 @@
+<b><size=20>Raycasting</size></b>
+
+You can do simple raycasting by using <i>PathFinder.Raycast</i>. There is bunch of versions with different input. It's not an Agent function, it's a static function so no threaded stuff here. Intended to check existence of obstacles in short distances. For example for checking ability to dodge. But there is lots of stuff you may do with this.
