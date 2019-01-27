@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GameData/Rooms", order = 1)]
+[CreateAssetMenu(menuName = "GameData/Rooms", order = 2)]
 public class RoomPool : ScriptableObject
 {
     public List<GameObject> rooms;

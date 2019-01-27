@@ -39,6 +39,16 @@ public class IntVector
         return new IntVector(a.x - b.x, a.y - b.y);
     }
 
+    public static bool operator== (IntVector a, IntVector b)
+    {
+        return a.x == b.x && a.y == b.y;
+    }
+
+    public static bool operator !=(IntVector a, IntVector b)
+    {
+        return !(a == b);
+    }
+
     public static float GetRotationAngle (Rotation rot)
     {
         switch (rot)

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b2a6c105f28fe44a59350305dfb01a, type: 3}
+  m_Name: TileGen
+  m_EditorClassIdentifier: 
+  deadend: {fileID: 4436019185665884160, guid: 79bff80dea0b1f64d91dfcc7c7467426, type: 3}
+  turn: {fileID: 2629328413418660303, guid: b048fb2a32264e54caaeb5d3e7845ddb, type: 3}
+  line: {fileID: 5236371416159459050, guid: d07de45cc5fb09242aed712271ade08d, type: 3}
+  tIntersect: {fileID: 3833672084214076816, guid: e6c11a5b3fd05fc4fb1c188ebc3cfaa8,
+    type: 3}
+  fourway: {fileID: 1009807610501350168, guid: cbc31b6ea2c7ca540a41e1ca375167b1, type: 3}
