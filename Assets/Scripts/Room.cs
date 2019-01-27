@@ -8,8 +8,36 @@ public class Room : MonoBehaviour
     public int id;
     public IntVector pos;
     public IntVector.Rotation rot;
-    public bool saved = false;
+    //public bool saved = false;
     public bool toBeDeleted = false;
+    [SerializeField]
+    private GameObject light;
+
+    private bool _saved = false;
+    public bool saved
+    {
+        get
+        {
+            return _saved;
+        }
+        set
+        {
+            if (_saved && !value)
+            {
+                _saved = value;
+                Debug.LogError("Room got unsaved");
+            }
+            else if (!_saved && value)
+            {
+                _saved = value;
+                // turn on light
+                if(light != null)
+                {
+                    light.SetActive(true);
+                }
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
