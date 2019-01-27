@@ -39,13 +39,7 @@ public class RoomMgr : MonoBehaviour
         {
             PlaceRooms();
             DebugMap();
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
             LinkRooms();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
             GenerateHallways();
         }
     }
@@ -108,17 +102,95 @@ public class RoomMgr : MonoBehaviour
             }
         }
 
-        // add in the room entrance hallways
-        foreach(IntVector entranceLoc in data.entrances)
+
+        // Add spacers to paths are guaranteed to exist
+        for (int x = -1; x < data.dimensions.x; x++)
         {
-            IntVector newCoords = new IntVector(location.x + entranceLoc.x, location.y + entranceLoc.y);
+            IntVector newCoords = new IntVector(location.x + x, location.y - 1);
             newCoords = newCoords.RotateCentered(rot, location);
 
             // oob
             if (!newCoords.IsInBounds(dimensions))
                 return false;
             // overlap with another room
-            if (newMap[newCoords.x, newCoords.y].type != MapTile.Type.eNone)
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eRoom)
+                return false;
+
+            // only add spacers to empty space
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eNone)
+            {
+                newMap[newCoords.x, newCoords.y].type = MapTile.Type.eSpacer;
+            }
+        }
+        for (int y = -1; y < data.dimensions.y; y++)
+        {
+            IntVector newCoords = new IntVector(location.x - 1, location.y + y);
+            newCoords = newCoords.RotateCentered(rot, location);
+
+            // oob
+            if (!newCoords.IsInBounds(dimensions))
+                return false;
+            // overlap with another room
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eRoom)
+                return false;
+
+            // only add spacers to empty space
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eNone)
+            {
+                newMap[newCoords.x, newCoords.y].type = MapTile.Type.eSpacer;
+            }
+        }
+        for (int x = -1; x < data.dimensions.x; x++)
+        {
+            IntVector newCoords = new IntVector(location.x + x, location.y + data.dimensions.y);
+            newCoords = newCoords.RotateCentered(rot, location);
+
+            // oob
+            if (!newCoords.IsInBounds(dimensions))
+                return false;
+            // overlap with another room
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eRoom)
+                return false;
+
+            // only add spacers to empty space
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eNone)
+            {
+                newMap[newCoords.x, newCoords.y].type = MapTile.Type.eSpacer;
+            }
+        }
+        for (int y = -1; y < data.dimensions.y + 1; y++)// +1 to get the last spot
+        {
+            IntVector newCoords = new IntVector(location.x + data.dimensions.x, location.y + y);
+            newCoords = newCoords.RotateCentered(rot, location);
+
+            // oob
+            if (!newCoords.IsInBounds(dimensions))
+                return false;
+            // overlap with another room
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eRoom)
+                return false;
+
+            // only add spacers to empty space
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eNone)
+            {
+                newMap[newCoords.x, newCoords.y].type = MapTile.Type.eSpacer;
+            }
+        }
+
+
+        // add in the room entrance hallways
+        foreach (IntVector entranceLoc in data.entrances)
+        {
+            IntVector newCoords = new IntVector(location.x + entranceLoc.x, location.y + entranceLoc.y);
+            newCoords = newCoords.RotateCentered(rot, location);
+
+            //guaranteed by spacer
+            //// oob
+            //if (!newCoords.IsInBounds(dimensions))
+            //    return false;
+            //// overlap with another room
+            // No overlapping entrances because I'm lazy
+            if (newMap[newCoords.x, newCoords.y].type == MapTile.Type.eEntrance)
                 return false;
 
             newMap[newCoords.x, newCoords.y].type = MapTile.Type.eEntrance;
@@ -170,6 +242,9 @@ public class RoomMgr : MonoBehaviour
                     case MapTile.Type.eNone:
                         mesg += 'O';
                         break;
+                    case MapTile.Type.eSpacer:
+                        mesg += 'S';
+                        break;
                     default:
                         break;
                 }
@@ -208,18 +283,20 @@ public class RoomMgr : MonoBehaviour
             if (path == null)
             {
                 Debug.LogError("No path could be found");
+                // can use id to delete room
+
                 return;
             }
 
             // get new node from hallway
-            int newNodeIndex = Random.Range(0, path.totalCost);
+            int newNodeIndex = Random.Range(0, path.totalCost-1);
 
             // link with hallway
             PathNode currNode = path;
             while(currNode.prevNode != null)
             {
 
-                if (currNode.tile.type == MapTile.Type.eNone)
+                if (currNode.tile.type == MapTile.Type.eNone || currNode.tile.type == MapTile.Type.eSpacer)
                     currNode.tile.type = MapTile.Type.eHallway;
 
                 if (newNodeIndex == 0)

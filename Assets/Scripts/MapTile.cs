@@ -10,7 +10,8 @@ public class MapTile
         eRoom,
         eHallway,
         eEntrance,
-        eNone
+        eNone,
+        eSpacer
     }
 
     // just for entrances to match rooms
