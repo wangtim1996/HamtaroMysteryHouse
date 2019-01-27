@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource), typeof(Animator))]
+[RequireComponent(typeof(AudioSource), typeof(Animator), typeof(CameraShaker))]
 public class BasicAISounds : MonoBehaviour
 {
 
-    public AudioClip footstep;
+    public AudioClip[] footsteps;
     private AudioSource audioSource;
+    private CameraShaker shaker;
 
     void Start(){
         Animator anim = GetComponent<Animator>();
@@ -16,13 +17,19 @@ public class BasicAISounds : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
+        shaker = GetComponent<CameraShaker>();
 
-        AddEvent(3, 0.05f, "Footstep", 0);
-        AddEvent(3, 0.6f, "Footstep", 0);
+        AddEvent(1, 0.08f, "Footstep", 0);
+        AddEvent(1, 0.6f, "Footstep", 0);
     }
 
     public void Footstep(){
-        audioSource.PlayOneShot(footstep, 1.0f);
+        var rand = Random.Range(0, footsteps.Length);
+        audioSource.PlayOneShot(footsteps[rand], 1.0f);
+
+        float dist = Vector3.Distance(Camera.main.transform.position, transform.position);
+        float magnitude = 0.1f / Mathf.Max(1.0f, dist);
+        shaker.ShakeCamera(0.5f, magnitude, 0);
     }
 
     void AddEvent(int Clip, float time, string functionName, float floatParameter)
