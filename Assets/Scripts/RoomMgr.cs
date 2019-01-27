@@ -17,7 +17,9 @@ public class RoomMgr : MonoBehaviour
 
     private List<MapTile> nodesToLink = new List<MapTile>();
 
+    public static RoomMgr Instance;
 
+    public int playerCurrRoomId = -1;
     int currId;
 
     public static readonly IntVector[] DIRS = new[]
@@ -30,9 +32,14 @@ public class RoomMgr : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-       // TODO place starting room
+        if (Instance != null)
+        {
+            Debug.LogError("RoomMgr singleton error");
+            Destroy(this);
+        }
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -40,12 +47,16 @@ public class RoomMgr : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            PlaceRooms();
-            DebugMap();
-            LinkRooms();
-            GenerateHallways();
-            NavMeshMgr.Instance.CreateNavMesh(dimensions);
+            GenerateMap();
         }
+    }
+
+    public void GenerateMap()
+    {
+        PlaceRooms();
+        LinkRooms();
+        GenerateHallways();
+        NavMeshMgr.Instance.CreateNavMesh(dimensions);
     }
 
     private void PlaceRooms()
@@ -66,7 +77,7 @@ public class RoomMgr : MonoBehaviour
             IntVector loc = room.pos;
             IntVector.Rotation rot = room.rot;
 
-            Debug.Log("Placing at " + loc.x + "," + loc.y);
+            //Debug.Log("Placing at " + loc.x + "," + loc.y);
 
             // if it succeeded the map changed and we need to add the game object
             bool placed = TryPlaceRoom(loc, rot, room.data, room.id);
@@ -91,13 +102,13 @@ public class RoomMgr : MonoBehaviour
                 // Get random rotation
                 IntVector.Rotation rot = (IntVector.Rotation)Random.Range(0, (int)IntVector.Rotation.eNumElem);
 
-                Debug.Log("Placing at " + randLoc.x +","+randLoc.y);
+                //Debug.Log("Placing at " + randLoc.x +","+randLoc.y);
 
                 // if it succeeded the map changed and we need to add the game object
                 placed = TryPlaceRoom(randLoc, rot, roomObj.GetComponent<Room>().data, currId);
                 if(placed)
                 {
-                    GameObject obj = Instantiate(roomObj, new Vector3(randLoc.x, 0, randLoc.y), Quaternion.Euler(0, IntVector.GetRotationAngle(rot), 0), transform);
+                    GameObject obj = Instantiate(roomObj, new Vector3(randLoc.x, 0, randLoc.y) * tileGenAssets.scale, Quaternion.Euler(0, IntVector.GetRotationAngle(rot), 0), transform);
                     Room room = obj.GetComponent<Room>();
                     room.id = currId;
                     room.pos = randLoc;
@@ -255,7 +266,7 @@ public class RoomMgr : MonoBehaviour
         {
             Room room = child.gameObject.GetComponent<Room>();
             // Don't delete saved rooms
-            if (room && room.saved)
+            if (room && (room.saved || room.id == playerCurrRoomId))
                 continue;
 
             if (room)
@@ -322,7 +333,7 @@ public class RoomMgr : MonoBehaviour
 
             PathNode path = GetPath(node0, node1);
 
-            Debug.Log("Linking " + node0.coords.x + "," + node0.coords.y + " and " + node1.coords.x + "," + node1.coords.y);
+            //Debug.Log("Linking " + node0.coords.x + "," + node0.coords.y + " and " + node1.coords.x + "," + node1.coords.y);
 
             if (path == null)
             {
@@ -351,7 +362,7 @@ public class RoomMgr : MonoBehaviour
             }
 
 
-            DebugMap();
+            //DebugMap();
 
         }
     }
@@ -448,49 +459,49 @@ public class RoomMgr : MonoBehaviour
         switch (x)
         {
             case 0x1:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 180, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 180, 0), transform);
                 break;
             case 0x2:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, -90, 0), transform);
                 break;
             case 0x3:
-                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
+                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, -90, 0), transform);
                 break;
             case 0x4:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 0, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 0, 0), transform);
                 break;
             case 0x5:
-                Instantiate(tileGenAssets.line, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 0, 0), transform);
+                Instantiate(tileGenAssets.line, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 0, 0), transform);
                 break;
             case 0x6:
-                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 0, 0), transform);
+                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 0, 0), transform);
                 break;
             case 0x7:
-                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
+                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, -90, 0), transform);
                 break;
             case 0x8:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 90, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 90, 0), transform);
                 break;
             case 0x9:
-                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 180, 0), transform);
+                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 180, 0), transform);
                 break;
             case 0xA:
-                Instantiate(tileGenAssets.line, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 90, 0), transform);
+                Instantiate(tileGenAssets.line, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 90, 0), transform);
                 break;
             case 0xB:
-                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 180, 0), transform);
+                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 180, 0), transform);
                 break;
             case 0xC:
-                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 90, 0), transform);
+                Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 90, 0), transform);
                 break;
             case 0xD:
-                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -270, 0), transform);
+                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, -270, 0), transform);
                 break;
             case 0xE:
-                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 0, 0), transform);
+                Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 0, 0), transform);
                 break;
             case 0xF:
-                Instantiate(tileGenAssets.fourway, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 0, 0), transform);
+                Instantiate(tileGenAssets.fourway, new Vector3(pos.x, 0, pos.y) * tileGenAssets.scale, Quaternion.Euler(0, 0, 0), transform);
                 break;
             default:
                 Debug.LogError("MARCHING SQUARES ERROR");
@@ -510,6 +521,19 @@ public class RoomMgr : MonoBehaviour
                 TileGen(count++, new IntVector(j, i));
             }
         }
+    }
+
+    public GameObject GetFirstRoom()
+    {
+        foreach(Transform child in transform)
+        {
+            Room room = child.gameObject.GetComponent<Room>();
+            if(room & room.toBeDeleted == false)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
     }
 
 }

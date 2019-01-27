@@ -24,7 +24,7 @@ public class NavMeshMgr : MonoBehaviour
     public void CreateNavMesh(IntVector intBounds)
     {
         Bounds bounds = new Bounds();
-        bounds.SetMinMax(new Vector3(-1, -2, -1), new Vector3(intBounds.x, 4, intBounds.y));
+        bounds.SetMinMax(new Vector3(-1, -2, -1), new Vector3(intBounds.x, 0.01f, intBounds.y) * 5);
         if (!_havmesh)
         {
             K_PathFinder.PathFinder.QueueGraph(bounds, properties); //if button pressed first. Generate navmesh

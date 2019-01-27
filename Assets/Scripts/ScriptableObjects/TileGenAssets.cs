@@ -10,4 +10,5 @@ public class TileGenAssets : ScriptableObject
     public GameObject line;
     public GameObject tIntersect;
     public GameObject fourway;
+    public float scale = 5;
 }

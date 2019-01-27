@@ -60,10 +60,10 @@ MonoBehaviour:
     m_Tooltip: 
   areaIDs: 00000000010000000200000003000000
   drawUnityAssociations: 1
-  checkRootTag: 1
+  checkRootTag: 0
   tagAssociationsSerialized:
   - tag: Untagged
-    area: 0
+    area: 1
   - tag: Respawn
     area: 1
   - tag: Finish
@@ -76,6 +76,10 @@ MonoBehaviour:
     area: 1
   - tag: GameController
     area: 1
+  - tag: Floor
+    area: 0
+  - tag: RoomEnter
+    area: 0
   areaPointer:
     startX: -1
     startZ: -1

@@ -42,7 +42,7 @@ public class CameraShaker : MonoBehaviour
         float currAmplitude = 0;
 
         for(int i = 0; i < shakes.Count; ++i){
-            Debug.Log(shakes[i].currentTime + ", " + shakes[i].amplitude + ", " + shakes[i].duration + ", " + shakes[i].decay);
+            //Debug.Log(shakes[i].currentTime + ", " + shakes[i].amplitude + ", " + shakes[i].duration + ", " + shakes[i].decay);
             if(shakes[i].currentTime < shakes[i].duration){
                 shakes[i].currentTime += Time.deltaTime;
                 currAmplitude += shakes[i].amplitude;
