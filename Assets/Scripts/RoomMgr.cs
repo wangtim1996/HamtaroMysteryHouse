@@ -17,6 +17,9 @@ public class RoomMgr : MonoBehaviour
 
     private List<MapTile> nodesToLink = new List<MapTile>();
 
+
+    int currId;
+
     public static readonly IntVector[] DIRS = new[]
     {
             new IntVector(0, 1),
@@ -29,7 +32,7 @@ public class RoomMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       // TODO place starting room
     }
 
     // Update is called once per frame
@@ -50,14 +53,36 @@ public class RoomMgr : MonoBehaviour
         ResetMap();
         nodesToLink.Clear();
 
-        int id;
+        //Place saved rooms
+        foreach(Transform child in transform)
+        {
+            Room room = child.GetComponent<Room>();
+            if(room == null)
+            {
+                continue;
+            }
+            if (room.toBeDeleted)
+                continue;
+            IntVector loc = room.pos;
+            IntVector.Rotation rot = room.rot;
+
+            Debug.Log("Placing at " + loc.x + "," + loc.y);
+
+            // if it succeeded the map changed and we need to add the game object
+            bool placed = TryPlaceRoom(loc, rot, room.data, room.id);
+            if (!placed)
+            {
+                Debug.LogError("HOW COULD HAVE THIS HAPPENED pt2");
+                continue;
+            }
+        }
 
         for (int i = 0; i < numRoomsToPlace; i++)
         {
             GameObject roomObj = roomPool.Get();
             bool placed = false;
             int tries = 0;
-            id = i;
+            currId++;
 
             while(!placed && tries < 10)
             {
@@ -69,9 +94,20 @@ public class RoomMgr : MonoBehaviour
                 Debug.Log("Placing at " + randLoc.x +","+randLoc.y);
 
                 // if it succeeded the map changed and we need to add the game object
-                placed = TryPlaceRoom(randLoc, rot, roomObj.GetComponent<Room>().data, id);
+                placed = TryPlaceRoom(randLoc, rot, roomObj.GetComponent<Room>().data, currId);
                 if(placed)
-                    Instantiate(roomObj, new Vector3(randLoc.x, 0, randLoc.y), Quaternion.Euler(0, IntVector.GetRotationAngle(rot), 0), transform);
+                {
+                    GameObject obj = Instantiate(roomObj, new Vector3(randLoc.x, 0, randLoc.y), Quaternion.Euler(0, IntVector.GetRotationAngle(rot), 0), transform);
+                    Room room = obj.GetComponent<Room>();
+                    room.id = currId;
+                    room.pos = randLoc;
+                    room.rot = rot;
+
+                    if(i == 0)
+                    {
+                        room.saved = true;
+                    }
+                }
             }
 
         }
@@ -217,6 +253,13 @@ public class RoomMgr : MonoBehaviour
         //clear out old children
         foreach (Transform child in transform)
         {
+            Room room = child.gameObject.GetComponent<Room>();
+            // Don't delete saved rooms
+            if (room && room.saved)
+                continue;
+
+            if (room)
+                room.toBeDeleted = true;
             GameObject.Destroy(child.gameObject);
         }
     }
