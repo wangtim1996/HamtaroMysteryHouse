@@ -540,8 +540,8 @@ MonoBehaviour:
   tileGenAssets: {fileID: 11400000, guid: bcec3125692ff1d46bcc25219e7e66d3, type: 2}
   numRoomsToPlace: 7
   dimensions:
-    x: 15
-    y: 15
+    x: 20
+    y: 20
   playerCurrRoomId: -1
 --- !u!4 &946245644
 Transform:

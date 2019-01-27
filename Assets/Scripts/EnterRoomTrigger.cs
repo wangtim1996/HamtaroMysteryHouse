@@ -30,7 +30,7 @@ public class EnterRoomTrigger : MonoBehaviour
             if(owner.id != RoomMgr.Instance.playerCurrRoomId)
             {
                 RoomMgr.Instance.playerCurrRoomId = owner.id;
-                RoomMgr.Instance.GenerateMap();
+                RoomMgr.Instance.DelayGenerateMap();
 
             }
         }

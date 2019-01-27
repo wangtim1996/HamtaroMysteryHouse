@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helperName: _pathFinderHelper
   useMultithread: 1
-  maxThreads: 8
+  maxThreads: 4
   gridSize: 10
   gridLowest: -100
   gridHighest: 100
@@ -79,7 +79,7 @@ MonoBehaviour:
   - tag: Floor
     area: 0
   - tag: RoomEnter
-    area: 0
+    area: 1
   areaPointer:
     startX: -1
     startZ: -1

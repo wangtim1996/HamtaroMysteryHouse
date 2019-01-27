@@ -28,7 +28,9 @@ public class RoomMgr : MonoBehaviour
             new IntVector(1, 0),
             new IntVector(0, -1),
             new IntVector(-1, 0)
-        };
+    };
+
+    bool generateMap = false;
 
 
     // Start is called before the first frame update
@@ -45,10 +47,16 @@ public class RoomMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(generateMap)
         {
+            generateMap = false;
             GenerateMap();
         }
+    }
+
+    public void DelayGenerateMap()
+    {
+        generateMap = true;
     }
 
     public void GenerateMap()
