@@ -14,7 +14,11 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Generate clear trigger
+        //IntVector adjVector = new IntVector(pos) + new IntVector(data.dimensions.x-1, data.dimensions.y-1);
+        IntVector adjVector = new IntVector(Random.Range(pos.x, pos.x + data.dimensions.x - 1), Random.Range(pos.y, pos.y + data.dimensions.y - 1));
+        adjVector = adjVector.RotateCentered(rot, pos);
+        Instantiate(data.clearTrigger, new Vector3(adjVector.x, 0, adjVector.y) * 5, Quaternion.identity, transform);
     }
 
     // Update is called once per frame

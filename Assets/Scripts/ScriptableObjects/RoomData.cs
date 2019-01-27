@@ -7,4 +7,5 @@ public class RoomData : ScriptableObject
 {
     public IntVector dimensions;
     public List<IntVector> entrances;
+    public GameObject clearTrigger;
 }

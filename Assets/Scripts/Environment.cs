@@ -54,7 +54,7 @@ public class Environment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nice = test;
+        //nice = test;
     }
 
     private void SwitchToScary(){

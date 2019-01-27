@@ -121,11 +121,6 @@ public class RoomMgr : MonoBehaviour
                     room.id = currId;
                     room.pos = randLoc;
                     room.rot = rot;
-
-                    if(i == 0)
-                    {
-                        room.saved = true;
-                    }
                 }
             }
 
