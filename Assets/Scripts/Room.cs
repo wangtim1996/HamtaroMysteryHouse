@@ -5,6 +5,8 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public RoomData data;
+    public int id;
+
     // Start is called before the first frame update
     void Start()
     {

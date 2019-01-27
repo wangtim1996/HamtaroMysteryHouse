@@ -294,10 +294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPool: {fileID: 11400000, guid: 71fbcfc6351ca9c4c961f06c5c787de8, type: 2}
   tileGenAssets: {fileID: 11400000, guid: cde2d2d6ca1ed894fbb40acdfeca8e74, type: 2}
-  numRoomsToPlace: 10
+  numRoomsToPlace: 8
   dimensions:
-    x: 30
-    y: 30
+    x: 10
+    y: 10
 --- !u!4 &946245644
 Transform:
   m_ObjectHideFlags: 0

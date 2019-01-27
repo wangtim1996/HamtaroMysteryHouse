@@ -55,11 +55,15 @@ public class RoomMgr : MonoBehaviour
         ResetMap();
         nodesToLink.Clear();
 
+        int id;
+
         for (int i = 0; i < numRoomsToPlace; i++)
         {
             GameObject roomObj = roomPool.Get();
             bool placed = false;
             int tries = 0;
+            id = i;
+
             while(!placed && tries < 10)
             {
                 tries++;
@@ -70,7 +74,7 @@ public class RoomMgr : MonoBehaviour
                 Debug.Log("Placing at " + randLoc.x +","+randLoc.y);
 
                 // if it succeeded the map changed and we need to add the game object
-                placed = TryPlaceRoom(randLoc, rot, roomObj.GetComponent<Room>().data);
+                placed = TryPlaceRoom(randLoc, rot, roomObj.GetComponent<Room>().data, id);
                 if(placed)
                     Instantiate(roomObj, new Vector3(randLoc.x, 0, randLoc.y), Quaternion.Euler(0, IntVector.GetRotationAngle(rot), 0), transform);
             }
@@ -78,7 +82,7 @@ public class RoomMgr : MonoBehaviour
         }
     }
 
-    bool TryPlaceRoom(IntVector location, IntVector.Rotation rot, RoomData data)
+    bool TryPlaceRoom(IntVector location, IntVector.Rotation rot, RoomData data, int id)
     {
         // temp copy in case of fail
         MapTile[,] newMap = MakeMapCopy(map);
@@ -100,6 +104,7 @@ public class RoomMgr : MonoBehaviour
                     return false;
 
                 newMap[newCoords.x, newCoords.y].type = MapTile.Type.eRoom;
+                newMap[newCoords.x, newCoords.y].id = id;
             }
         }
 
@@ -117,6 +122,7 @@ public class RoomMgr : MonoBehaviour
                 return false;
 
             newMap[newCoords.x, newCoords.y].type = MapTile.Type.eEntrance;
+            newMap[newCoords.x, newCoords.y].id = id;
             nodesToLink.Add(newMap[newCoords.x, newCoords.y]);
         }
 
@@ -152,10 +158,11 @@ public class RoomMgr : MonoBehaviour
                 switch(map[x,y].type)
                 {
                     case MapTile.Type.eRoom:
-                        mesg += 'R';
+                        mesg += map[x,y].id;
                         break;
                     case MapTile.Type.eHallway:
-                        mesg += 'H';
+                        mesg += map[x,y].id;
+                        //mesg += 'H';
                         break;
                     case MapTile.Type.eEntrance:
                         mesg += 'E';
@@ -266,8 +273,12 @@ public class RoomMgr : MonoBehaviour
 
                 if (newTile.type == MapTile.Type.eRoom)
                     continue;
-
-                int newCost = current.totalCost + 1;
+                int newCost = current.totalCost;
+                //piggy back off of existing hallways
+                if (newTile.type != MapTile.Type.eHallway)
+                {
+                    newCost++;
+                }
                 PathNode neighbor = new PathNode(current, newTile, newCost);
                 visited.Add(newTile);
                 frontier.Enqueue(neighbor, newCost);
@@ -298,7 +309,7 @@ public class RoomMgr : MonoBehaviour
                         bool isHallway = neighbor.type == MapTile.Type.eHallway || neighbor.type == MapTile.Type.eEntrance;
                         // if curr tile type is entrance, include rooms
                         if (tile.type == MapTile.Type.eEntrance)
-                            isHallway = isHallway || neighbor.type == MapTile.Type.eRoom; 
+                            isHallway = isHallway || (neighbor.type == MapTile.Type.eRoom && neighbor.id == tile.id); 
 
                         if(isHallway)
                         {
@@ -319,7 +330,7 @@ public class RoomMgr : MonoBehaviour
                 Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 180, 0), transform);
                 break;
             case 0x2:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 90, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
                 break;
             case 0x3:
                 Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
@@ -337,7 +348,7 @@ public class RoomMgr : MonoBehaviour
                 Instantiate(tileGenAssets.tIntersect, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -90, 0), transform);
                 break;
             case 0x8:
-                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, -270, 0), transform);
+                Instantiate(tileGenAssets.deadend, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 90, 0), transform);
                 break;
             case 0x9:
                 Instantiate(tileGenAssets.turn, new Vector3(pos.x, 0, pos.y), Quaternion.Euler(0, 180, 0), transform);

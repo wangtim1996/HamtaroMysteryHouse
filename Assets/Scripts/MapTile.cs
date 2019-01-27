@@ -13,6 +13,9 @@ public class MapTile
         eNone
     }
 
+    // just for entrances to match rooms
+    public int id;
+
     public Type type = Type.eNone;
 
     public IntVector coords;
@@ -26,6 +29,7 @@ public class MapTile
     {
         this.coords = other.coords;
         this.type = other.type;
+        this.id = other.id;
     }
 
     public MapTile(IntVector coords)
