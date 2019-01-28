@@ -42,6 +42,12 @@ public class AIManager : MonoBehaviour, MapListener
         Debug.LogWarning("Rooms regenerated");
         foreach(var ai in AI)
         {
+            var sounds = ai.GetComponentsInChildren<AudioSource>();
+            foreach(AudioSource sound in sounds)
+            {
+                sound.Stop();
+                Destroy(sound);
+            }
             DestroyImmediate(ai);
         }
         AI.Clear();
@@ -52,6 +58,7 @@ public class AIManager : MonoBehaviour, MapListener
         for(int i = 0; i < maxAI; ++i)
         {
             var ai = Instantiate(AIPrefab);
+            ai.GetComponent<BasicAI>().speed *= 1.0f + GameMgr.Instance.clearedCount * 0.25f;
             GameObject path = new GameObject("Path");
             SimplePatrolPath p = path.AddComponent<SimplePatrolPath>();
             p.points = new List<Vector3>();

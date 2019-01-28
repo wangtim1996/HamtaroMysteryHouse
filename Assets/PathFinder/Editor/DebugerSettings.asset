@@ -48,7 +48,7 @@ MonoBehaviour:
   doProfilerStuff: 0
   showSelector: 1
   showSceneGUI: 0
-  doDebugPaths: 1
+  doDebugPaths: 0
   clearGenericOnUpdate: 0
   drawGenericDots: 1
   drawGenericLines: 1

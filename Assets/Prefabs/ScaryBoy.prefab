@@ -423,7 +423,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.15
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -470,10 +470,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrol: {fileID: 0}
-  speed: 0.5
+  speed: 0.4
   pauseTime: 0
   minimumPursueDistance: 7
-  catchRadius: 1
+  catchRadius: 0.25
 --- !u!114 &1503448846
 MonoBehaviour:
   m_ObjectHideFlags: 0

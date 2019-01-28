@@ -43,7 +43,7 @@ public class BasicAI : MonoBehaviour {
             }
         }
 
-        agent.SetRecievePathDelegate((Path path) => { Debug.Log(path.pathType); });
+        //agent.SetRecievePathDelegate((Path path) => { Debug.Log(path.pathType); });
 
         //queue navmesh
         PathFinder.QueueGraph(new Bounds(transform.position, Vector3.one * 20), agent.properties);
@@ -107,7 +107,7 @@ public class BasicAI : MonoBehaviour {
             //if next point still exist then we move towards it
             if (agent.haveNextNode) {
                 Vector2 moveDirection = agent.nextNodeDirectionVector2.normalized;
-                Debug.Log(moveDirection);
+                //Debug.Log(moveDirection);
                 controler.SimpleMove(new Vector3(moveDirection.x, 0, moveDirection.y) * speed);
 
                 //Visuals
