@@ -971,6 +971,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6200496846241385035, guid: f9c815cab8d2b6340ad0f9893471d9b9,
+        type: 3}
+      propertyPath: m_JumpPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200496846241385035, guid: f9c815cab8d2b6340ad0f9893471d9b9,
+        type: 3}
+      propertyPath: m_MaxAngularVelocity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6200496847504805756, guid: f9c815cab8d2b6340ad0f9893471d9b9,
         type: 3}
       propertyPath: m_Target
