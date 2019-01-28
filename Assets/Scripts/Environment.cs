@@ -94,16 +94,13 @@ public class Environment : MonoBehaviour
         foreach(var music in musics){
             var sounds = music.GetComponents<AudioSource>();
             sounds[0].enabled = true; //enable scary bknd
-            float ov1 = sounds[0].volume; 
-            float ov2 = sounds[1].volume; //save original volumes
             TweenFactory.Tween(sounds, 0, 1, changeDuration, TweenScaleFunctions.CubicEaseInOut, (t) => {
                 //tween volumes
-                sounds[1].volume = ov1 * (1.0f - t.CurrentValue);
-                sounds[0].volume = ov2 * t.CurrentValue;
+                sounds[1].volume = 0.5f * (1.0f - t.CurrentValue);
+                sounds[0].volume = 0.5f * t.CurrentValue;
             }, (t) => {
                 //disable nice bknd
-                sounds[1].enabled = false;
-                sounds[1].volume = ov1;
+                //sounds[1].enabled = false;
             });
         }
     }
@@ -145,37 +142,63 @@ public class Environment : MonoBehaviour
         foreach(var music in musics){
             var sounds = music.GetComponents<AudioSource>();
             sounds[1].enabled = true; //enable nice bknd
-            float ov1 = sounds[0].volume; 
-            float ov2 = sounds[1].volume; //save original volumes
             TweenFactory.Tween(sounds, 0, 1, changeDuration, TweenScaleFunctions.CubicEaseInOut, (t) => {
                 //tween volumes
-                sounds[0].volume = ov1 * (1.0f - t.CurrentValue);
-                sounds[1].volume = ov2 * t.CurrentValue;
+                sounds[0].volume = 0.5f * (1.0f - t.CurrentValue);
+                sounds[1].volume = 0.5f * t.CurrentValue;
             }, (t) => {
                 //disable scary bknd
-                sounds[0].enabled = false;
-                sounds[0].volume = ov1;
+                //sounds[0].enabled = false;
             });
         }
     }
 
-    public void AddEntity(EntityType type, GameObject go){
+    public int AddEntity(EntityType type, GameObject go){
         switch(type){
             case EntityType.Camera:
                 cameras.Add(go);
+                return cameras.Count-1;
                 break;
             case EntityType.Material:
                 materials.Add(go);
+                return materials.Count-1;
                 break;
             case EntityType.ParticleSystem:
                 particles.Add(go);
+                return particles.Count-1;
                 break;
             case EntityType.AI:
                 ais.Add(go);
+                return ais.Count-1;
                 break;
             case EntityType.Music:
                 musics.Add(go);
+                return musics.Count-1;
                 break;
         }
+        return 0;
+    }
+
+    public void RemoveEntity(EntityType type, GameObject go)
+    {
+        switch (type)
+        {
+            case EntityType.Camera:
+                cameras.Remove(go);
+                break;
+            case EntityType.Material:
+                materials.Remove(go);
+                break;
+            case EntityType.ParticleSystem:
+                particles.Remove(go);
+                break;
+            case EntityType.AI:
+                ais.Remove(go);
+                break;
+            case EntityType.Music:
+                musics.Remove(go);
+                break;
+        }
+
     }
 }

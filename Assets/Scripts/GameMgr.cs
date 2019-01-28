@@ -7,6 +7,9 @@ public class GameMgr : MonoBehaviour
 {
     public static GameMgr Instance;
     public GameObject player;
+
+    public int winCount = 5;
+    public int clearedCount;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,17 +32,25 @@ public class GameMgr : MonoBehaviour
         Room room = roomGO.GetComponent<Room>();
         RoomMgr.Instance.playerCurrRoomId = room.id;
         //room.saved = true;
-
+        clearedCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(clearedCount > winCount)
+        {
+            WinGame();
+        }
     }
 
     public void Caught()
     {
         SceneManager.LoadScene("GameOver");
+    }
+
+    public void WinGame()
+    {
+
     }
 }

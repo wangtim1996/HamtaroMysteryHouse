@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100994be10c2abd45b8c9484147b0e06, type: 3}
   m_Name: ScaryBoyProperties
   m_EditorClassIdentifier: 
-  radius: 0.5
+  radius: 0.1
   height: 1
   maxSlope: 45
   maxStepHeight: 0.4
