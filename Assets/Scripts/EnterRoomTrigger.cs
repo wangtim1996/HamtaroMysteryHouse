@@ -33,6 +33,7 @@ public class EnterRoomTrigger : MonoBehaviour
                 RoomMgr.Instance.DelayGenerateMap();
                 RoomMgr.Instance.playerCurrRoom = owner;
             }
+            Environment.instance.nice = owner.saved;
         }
     }
 }

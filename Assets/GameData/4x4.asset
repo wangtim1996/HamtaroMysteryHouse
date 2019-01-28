@@ -18,3 +18,5 @@ MonoBehaviour:
   entrances:
   - x: 1
     y: -1
+  clearTrigger: {fileID: 2599872438400679543, guid: 5965c6ceee7d5454a96b7cf2353668e2,
+    type: 3}
