@@ -885,5 +885,15 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 737796171}
+    - target: {fileID: 6200496846241385035, guid: f9c815cab8d2b6340ad0f9893471d9b9,
+        type: 3}
+      propertyPath: m_JumpPower
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200496846241385035, guid: f9c815cab8d2b6340ad0f9893471d9b9,
+        type: 3}
+      propertyPath: m_MaxAngularVelocity
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c815cab8d2b6340ad0f9893471d9b9, type: 3}
