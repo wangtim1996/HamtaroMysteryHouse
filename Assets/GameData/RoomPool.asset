@@ -14,9 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: 1665011442013021694, guid: 0e8995ead15b78d4cb1231ebbf7c57d9, type: 3}
-  - {fileID: 9160079275320376272, guid: f89aa4a0936ea424aa62e0d0bc7357af, type: 3}
-  - {fileID: 2927697735403981316, guid: 10e432ac7ed405444ad49ef50e560713, type: 3}
-  - {fileID: 3832322585670252941, guid: 1f40002d6cfac8a44a41d3dbc07bd286, type: 3}
-  - {fileID: 6958560225425466691, guid: 3c11996324cae0b46ad304f34af82a84, type: 3}
-  - {fileID: 7517658694830078163, guid: f5030a1a6e1ccb94f94db73470fe2024, type: 3}
-  - {fileID: 6581334105334323064, guid: 198f691cccb27ee43afb32a65a6ebce6, type: 3}
+  - {fileID: 8304356244247382116, guid: b53c68bdee60dfa4398d122032c6f0f0, type: 3}
+  - {fileID: 8936132603385119458, guid: c0a6482f66ac996429e97c04057f3c18, type: 3}
