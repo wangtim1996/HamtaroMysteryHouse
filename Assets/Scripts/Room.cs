@@ -10,6 +10,7 @@ public class Room : MonoBehaviour
     public IntVector.Rotation rot;
     //public bool saved = false;
     public bool toBeDeleted = false;
+    public bool containsPlayer = false;
     [SerializeField]
     private GameObject light;
 

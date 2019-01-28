@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1093447411}
   m_Layer: 0
   m_Name: BackgroundNoise
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,16 +45,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e3ed3a4b9ac918a4c842edc3088b1721, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.726
-  m_Pitch: 0.87
+  m_Volume: 0.75
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 0
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -64,7 +64,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.041175842
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -73,14 +73,14 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.21141139
-      value: 0.088763535
+      time: 0.12024012
+      value: 0.09308177
       inSlope: -1.3372177
-      outSlope: -0.25287855
+      outSlope: -0.11294712
       tangentMode: 1
       weightedMode: 0
       inWeight: 0.39889005
-      outWeight: 0.21139959
+      outWeight: 0.17035876
     - serializedVersion: 3
       time: 1
       value: 0
@@ -98,7 +98,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1503448850}
   m_Layer: 0
   m_Name: ScaryBoy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 672341692633477684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 2326962192964095548}
   - {fileID: 2329885514522578770}
@@ -318,16 +318,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23090347ca4e70e4c94b680edab33dd8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 0
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -346,14 +346,14 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.12023631
-      value: 0.09309703
+      time: 0.12024012
+      value: 0.09308177
       inSlope: -1.3372177
-      outSlope: -0.25287855
+      outSlope: -0.11294712
       tangentMode: 1
       weightedMode: 0
       inWeight: 0.39889005
-      outWeight: 0.21139959
+      outWeight: 0.17035876
     - serializedVersion: 3
       time: 1
       value: 0
@@ -423,7 +423,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.15
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -437,7 +437,7 @@ AudioDistortionFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672341692633477684}
   m_Enabled: 1
-  m_DistortionLevel: 0.85
+  m_DistortionLevel: 0.5
 --- !u!95 &1503448841
 Animator:
   serializedVersion: 3
@@ -470,8 +470,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrol: {fileID: 0}
-  speed: 1
-  pauseTime: 1
+  speed: 0.4
+  pauseTime: 0
+  minimumPursueDistance: 7
+  catchRadius: 0.25
 --- !u!114 &1503448846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2094593f742fc40438581bb633429322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  properties: {fileID: 11400000, guid: 19aca99931cbe064e866f6cfec4b6ea1, type: 2}
+  properties: {fileID: 11400000, guid: 70c475b77d6448e4d9d0a150fe1c8475, type: 2}
   ignoreCrouchCost: 0
   updateNavmeshPosition: 1
   updateNeighbourAgents: 0
@@ -562,7 +564,7 @@ GameObject:
   - component: {fileID: 2326905544060554266}
   m_Layer: 0
   m_Name: basic_rig L Finger2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -593,7 +595,7 @@ GameObject:
   - component: {fileID: 2329541434175223200}
   m_Layer: 0
   m_Name: basic_rig R Thigh
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,7 +626,7 @@ GameObject:
   - component: {fileID: 2327056525952687322}
   m_Layer: 0
   m_Name: Bip001 R Finger0Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +656,7 @@ GameObject:
   - component: {fileID: 2329798058076378322}
   m_Layer: 0
   m_Name: basic_rig UpperArm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -685,7 +687,7 @@ GameObject:
   - component: {fileID: 2330023169913017178}
   m_Layer: 0
   m_Name: basic_rig R Finger1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +718,7 @@ GameObject:
   - component: {fileID: 2329838708538808678}
   m_Layer: 0
   m_Name: Bip001 HeadNub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +748,7 @@ GameObject:
   - component: {fileID: 2326831198256017582}
   m_Layer: 0
   m_Name: basic_rig Neck
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -777,7 +779,7 @@ GameObject:
   - component: {fileID: 2327095911889806514}
   m_Layer: 0
   m_Name: Bip001 L Finger0Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -808,7 +810,7 @@ GameObject:
   - component: {fileID: 2329601820111575376}
   m_Layer: 0
   m_Name: basic_rig L Toe0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -839,7 +841,7 @@ GameObject:
   - component: {fileID: 2327214197882657706}
   m_Layer: 0
   m_Name: basic_rig L Thigh
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -872,7 +874,7 @@ GameObject:
   - component: {fileID: 2120072219}
   m_Layer: 0
   m_Name: C_man_1_FBX2013
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -993,7 +995,7 @@ GameObject:
   - component: {fileID: 2329752132088638832}
   m_Layer: 0
   m_Name: basic_rig R Clavicle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,7 +1026,7 @@ GameObject:
   - component: {fileID: 2329915161261224042}
   m_Layer: 0
   m_Name: basic_rig L UpperArm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1055,7 +1057,7 @@ GameObject:
   - component: {fileID: 2329651040357891952}
   m_Layer: 0
   m_Name: basic_rig R Toe0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,7 +1088,7 @@ GameObject:
   - component: {fileID: 2329800139375773340}
   m_Layer: 0
   m_Name: basic_rig Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1117,7 +1119,7 @@ GameObject:
   - component: {fileID: 2329527003215909448}
   m_Layer: 0
   m_Name: basic_rig R Finger2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1148,7 +1150,7 @@ GameObject:
   - component: {fileID: 2326925311747915170}
   m_Layer: 0
   m_Name: Bip001 R Finger2Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1178,7 +1180,7 @@ GameObject:
   - component: {fileID: 2329850151472647218}
   m_Layer: 0
   m_Name: basic_rig Pelvis
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1211,7 +1213,7 @@ GameObject:
   - component: {fileID: 2329822581916243362}
   m_Layer: 0
   m_Name: basic_rig L Clavicle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1242,7 +1244,7 @@ GameObject:
   - component: {fileID: 2326863731875800894}
   m_Layer: 0
   m_Name: basic_rig R Finger0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1273,7 +1275,7 @@ GameObject:
   - component: {fileID: 2329534505309937258}
   m_Layer: 0
   m_Name: basic_rig L Foot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1304,7 +1306,7 @@ GameObject:
   - component: {fileID: 2329960927965777104}
   m_Layer: 0
   m_Name: Bip001 L Finger2Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,7 +1337,7 @@ GameObject:
   - component: {fileID: 2329923386136906576}
   m_Layer: 0
   m_Name: basic_rig Spine1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1368,7 +1370,7 @@ GameObject:
   - component: {fileID: 2327227073043752744}
   m_Layer: 0
   m_Name: Bip001 L Finger1Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,7 +1401,7 @@ GameObject:
   - component: {fileID: 2329812426161701064}
   m_Layer: 0
   m_Name: basic_rig R Calf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1430,7 +1432,7 @@ GameObject:
   - component: {fileID: 2327148542040038376}
   m_Layer: 0
   m_Name: basic_rig L Forearm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1461,7 +1463,7 @@ GameObject:
   - component: {fileID: 2326833496104869334}
   m_Layer: 0
   m_Name: basic_rig R Hand
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1494,7 +1496,7 @@ GameObject:
   - component: {fileID: 2329550412808876384}
   m_Layer: 0
   m_Name: basic_rig R Foot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,7 +1527,7 @@ GameObject:
   - component: {fileID: 2329886017688962216}
   m_Layer: 0
   m_Name: basic_rig L Calf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,7 +1558,7 @@ GameObject:
   - component: {fileID: 2326825187236546170}
   m_Layer: 0
   m_Name: basic_rig L Finger0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1587,7 +1589,7 @@ GameObject:
   - component: {fileID: 2326998387041662236}
   m_Layer: 0
   m_Name: basic_rig R Forearm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1618,7 +1620,7 @@ GameObject:
   - component: {fileID: 2326872010388557986}
   m_Layer: 0
   m_Name: basic_rig L Finger1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1650,7 +1652,7 @@ GameObject:
   - component: {fileID: 2329666518800545338}
   m_Layer: 0
   m_Name: Bip001 R Finger1Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1680,7 +1682,7 @@ GameObject:
   - component: {fileID: 2329543190931356716}
   m_Layer: 0
   m_Name: Bip001 R Toe0Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1710,7 +1712,7 @@ GameObject:
   - component: {fileID: 2327127945853904588}
   m_Layer: 0
   m_Name: basic_rig L Hand
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1743,7 +1745,7 @@ GameObject:
   - component: {fileID: 2326962192964095548}
   m_Layer: 0
   m_Name: basic_rig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1775,7 +1777,7 @@ GameObject:
   - component: {fileID: 2329574631663221594}
   m_Layer: 0
   m_Name: basic_rig Footsteps
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1805,7 +1807,7 @@ GameObject:
   - component: {fileID: 2326835287228840346}
   m_Layer: 0
   m_Name: basic_rig Spine
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1836,7 +1838,7 @@ GameObject:
   - component: {fileID: 2327155464350389030}
   m_Layer: 0
   m_Name: Bip001 L Toe0Nub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,7 +1871,7 @@ GameObject:
   - component: {fileID: 229298323}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -20,6 +20,7 @@ public class RoomMgr : MonoBehaviour
     public static RoomMgr Instance;
 
     public int playerCurrRoomId = -1;
+    public Room playerCurrRoom = null;
     int currId;
 
     public static readonly IntVector[] DIRS = new[]
@@ -32,6 +33,13 @@ public class RoomMgr : MonoBehaviour
 
     bool generateMap = false;
 
+    public List<MapListener> listeners;
+    private bool notify = false;
+
+    void Start()
+    {
+        listeners = new List<MapListener>();
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -52,6 +60,17 @@ public class RoomMgr : MonoBehaviour
             generateMap = false;
             GenerateMap();
         }
+        if (notify)
+        {
+            if (listeners != null)
+            {
+                foreach (MapListener listener in listeners)
+                {
+                    listener.OnMapGenerated();
+                }
+                notify = false;
+            }
+        }
     }
 
     public void DelayGenerateMap()
@@ -65,6 +84,12 @@ public class RoomMgr : MonoBehaviour
         LinkRooms();
         GenerateHallways();
         NavMeshMgr.Instance.CreateNavMesh(dimensions);
+
+        notify = true;
+        if(playerCurrRoom == null)
+        {
+            playerCurrRoom = GetAllRooms()[0].GetComponent<Room>();
+        }
     }
 
     private void PlaceRooms()
@@ -531,12 +556,26 @@ public class RoomMgr : MonoBehaviour
         foreach(Transform child in transform)
         {
             Room room = child.gameObject.GetComponent<Room>();
-            if(room & room.toBeDeleted == false)
+            if(room && room.toBeDeleted == false)
             {
                 return child.gameObject;
             }
         }
         return null;
+    }
+
+    public List<GameObject> GetAllRooms()
+    {
+        List<GameObject> rooms = new List<GameObject>();
+        foreach(Transform child in transform)
+        {
+            Room room = child.gameObject.GetComponent<Room>();
+            if(room && room.toBeDeleted == false)
+            {
+                rooms.Add(room.gameObject);
+            }
+        }
+        return rooms;
     }
 
 }

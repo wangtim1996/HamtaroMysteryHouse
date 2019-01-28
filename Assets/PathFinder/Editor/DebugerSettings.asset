@@ -43,7 +43,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   optionIsShows: 00000000010000000000000000000000000000000000000000000100
-  doDebug: 0
+  doDebug: 1
   debugOnlyNavmesh: 0
   doProfilerStuff: 0
   showSelector: 1

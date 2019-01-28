@@ -27,10 +27,11 @@ public class EnterRoomTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(owner.id != RoomMgr.Instance.playerCurrRoomId)
+            if (owner.id != RoomMgr.Instance.playerCurrRoomId)
             {
                 RoomMgr.Instance.playerCurrRoomId = owner.id;
                 RoomMgr.Instance.DelayGenerateMap();
+                RoomMgr.Instance.playerCurrRoom = owner;
             }
             Environment.instance.nice = owner.saved;
         }

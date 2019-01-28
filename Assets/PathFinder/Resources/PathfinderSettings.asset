@@ -80,6 +80,8 @@ MonoBehaviour:
     area: 0
   - tag: RoomEnter
     area: 1
+  - tag: Enemy
+    area: 0
   areaPointer:
     startX: -1
     startZ: -1

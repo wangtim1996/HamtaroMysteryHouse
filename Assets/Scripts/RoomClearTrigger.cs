@@ -20,6 +20,8 @@ public class RoomClearTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            //increment cleared room counter
+            GameMgr.Instance.clearedCount++;
             //set saved
             Room room = null;
             Transform currTransform = transform.parent;
@@ -28,6 +30,7 @@ public class RoomClearTrigger : MonoBehaviour
                 room = currTransform.gameObject.GetComponent<Room>();
                 if (room != null)
                 {
+                    Debug.Log("setting nice");
                     room.saved = true;
                     Environment.instance.nice = true;
                     Destroy(gameObject);
