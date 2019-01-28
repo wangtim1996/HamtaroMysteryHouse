@@ -43,12 +43,12 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   optionIsShows: 00000000010000000000000000000000000000000000000000000100
-  doDebug: 0
+  doDebug: 1
   debugOnlyNavmesh: 0
   doProfilerStuff: 0
   showSelector: 1
   showSceneGUI: 0
-  doDebugPaths: 0
+  doDebugPaths: 1
   clearGenericOnUpdate: 0
   drawGenericDots: 1
   drawGenericLines: 1

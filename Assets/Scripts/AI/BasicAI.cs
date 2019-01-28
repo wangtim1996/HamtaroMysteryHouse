@@ -11,6 +11,8 @@ public class BasicAI : MonoBehaviour {
     [Range(0f, 5f)]
     public float speed = 3;
     public float pauseTime = 1;
+    public float minimumPursueDistance = 5;
+    public float catchRadius = 2;
 
     private PathFinderAgent agent;
     private CharacterController controler;
@@ -19,6 +21,7 @@ public class BasicAI : MonoBehaviour {
 
     private float currT = 0;
     private float pauseT = 0;
+    private float waitTime;
 
     void Start() {
         if (patrol == null || patrol.Count == 0)
@@ -44,9 +47,35 @@ public class BasicAI : MonoBehaviour {
 
         //queue navmesh
         PathFinder.QueueGraph(new Bounds(transform.position, Vector3.one * 20), agent.properties);
+
+        waitTime = Random.Range(0.0f, 1.0f);
     }
     
     void Update() {
+        if(waitTime > 0)
+        {
+            waitTime -= Time.deltaTime;
+            return;
+        }
+
+        var playerpos = GameMgr.Instance.player.transform.Find("RollerBall").transform.position;
+        float dist = Vector3.Distance(playerpos, this.transform.position);
+        if(dist < catchRadius)
+        {
+            GameMgr.Instance.Caught();
+            return;
+        }
+        else if (dist < minimumPursueDistance)
+        {
+            agent.SetGoalMoveHere(playerpos); //queue new path
+        }
+        else
+        {
+            agent.SetGoalMoveHere(patrol[currentPoint]);
+        }
+
+
+
         //if patrol not valid return
         if (patrol.Count == 0) {
             Debug.Log("patrol.Count == 0");
@@ -78,16 +107,13 @@ public class BasicAI : MonoBehaviour {
             //if next point still exist then we move towards it
             if (agent.haveNextNode) {
                 Vector2 moveDirection = agent.nextNodeDirectionVector2.normalized;
+                Debug.Log(moveDirection);
                 controler.SimpleMove(new Vector3(moveDirection.x, 0, moveDirection.y) * speed);
 
                 //Visuals
                 this.transform.LookAt(this.transform.position + new Vector3(moveDirection.x, 0, moveDirection.y) * speed); //Look where going
                 anim.SetFloat("MoveSpeed", speed);
             }
-        }
-        else {
-            //get path to current point
-            agent.SetGoalMoveHere(patrol[currentPoint]);
         }
 
     }
