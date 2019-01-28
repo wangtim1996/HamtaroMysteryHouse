@@ -51,6 +51,6 @@ public class GameMgr : MonoBehaviour
 
     public void WinGame()
     {
-
+        SceneManager.LoadScene("win");
     }
 }
