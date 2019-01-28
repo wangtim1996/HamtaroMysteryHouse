@@ -14128,6 +14128,7 @@ MonoBehaviour:
     y: 0
   rot: 0
   toBeDeleted: 0
+  containsPlayer: 0
   light: {fileID: 1959912352726733044}
 --- !u!1 &8942127925622999717
 GameObject:
@@ -14530,7 +14531,7 @@ PrefabInstance:
     - target: {fileID: 5417459442747437742, guid: ecaebba761bd28b4fb91e095b856494c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 5417459442747437742, guid: ecaebba761bd28b4fb91e095b856494c,
         type: 3}

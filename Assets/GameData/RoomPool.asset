@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: RoomPool
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 1665011442013021694, guid: 0e8995ead15b78d4cb1231ebbf7c57d9, type: 3}
-  - {fileID: 8304356244247382116, guid: b53c68bdee60dfa4398d122032c6f0f0, type: 3}
   - {fileID: 8936132603385119458, guid: c0a6482f66ac996429e97c04057f3c18, type: 3}
