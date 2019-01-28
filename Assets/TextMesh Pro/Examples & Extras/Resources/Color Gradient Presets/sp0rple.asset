@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sp0rple
   m_EditorClassIdentifier: 
   colorMode: 2
-  topLeft: {r: 0.77254903, g: 0, b: 0.8392157, a: 1}
-  topRight: {r: 0.77254903, g: 0, b: 0.8392157, a: 1}
+  topLeft: {r: 0.77254903, g: 0, b: 0.8392157, a: 0.62352943}
+  topRight: {r: 0.77254903, g: 0, b: 0.8392157, a: 0.62352943}
   bottomLeft: {r: 0, g: 0, b: 0, a: 1}
   bottomRight: {r: 0, g: 0, b: 0, a: 1}
